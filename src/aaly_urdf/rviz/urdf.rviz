@@ -58,62 +58,62 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        track_creator__Left_Side_Track_Cover:
+        aaly__Left_Side_Track_Cover:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        track_creator__Left_Side_Track_Support:
+        aaly__Left_Side_Track_Support:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        track_creator__Right_Side_Track_Cover:
+        aaly__Right_Side_Track_Cover:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        track_creator__Right_Side_Track_Support:
+        aaly__Right_Side_Track_Support:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        track_creator__base_link:
+        aaly__base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        track_creator__drum1:
+        aaly__drum1:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        track_creator__drum2:
+        aaly__drum2:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        track_creator__drum3:
+        aaly__drum3:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        track_creator__drum4:
+        aaly__drum4:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        track_creator__drum5:
+        aaly__drum5:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        track_creator__drum6:
+        aaly__drum6:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        track_creator__motor1:
+        aaly__motor1:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -132,7 +132,7 @@ Visualization Manager:
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: track_creator__base_link
+    Fixed Frame: aaly__base_link
     Frame Rate: 30
   Name: root
   Tools:
@@ -189,5 +189,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1200
-  X: 2055
+  X: 2000
   Y: 94

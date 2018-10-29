@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+
+<robot name="aaly_macros" xmlns:xacro="https://www.ros.org/wiki/xacro" >
+
+  <xacro:property name="pi" value="3.1415" />
+
+  <material name="blue">
+    <color rgba="0 0 0.8 1"/>
+  </material>
+
+  <material name="black">
+    <color rgba="0 0 0 1"/>
+  </material>
+
+  <material name="white">
+    <color rgba="1 1 1 1"/>
+  </material>
+
+  <xacro:macro name="default_inertial" params="mass">
+    <inertial>
+      <mass value="${mass}" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+    </inertial>
+  </xacro:macro>
+
+  <xacro:macro name="cylinder_inertia" params="mass r l" >
+      <inertia ixx="${mass*(3*r*r+l*l)/12}" ixy="0"                     ixz="0" 
+                                           iyy="${mass*(3*r*r+l*l)/12}" iyz="0" 
+                                                                        izz="${mass*(r*r)/2}" 
+      />      
+  </xacro:macro>
+
+  <xacro:macro name="joint_wheel" params="name child origin_xyz">
+      <joint name="${name}" type="continuous">
+          <origin rpy="0 0 0" xyz="${origin_xyz}"/>
+          <child link="${child}" />
+          <parent link="link_chassis"/>
+          <axis rpy="0 0 0" xyz="0 1 0"/>
+          <limit effort="10000" velocity="1000"/>
+          <joint_properties damping="1.0" friction="1.0" />
+      </joint>
+  </xacro:macro>
+  
+</robot>

@@ -1,6 +1,6 @@
 <launch>
 
-      <arg name="model"  default="$(find aaly_urdf)/urdf/base.urdf"/>
+      <arg name="model"  default="$(find aaly_urdf)/urdf/base.urdf.xacro"/>
 
       <arg name="paused" value="false"/>
       <arg name="use_sim_time" value="true"/>
@@ -11,6 +11,7 @@
       <arg name="x" default="0"/>
       <arg name="y" default="0"/>
       <arg name="z" default="0.1"/>
+      <arg name="world" default="ground" />
 
       <include file="$(find gazebo_ros)/launch/empty_world.launch" >
         <arg name="world_name" value="$(find aaly_urdf)/worlds/$(arg world).world" />
@@ -21,9 +22,13 @@
         <arg name="headless" value="$(arg headless)"/>
       </include>  
 
-      <param name="robot_description" textfile="$(find aaly_urdf)/urdf/base.urdf" />
+      <param name="robot_description" command="$(find xacro)/xacro.py $(arg model)"  />
 
-      <node name="base_spawn" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
-          args="-urdf -param robot_description -model track_creator -x $(arg x) -y $(arg y) -z $(arg z)" />
+      <node name="aaly_urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+          args="-urdf -param robot_description -model aaly -x $(arg x) -y $(arg y) -z $(arg z)" />
+
+      <node pkg="robot_state_publisher" type="robot_state_publisher"  name="robot_state_publisher">
+        <param name="publish_frequency" type="double" value="30.0" />
+      </node>
 
 </launch>
