@@ -1,0 +1,15 @@
+<launch>
+
+      <arg name="rvizconfig" default="$(find aaly_urdf)/rviz/urdf.rviz" />
+
+      <param name="robot_description" textfile="$(find aaly_urdf)/urdf/base.urdf" />
+
+      <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" >
+            <param name="use_gui" value="TRUE"/>
+      </node>
+
+      <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen" />
+
+      <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" />
+
+</launch>

@@ -1,0 +1,8 @@
+prefix=/home/ironfist/Documents/Robot/ROS/dev/aaly_ws/install
+
+Name: aaly_urdf
+Description: Description of aaly_urdf
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/ironfist/Documents/Robot/ROS/dev/aaly_ws/install/lib 
+Requires: 

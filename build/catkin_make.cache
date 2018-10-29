@@ -1,0 +1,2 @@
+aaly_urdf
+-DCATKIN_DEVEL_PREFIX=/home/ironfist/Documents/Robot/ROS/dev/aaly_ws/devel -DCMAKE_INSTALL_PREFIX=/home/ironfist/Documents/Robot/ROS/dev/aaly_ws/install -G Unix Makefiles

@@ -1,0 +1,29 @@
+<!-- Base link Inertia -->
+    <inertial>
+      <mass value="0.36"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="0.0028086383999999997" ixy="0.0" ixz="0.0" iyy="4.3094400000000005e-05" iyz="0.0" izz="0.0028086383999999997"/>
+    </inertial>
+
+      <arg name="model"  default="$(find aaly_urdf)/urdf/base.urdf"/>
+
+      <arg name="paused" value="false"/>
+      <arg name="use_sim_time" value="true"/>
+      <arg name="gui" value="true"/>
+      <arg name="recording" value="false"/>
+      <arg name="debug" value="false"/>
+      <arg name="x" default="0"/>
+      <arg name="y" default="0"/>
+      <arg name="z" default="0.5"/>
+
+      <include file="$(find gazebo_ros)/launch/empty_world.launch" >
+          <arg name="world_name" value="$(find aaly_urdf)/worlds/$(arg world).world" />
+      </include>  
+
+      <!-- load the controllers -->
+      <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+        output="screen" args="joint_state_controller
+                          joint1_position_controller" />
+
+      <node name="base_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
+          args="-urdf -param robot_description -model track_creator -x $(arg x) -y $(arg y) -z $(arg z)" />
