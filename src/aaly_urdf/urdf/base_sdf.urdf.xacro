@@ -6,46 +6,13 @@
       <child link="aaly__base_link"/>
   </joint>
 
-  <joint name="aaly__knee_left_back_joint" type="revolute">
+  <joint name="aaly__j1" type="revolute">
     <parent link="aaly__base_link"/>
-    <child link="aaly__knee_left_back_motor"/>
-    <origin rpy="0 0 0" xyz="-0.107 0.114400 0.121275"/>
-    <axis xyz="-1 0 0"/>
-
-    <limit effort="100" velocity="1" lower="0" upper="5.235987755982989"/>
-
-    <dynamics damping="5" friction="0.1"/>
-  </joint>
-
-  <joint name="aaly__knee_left_front_joint" type="revolute">
-    <parent link="aaly__base_link"/>
-    <child link="aaly__knee_left_front_motor"/>
-    <origin rpy="0 0 3.141592653589793" xyz="-0.107 0.114400 0.121275"/>
-    <axis xyz="-1 0 0"/>
-
-    <limit effort="100" velocity="1" lower="0" upper="5.235987755982989"/>
-
-    <dynamics damping="5" friction="0.1"/>
-  </joint>
-
-  <joint name="aaly__knee_right_back_joint" type="revolute">
-    <parent link="aaly__base_link"/>
-    <child link="aaly__knee_right_back_motor"/>
-    <origin rpy="0 0 0" xyz="-0.107 -0.114400 0.121275"/>
+    <child link="aaly__motor1"/>
+    <origin rpy="0 0 0" xyz="-0.107 0.0 0.12427"/>
     <axis xyz="1 0 0"/>
 
-    <limit effort="100" velocity="1" lower="0" upper="5.235987755982989"/>
-
-    <dynamics damping="5" friction="0.1"/>
-  </joint>
-
-  <joint name="aaly__knee_right_front_joint" type="revolute">
-    <parent link="aaly__base_link"/>
-    <child link="aaly__knee_right_front_motor"/>
-    <origin rpy="0 0 3.141592653589793" xyz="-0.034 -0.114400 0.121275"/>
-    <axis xyz="1 0 0"/>
-
-    <limit effort="100" velocity="1" lower="0" upper="5.235987755982989"/>
+    <limit effort="1.5" velocity="1" lower="0" upper="5.235987755982989"/>
 
     <dynamics damping="5" friction="0.1"/>
   </joint>
@@ -69,49 +36,54 @@
   <joint name="aaly__drum_joint1" type="continuous">
     <parent link="aaly__Left_Side_Track_Support"/>
     <child link="aaly__drum1"/>
-    <origin rpy="1.57079 0 0" xyz="-0.1091 -0.038 -0.03562"/>
-    <axis xyz="0 0 1"/>
+    <origin rpy="1.57079632679 0 0" xyz="-0.1228385 -0.19612 0.030"/>
+    <axis xyz="0 1 0"/>
   </joint>
 
   <joint name="aaly__drum_joint2" type="continuous">
     <parent link="aaly__Right_Side_Track_Support"/>
     <child link="aaly__drum2"/>
-    <origin rpy="1.57079 0 0" xyz="-0.1091 0.038 -0.04062"/>
-    <axis xyz="0 0 -1"/>
+    <origin rpy="1.57079632679 0 0" xyz="-0.1228385 0.19612 0.030"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="0" lower="-1e+16" upper="1e+16" velocity="2"/>
   </joint>
 
   <joint name="aaly__drum_joint3" type="continuous">
     <parent link="aaly__Left_Side_Track_Support"/>
     <child link="aaly__drum3"/>
-    <origin rpy="1.57079 0 0" xyz="0.13857 -0.038 -0.028"/>
-    <axis xyz="0 0 -1"/>
+    <origin rpy="1.57079632679 0 0" xyz="0.1248385 -0.19612 0.037625"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="0" lower="-1e+16" upper="1e+16" velocity="2"/>
   </joint>
 
   <joint name="aaly__drum_joint4" type="continuous">
     <parent link="aaly__Right_Side_Track_Support"/>
     <child link="aaly__drum4"/>
-    <origin rpy="1.57079 0 0" xyz="0.13857 0.038 -0.033"/>
-    <axis xyz="0 0 -1"/>
+    <origin rpy="1.57079632679 0 0" xyz="0.1248385 0.19612 0.037625"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="0" lower="-1e+16" upper="1e+16" velocity="2"/>
   </joint>
 
   <joint name="aaly__drum_joint5" type="continuous">
     <parent link="aaly__Left_Side_Track_Support"/>
     <child link="aaly__drum5"/>
-    <origin rpy="1.57079 0 0" xyz="-0.03231 -0.038 0.08871"/>
-    <axis xyz="0 0 -1"/>
+    <origin rpy="1.57079632679 0 0" xyz="-0.0460507 -0.19612 0.154342"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="0" lower="-1e+16" upper="1e+16" velocity="2"/>
   </joint>
 
   <joint name="aaly__drum_joint6" type="continuous">
     <parent link="aaly__Right_Side_Track_Support"/>
     <child link="aaly__drum6"/>
-    <origin rpy="1.57079 0 0" xyz="-0.03231 0.038 0.08371"/>
-    <axis xyz="0 0 -1"/>
+    <origin rpy="1.57079632679 0 0" xyz="-0.0460507 0.19612 0.154342"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="0" lower="-1e+16" upper="1e+16" velocity="2"/>
   </joint>
 
   <joint name="aaly__Left_Side_Track_Cover_joint" type="fixed">
     <parent link="aaly__Left_Side_Track_Support"/>
     <child link="aaly__Left_Side_Track_Cover"/>
-    <origin rpy="0 0 0" xyz="0.00029 -0.07299 -0.00449"/>
+    <origin rpy="0 0 0" xyz="-0.0134385 -0.23112 0.061125"/>
     <axis xyz="0 0 0"/>
     <limit effort="0" lower="0" upper="0" velocity="0"/>
   </joint>
@@ -119,7 +91,7 @@
   <joint name="aaly__Right_Side_Track_Cover_joint" type="fixed">
     <parent link="aaly__Right_Side_Track_Support"/>
     <child link="aaly__Right_Side_Track_Cover"/>
-    <origin rpy="0 0 0" xyz="0.00029 0.07299 -0.0095"/>
+    <origin rpy="0 0 0" xyz="-0.0134385 0.23112 0.061125"/>
     <axis xyz="0 0 0"/>
     <limit effort="0" lower="0" upper="0" velocity="0"/>
   </joint>
@@ -147,75 +119,18 @@
     </visual>
   </link>
 
-  <link name="aaly__knee_left_back_motor">
+  <link name="aaly__motor1">
     <inertial>
         <mass value="0.05" />
         <inertia ixx="0.04" ixy="0.0" ixz="0.0" iyy="0.04" iyz="0.0" izz="0.04"/>
     </inertial>
-    <collision name="aaly__knee_left_back_motor_collision">
+    <collision name="aaly__motor1_collision">
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
         <box size="0.04 0.032 0.050"/>
       </geometry>
     </collision>
-    <visual name="aaly__knee_left_back_motor_visual">
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <mesh filename="package://aaly_urdf/meshes/AX12-A_origin_same_as_center_of_mass.stl" scale="1.0 1.0 1.0"/>
-      </geometry>
-    </visual>
-  </link>
-
-  <link name="aaly__knee_left_front_motor">
-    <inertial>
-        <mass value="0.05" />
-        <inertia ixx="0.04" ixy="0.0" ixz="0.0" iyy="0.04" iyz="0.0" izz="0.04"/>
-    </inertial>
-    <collision name="aaly__knee_left_front_collision">
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <box size="0.04 0.032 0.050"/>
-      </geometry>
-    </collision>
-    <visual name="aaly__knee_left_front_visual">
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <mesh filename="package://aaly_urdf/meshes/AX12-A_origin_same_as_center_of_mass.stl" scale="1.0 1.0 1.0"/>
-      </geometry>
-    </visual>
-  </link>
-
-  <link name="aaly__knee_right_back_motor">
-    <inertial>
-        <mass value="0.05" />
-        <inertia ixx="0.04" ixy="0.0" ixz="0.0" iyy="0.04" iyz="0.0" izz="0.04"/>
-    </inertial>
-    <collision name="aaly__knee_right_back_collision">
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <box size="0.04 0.032 0.050"/>
-      </geometry>
-    </collision>
-    <visual name="aaly__knee_right_back_visual">
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <mesh filename="package://aaly_urdf/meshes/AX12-A_origin_same_as_center_of_mass.stl" scale="1.0 1.0 1.0"/>
-      </geometry>
-    </visual>
-  </link>
-
-  <link name="aaly__knee_right_front_motor">
-    <inertial>
-        <mass value="0.05" />
-        <inertia ixx="0.04" ixy="0.0" ixz="0.0" iyy="0.04" iyz="0.0" izz="0.04"/>
-    </inertial>
-    <collision name="aaly__knee_right_front_collision">
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <box size="0.04 0.032 0.050"/>
-      </geometry>
-    </collision>
-    <visual name="aaly__knee_right_front_visual">
+    <visual name="aaly__motor1_visual">
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://aaly_urdf/meshes/AX12-A_origin_same_as_center_of_mass.stl" scale="1.0 1.0 1.0"/>
@@ -427,49 +342,44 @@
 
     <!-- Replaced Gazebo's differential drive plugin with the
          ROS-friendly variant -->
+    <gazebo>
+      <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+        <robotNamespace>/aaly_robot</robotNamespace>
+      </plugin>
+    </gazebo>
+
 
   <transmission name="tran1">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="aaly__knee_left_back_joint">
+    <joint name="aaly__j1">
       <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     </joint>
-    <actuator name="aaly__knee_left_back_motor">
+    <actuator name="aaly__motor1">
       <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
 
-  <transmission name="tran2">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="aaly__knee_left_front_joint">
-      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="aaly__knee_left_front_motor">
-      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-
-  <transmission name="tran3">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="aaly__knee_right_back_joint">
-      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="aaly__knee_right_back_motor">
-      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-
-  <transmission name="tran4">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="aaly__knee_right_front_joint">
-      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="aaly__knee_right_front_motor">
-      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
+  <transmission name="left_wheel_transmission">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="aaly__drum_joint5">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>  
+  </joint>
+  <actuator name="aaly__drum5">
+    <mechanicalReduction>1</mechanicalReduction>
+    <hardwareInterface>VelocityJointInterface</hardwareInterface>
+  </actuator>
+</transmission>
+ 
+<transmission name="right_wheel_transmission">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="aaly__drum_joint6">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>  
+  </joint>
+  <actuator name="aaly__drum6">
+    <mechanicalReduction>1</mechanicalReduction>
+    <hardwareInterface>VelocityJointInterface</hardwareInterface>
+  </actuator>
+</transmission>
 
 </robot>

@@ -1,0 +1,367 @@
+<?xml version="1.0"?>
+<robot name="Test_robot" xmlns:xacro="http://ros.org/wiki/xacro">
+
+<link name="world"/>
+
+<joint name="fixed" type="fixed">
+    <parent link="world"/>
+    <child link="arm1"/>
+</joint>
+
+<material name="blue">
+    <color rgba="0 0 0.8 1"/>
+  </material>
+  <material name="black">
+    <color rgba="0.2 0.2 0.2 1"/>
+  </material>
+  <material name="white">
+    <color rgba="0.85 0.85 0.85 1"/>
+  </material>
+
+  <link name="arm1">
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh 
+        scale="0.001 0.001 0.001"
+        filename="package://aaly_urdf/meshes/arm.stl" />
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.04 0.032 0.050"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="motor1">
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh 
+        scale="0.001 0.001 0.001"
+        filename="package://aaly_urdf/meshes/motor.stl"/>
+      </geometry>
+      <origin rpy="0 1.57 0" xyz="0 0 0"/>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.04 0.032 0.050"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="j1" type="continuous">
+    <parent link="arm1"/>
+    <child link="motor1"/>
+    <origin xyz="0 0 0"/>
+  </joint>
+
+  <link name="plate1">
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh  
+        scale="0.001 0.001 0.001"
+        filename="package://aaly_urdf/meshes/plate.stl"/>
+      </geometry>
+      <origin rpy="0 1.57 0" xyz="0 -0.042 0"/>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.04 0.032 0.050"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="j2" type="fixed">
+    <parent link="motor1"/>
+    <child link="plate1"/>
+    <origin xyz="0 0 0"/>
+  </joint>
+
+  <link name="arm2">
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh  
+        scale="0.001 0.001 0.001"
+        filename="package://aaly_urdf/meshes/arm.stl"/>
+      </geometry>
+      <origin rpy="-1.57 0 0" xyz="0 -0.088 0"/>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.04 0.032 0.050"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="j3" type="fixed">
+    <parent link="plate1"/>
+    <child link="arm2"/>
+    <origin xyz="0 0 0"/>
+  </joint>
+
+  <link name="motor2">
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh 
+        scale="0.001 0.001 0.001"
+         filename="package://aaly_urdf/meshes/motor.stl"/>
+      </geometry>
+      <origin rpy="0 1.57 0" xyz="0 0 0"/>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.04 0.032 0.050"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="j4" type="continuous">
+    <parent link="arm2"/>
+    <child link="motor2"/>
+    <origin rpy="0 0 0" xyz="0 -0.088 0"/>
+  </joint>
+
+  <!--   SECOND SET -->
+
+  <link name="plate2">
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh  
+        scale="0.001 0.001 0.001"
+        filename="package://aaly_urdf/meshes/plate.stl"/>
+      </geometry>
+      <origin rpy="0 1.57 0" xyz="0 -0.042 0"/>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.04 0.032 0.050"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="j5" type="fixed">
+    <parent link="motor2"/>
+    <child link="plate2"/>
+    <origin xyz="0 0 0"/>
+  </joint>
+
+  <link name="arm3">
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh  
+        scale="0.001 0.001 0.001"
+        filename="package://aaly_urdf/meshes/arm.stl"/>
+      </geometry>
+      <origin rpy="-1.57 0 0" xyz="0 -0.088 0"/>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.04 0.032 0.050"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="j6" type="fixed">
+    <parent link="plate2"/>
+    <child link="arm3"/>
+    <origin xyz="0 0 0"/>
+  </joint>
+
+  <link name="motor3">
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh 
+        scale="0.001 0.001 0.001"
+         filename="package://aaly_urdf/meshes/motor.stl"/>
+      </geometry>
+      <origin rpy="0 1.57 0" xyz="0 0 0"/>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.04 0.032 0.050"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="j7" type="continuous">
+    <parent link="arm3"/>
+    <child link="motor3"/>
+    <origin rpy="0 0 0" xyz="0 -0.088 0"/>
+  </joint>
+
+  <!--- Third set -->
+
+  <link name="plate3">
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh  
+        scale="0.001 0.001 0.001"
+        filename="package://aaly_urdf/meshes/plate.stl"/>
+      </geometry>
+      <origin rpy="0 1.57 0" xyz="0 -0.042 0"/>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.04 0.032 0.050"/>
+      </geometry>
+    </collision>
+
+  </link>
+
+  <joint name="j8" type="fixed">
+    <parent link="motor3"/>
+    <child link="plate3"/>
+    <origin xyz="0 0 0"/>
+  </joint>
+
+  <link name="motor4">
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh 
+        scale="0.001 0.001 0.001"
+         filename="package://aaly_urdf/meshes/motor.stl"/>
+      </geometry>
+      <origin rpy="-1.57 0 0" xyz="0 0 0"/>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.04 0.032 0.050"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="j9" type="continuous">
+    <parent link="plate3"/>
+    <child link="motor4"/>
+    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0 -0.063 0"/>
+  </joint>
+
+  <link name="plate4">
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh  
+        scale="0.001 0.001 0.001"
+        filename="package://aaly_urdf/meshes/plate.stl"/>
+      </geometry>
+      <origin rpy="-1.57 0 0" xyz="0 0 0.042"/>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.04 0.032 0.050"/>
+      </geometry>
+    </collision>
+
+  </link>
+
+  <joint name="j10" type="fixed">
+    <parent link="motor4"/>
+    <child link="plate4"/>
+    <origin xyz="0 0 0"/>
+  </joint>
+
+  <link name="arm4">
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh  
+        scale="0.001 0.001 0.001"
+        filename="package://aaly_urdf/meshes/arm.stl"/>
+      </geometry>
+      <origin rpy="0 3.14 1.57" xyz="0 0 0.094"/>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.04 0.032 0.050"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="j11" type="fixed">
+    <parent link="plate4"/>
+    <child link="arm4"/>
+    <origin xyz="0 0 0"/>
+  </joint>
+
+
+  <!-- Gazebo plugin for ROS Control -->
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>
+      </robotNamespace>
+    </plugin>
+  </gazebo>
+
+
+  <transmission name="tran2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j9">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+</robot>

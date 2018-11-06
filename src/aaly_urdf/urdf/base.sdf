@@ -1,6 +1,6 @@
 <sdf version="1.4">
-  <model name="track_creator">
-    <link name="base_link">
+  <model name="aaly">
+    <link name="aaly__base_link">
       <self_collide>0</self_collide>
       <pose>-0.07 0 0.1242752 0 0 0</pose>
       <inertial>
@@ -31,50 +31,223 @@
     </link>
 
     <!--Lower Right and left legs-->
-    <link name="motor1">
+    <link name="aaly__knee_left_back_motor">
       <self_collide>1</self_collide>
-      <pose>-0.107 0 0.1242752 0 0 0</pose>
+      <pose>-0.107 0.114400 0.121275 0 0 0</pose>
       <inertial>        
-        <mass>0.055</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>1.8791666666e-05</ixx> 
+          <ixx>1.7083333333333333e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>1.7086666666e-05</iyy>
+          <iyy>1.4683333333333334e-05</iyy>
           <iyz>0.0</iyz>
-          <izz>1.2026666666e-05</izz>
+          <izz>1.0933333333333333e-05</izz>
         </inertia>
       </inertial>
-      <collision name="motor1_collision">
+      <collision name="aaly__knee_left_back_motor_collision">
         <geometry>
           <box>
             <size>0.04 0.032 0.050</size>
           </box>
         </geometry>
       </collision>
-      <visual name="motor1_visual">
+      <visual name="aaly__knee_left_back_motor_visual">
         <geometry>
           <mesh> 
             <uri>model://my_tracks/meshes/AX12-A_origin_same_as_center_of_mass.stl</uri>
           </mesh>
         </geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1</ambient>
+          <diffuse>0.1 0.1 0.1 1</diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
       </visual>
     </link>
 
-    <joint name="j1" type="revolute">
+    <joint name="aaly__knee_left_back_joint" type="revolute">
       <pose>0 0 0 0 0 0</pose>
-      <parent>base_link</parent>
-      <child>motor1</child>
+      <parent>aaly__base_link</parent>
+      <child>aaly__knee_left_back_motor</child>
       <axis> 
+        <limit>
+            <lower>0.0</lower>
+            <upper>5.235987755982989</upper>
+            <effort>100</effort>
+            <velocity>1.0</velocity>
+        </limit>
+        <xyz>-1 0 0</xyz>
+      </axis>
+    </joint>
+
+    <link name="aaly__knee_left_front_motor">
+      <self_collide>1</self_collide>
+      <pose>-0.034 0.114400 0.121275 0 0 3.141592653589793</pose>
+      <inertial>        
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>1.7083333333333333e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>1.4683333333333334e-05</iyy>
+          <iyz>0.0</iyz>
+          <izz>1.0933333333333333e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="aaly__knee_left_front_motor_collision">
+        <geometry>
+          <box>
+            <size>0.04 0.032 0.050</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="aaly__knee_left_front_motor_visual">
+        <geometry>
+          <mesh> 
+            <uri>model://my_tracks/meshes/AX12-A_origin_same_as_center_of_mass.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1</ambient>
+          <diffuse>0.1 0.1 0.1 1</diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="aaly__knee_left_front_joint" type="revolute">
+      <pose>0 0 0 0 0 0</pose>
+      <parent>aaly__base_link</parent>
+      <child>aaly__knee_left_front_motor</child>
+      <axis> 
+        <limit>
+            <lower>0.0</lower>
+            <upper>5.235987755982989</upper>
+            <effort>100</effort>
+            <velocity>1.0</velocity>
+        </limit>
+        <xyz>-1 0 0</xyz>
+      </axis>
+    </joint>
+    <link name="aaly__knee_right_back_motor">
+      <self_collide>1</self_collide>
+      <pose>-0.107 -0.114400 0.121275 0 0 0</pose>
+      <inertial>        
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>1.7083333333333333e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>1.4683333333333334e-05</iyy>
+          <iyz>0.0</iyz>
+          <izz>1.0933333333333333e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="aaly__knee_right_back_motor_collision">
+        <geometry>
+          <box>
+            <size>0.04 0.032 0.050</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="aaly__knee_right_back_motor_visual">
+        <geometry>
+          <mesh> 
+            <uri>model://my_tracks/meshes/AX12-A_origin_same_as_center_of_mass.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1</ambient>
+          <diffuse>0.1 0.1 0.1 1</diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="aaly__knee_right_back_joint" type="revolute">
+      <pose>0 0 0 0 0 0</pose>
+      <parent>aaly__base_link</parent>
+      <child>aaly__knee_right_back_motor</child>
+      <axis> 
+        <limit>
+            <lower>0.0</lower>
+            <upper>5.235987755982989</upper>
+            <effort>100</effort>
+            <velocity>1.0</velocity>
+        </limit>
         <xyz>1 0 0</xyz>
       </axis>
     </joint>
 
-
-
-    <link name="Left_Side_Track_Support">
+    <link name="aaly__knee_right_front_motor">
       <self_collide>1</self_collide>
-      <pose>-0.0137385 -0.15812 0.065625 0 0 0</pose>
+      <pose>-0.034 -0.114400 0.121275 0 0 3.141592653589793</pose>
+      <inertial>        
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>1.7083333333333333e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>1.4683333333333334e-05</iyy>
+          <iyz>0.0</iyz>
+          <izz>1.0933333333333333e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="aaly__knee_right_front_motor_collision">
+        <geometry>
+          <box>
+            <size>0.04 0.032 0.050</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="aaly__knee_right_front_motor_visual">
+        <geometry>
+          <mesh> 
+            <uri>model://my_tracks/meshes/AX12-A_origin_same_as_center_of_mass.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1</ambient>
+          <diffuse>0.1 0.1 0.1 1</diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="aaly__knee_right_front_joint" type="revolute">
+      <pose>0 0 0 0 0 0</pose>
+      <parent>aaly__base_link</parent>
+      <child>aaly__knee_right_front_motor</child>
+      <axis> 
+        <limit>
+            <lower>0.0</lower>
+            <upper>5.235987755982989</upper>
+            <effort>100</effort>
+            <velocity>1.0</velocity>
+        </limit>
+        <xyz>1 0 0</xyz>
+      </axis>
+    </joint>
+
+    <link name="aaly__Left_Side_Track_Support">
+      <self_collide>1</self_collide>
+      <pose>-0.0137385 -0.15812 0.070625 0 0 0</pose>
+      <inertial>        
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>1.7083333333333333e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>1.4683333333333334e-05</iyy>
+          <iyz>0.0</iyz>
+          <izz>1.0933333333333333e-05</izz>
+        </inertia>
+      </inertial>
       <collision name="Left_Side_Track_Support_collision">
         <pose>0 0 0.015 0 0 0</pose>
         <geometry>
@@ -82,6 +255,12 @@
             <uri>model://my_tracks/meshes/Track_Support_Collision_Mesh.dae</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <!--<ode><mu>100000.0</mu><mu2>100000.0</mu2></ode>-->
+            <ode><mu>0.0</mu><mu2>0.0</mu2></ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="Left_Side_Track_Support_visual">
         <geometry>
@@ -91,18 +270,29 @@
         </geometry>
       </visual>
     </link>
-    <joint name="Left_Track_Side_joint" type="fixed">
+    <joint name="aaly__Left_Track_Side_joint" type="fixed">
       <pose>0 0 0 0 0 0</pose>
-      <parent>base_link</parent>
-      <child>Left_Side_Track_Support</child>
+      <parent>aaly__base_link</parent>
+      <child>aaly__Left_Side_Track_Support</child>
       <axis>
         <xyz>0 0 0</xyz>
       </axis>
     </joint>
 
-    <link name="Right_Side_Track_Support">
+    <link name="aaly__Right_Side_Track_Support">
       <self_collide>1</self_collide>
       <pose>-0.0137385 0.15812 0.070625 0 0 0</pose>
+      <inertial>        
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>1.7083333333333333e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>1.4683333333333334e-05</iyy>
+          <iyz>0.0</iyz>
+          <izz>1.0933333333333333e-05</izz>
+        </inertia>
+      </inertial> 
       <collision name="Right_Side_Track_Support_collision">
         <pose>0 0 0.015 0 0 0</pose>
         <geometry>
@@ -110,6 +300,12 @@
             <uri>model://my_tracks/meshes/Track_Support_Collision_Mesh.dae</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <!--<ode><mu>100000.0</mu><mu2>100000.0</mu2></ode>-->
+            <ode><mu>0.0</mu><mu2>0.0</mu2></ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="Left_Side_Track_Support_visual">
         <geometry>
@@ -119,19 +315,19 @@
         </geometry>
       </visual>
     </link>
-    <joint name="Right_Track_Side_joint" type="fixed">
+    <joint name="aaly__Right_Track_Side_joint" type="fixed">
       <pose>0 0 0 0 0 0</pose>
-      <parent>base_link</parent>
-      <child>Right_Side_Track_Support</child>
+      <parent>aaly__base_link</parent>
+      <child>aaly__Right_Side_Track_Support</child>
       <axis>
         <xyz>0 0 0</xyz>
       </axis>
     </joint>
 
 
-    <link name="drum1">
+    <link name="aaly__drum1">
       <self_collide>1</self_collide>
-      <pose>-0.1228385 -0.19612 0.030 1.57079632679 0 0</pose>
+      <pose>-0.1248385 -0.19612 0.030 1.57079632679 0 0</pose>
       <inertial>        
         <mass>0.1</mass>
         <inertia> 
@@ -146,11 +342,16 @@
       <collision name="drum1_collision">
         <geometry>
           <cylinder>
-            <radius>0.026525</radius>
+            <radius>0.026925</radius>
             <length>0.05124</length>
           </cylinder>
         </geometry>
-      </collision>
+        <surface>
+          <friction>
+            <ode><mu>100000.0</mu><mu2>100000.0</mu2></ode>
+          </friction>
+        </surface>
+    </collision>
       <visual name="drum1_visual">
         <geometry>
           <mesh>
@@ -159,18 +360,18 @@
         </geometry>
       </visual>
     </link>
-    <joint name="drum_joint1" type="revolute">
+    <joint name="aaly__drum_joint1" type="revolute">
       <pose>0 0 0 0 0 0</pose>
-      <parent>Left_Side_Track_Support</parent>
-      <child>drum1</child>
+      <parent>aaly__Left_Side_Track_Support</parent>
+      <child>aaly__drum1</child>
       <axis>
         <xyz>0 1 0</xyz>
       </axis>
     </joint>
 
-    <link name="drum2">
+    <link name="aaly__drum2">
       <self_collide>1</self_collide>
-      <pose>-0.1228385 0.19612 0.030 1.57079632679 0 0</pose>
+      <pose>-0.1248385 0.19612 0.030 1.57079632679 0 0</pose>
       <inertial>
         <mass>0.1</mass>
         <inertia> 
@@ -185,10 +386,15 @@
       <collision name="drum2_collision">
         <geometry>
           <cylinder>
-            <radius>0.026525</radius>
+            <radius>0.026925</radius>
             <length>0.05124</length>
           </cylinder>
         </geometry>
+        <surface>
+          <friction>
+            <ode><mu>100000.0</mu><mu2>100000.0</mu2></ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="drum2_visual">
         <geometry>
@@ -198,17 +404,17 @@
         </geometry>
       </visual>
     </link>
-    <joint name="drum_joint2" type="revolute">
+    <joint name="aaly__drum_joint2" type="revolute">
       <pose>0 0 0 0 0 0</pose>
-      <parent>Right_Side_Track_Support</parent>
-      <child>drum2</child>
+      <parent>aaly__Right_Side_Track_Support</parent>
+      <child>aaly__drum2</child>
       <axis>
         <xyz>0 1 0</xyz>
       </axis>
     </joint>
-    <link name="drum3">
+    <link name="aaly__drum3">
       <self_collide>1</self_collide>
-      <pose>0.1248385 -0.19612 0.037625 1.57079632679 0 0</pose>
+      <pose>0.1278385 -0.19612 0.037625 1.57079632679 0 0</pose>
       <inertial>
         <mass>0.15</mass>
         <inertia> 
@@ -223,10 +429,15 @@
       <collision name="drum3_collision">
         <geometry>
           <cylinder>
-            <radius>0.035625</radius>
+            <radius>0.036625</radius>
             <length>0.05124</length>
           </cylinder>
         </geometry>
+        <surface>
+          <friction>
+            <ode><mu>100000.0</mu><mu2>100000.0</mu2></ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="drum3_visual">
         <geometry>
@@ -236,17 +447,17 @@
         </geometry>
       </visual>
     </link>
-    <joint name="drum_joint3" type="revolute">
+    <joint name="aaly__drum_joint3" type="revolute">
       <pose>0 0 0 0 0 0</pose>
-      <parent>Left_Side_Track_Support</parent>
-      <child>drum3</child>
+      <parent>aaly__Left_Side_Track_Support</parent>
+      <child>aaly__drum3</child>
       <axis>
         <xyz>0 1 0</xyz>
       </axis>
     </joint>
-    <link name="drum4">
+    <link name="aaly__drum4">
       <self_collide>1</self_collide>
-      <pose>0.1248385 0.19612 0.037625 1.57079632679 0 0</pose>
+      <pose>0.1278385 0.19612 0.037625 1.57079632679 0 0</pose>
       <inertial>
         <mass>0.15</mass>
         <inertia> 
@@ -261,10 +472,15 @@
       <collision name="drum4_collision">
         <geometry>
           <cylinder>
-            <radius>0.035625</radius>
+            <radius>0.036625</radius>
             <length>0.05124</length>
           </cylinder>
         </geometry>
+        <surface>
+          <friction>
+            <ode><mu>100000.0</mu><mu2>100000.0</mu2></ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="drum4_visual">
         <geometry>
@@ -274,15 +490,15 @@
         </geometry>
       </visual>
     </link>
-    <joint name="drum_joint4" type="revolute">
+    <joint name="aaly__drum_joint4" type="revolute">
       <pose>0 0 0 0 0 0</pose>
-      <parent>Right_Side_Track_Support</parent>
-      <child>drum4</child>
+      <parent>aaly__Right_Side_Track_Support</parent>
+      <child>aaly__drum4</child>
       <axis>
         <xyz>0 1 0</xyz>
       </axis>
     </joint>
-    <link name="drum5">
+    <link name="aaly__drum5">
       <self_collide>1</self_collide>
       <pose>-0.0460507 -0.19612 0.154342 1.57079632679 0 0</pose>
       <inertial>
@@ -299,16 +515,13 @@
       <collision name="drum5_collision">
         <geometry>
           <cylinder>
-            <radius>0.026525</radius>
+            <radius>0.027025</radius>
             <length>0.05124</length>
           </cylinder>
         </geometry>
         <surface>
           <friction>
-            <ode>
-              <mu>1.50</mu>
-              <mu2>1.50</mu2>
-            </ode>
+            <ode><mu>100000.0</mu><mu2>100000.0</mu2></ode>
           </friction>
         </surface>
       </collision>
@@ -320,15 +533,16 @@
         </geometry>
       </visual>
     </link>
-    <joint name="drum_joint5" type="revolute">
+    <joint name="aaly__drum_joint5" type="revolute">
       <pose>0 0 0 0 0 0</pose>
-      <parent>Left_Side_Track_Support</parent>
-      <child>drum5</child>
+      <parent>aaly__Left_Side_Track_Support</parent>
+      <child>aaly__drum5</child>
       <axis>
         <xyz>0 1 0</xyz>
       </axis>
     </joint>
-    <link name="drum6">
+
+    <link name="aaly__drum6">
       <self_collide>1</self_collide>
       <pose>-0.0460507 0.19612 0.154342 1.57079632679 0 0</pose>
       <inertial>
@@ -345,16 +559,13 @@
       <collision name="drum6_collision">
         <geometry>
           <cylinder>
-            <radius>0.026525</radius>
+            <radius>0.027025</radius>
             <length>0.05124</length>
           </cylinder>
         </geometry>
         <surface>
           <friction>
-            <ode>
-              <mu>1.51</mu>
-              <mu2>1.51</mu2>
-            </ode>
+            <ode><mu>100000.0</mu><mu2>100000.0</mu2></ode>
           </friction>
         </surface>
       </collision>
@@ -366,10 +577,10 @@
         </geometry>
       </visual>
     </link>
-    <joint name="drum_joint6" type="revolute">
+    <joint name="aaly__drum_joint6" type="revolute">
       <pose>0 0 0 0 0 0</pose>
-      <parent>Right_Side_Track_Support</parent>
-      <child>drum6</child>
+      <parent>aaly__Right_Side_Track_Support</parent>
+      <child>aaly__drum6</child>
       <axis>
         <xyz>0 1 0</xyz>
       </axis>
@@ -378,9 +589,20 @@
 
 
 
-    <link name="Left_Side_Track_Cover">
+    <link name="aaly__Left_Side_Track_Cover">
       <self_collide>1</self_collide>
-      <pose>-0.0134385 -0.23112 0.061125 0 0 0</pose>
+      <pose>-0.0134385 -0.23112 0.061625 0 0 0</pose>
+      <inertial>        
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>1.7083333333333333e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>1.4683333333333334e-05</iyy>
+          <iyz>0.0</iyz>
+          <izz>1.0933333333333333e-05</izz>
+        </inertia>
+      </inertial>
       <collision name="Left_Side_Track_Cover_collision">
         <pose>0 0 0.015 0 0 0</pose>
         <geometry>
@@ -388,6 +610,12 @@
             <uri>model://my_tracks/meshes/Track_Support_Collision_Mesh.dae</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <!--<ode><mu>100000.0</mu><mu2>100000.0</mu2></ode>-->
+            <ode><mu>0.0</mu><mu2>0.0</mu2></ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="Left_Side_Track_Cover_visual">
         <geometry>
@@ -397,10 +625,10 @@
         </geometry>
       </visual>
     </link>
-    <joint name="Left_Side_Track_Cover_joint" type="fixed">
+    <joint name="aaly__Left_Side_Track_Cover_joint" type="fixed">
       <pose>0 0 0 0 0 0</pose>
-      <parent>Left_Side_Track_Support</parent>
-      <child>Left_Side_Track_Cover</child>
+      <parent>aaly__Left_Side_Track_Support</parent>
+      <child>aaly__Left_Side_Track_Cover</child>
       <axis>
         <xyz>0 0 0</xyz>
       </axis>
@@ -408,9 +636,20 @@
 
 
 
-    <link name="Right_Side_Track_Cover">
+    <link name="aaly__Right_Side_Track_Cover">
       <self_collide>1</self_collide>
-      <pose>-0.0134385 0.23112 0.061125 0 0 0</pose>
+      <pose>-0.0134385 0.23112 0.061625 0 0 0</pose>
+      <inertial>        
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>1.7083333333333333e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>1.4683333333333334e-05</iyy>
+          <iyz>0.0</iyz>
+          <izz>1.0933333333333333e-05</izz>
+        </inertia>
+      </inertial>
       <collision name="Right_Side_Track_Cover_collision">
         <pose>0 0 0.015 0 0 0</pose>
         <geometry>
@@ -418,6 +657,11 @@
             <uri>model://my_tracks/meshes/Track_Support_Collision_Mesh.dae</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode><mu>0.0</mu><mu2>0.0</mu2></ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="Right_Side_Track_Cover_visual">
         <geometry>
@@ -427,21 +671,2335 @@
         </geometry>
       </visual>
     </link>
-    <joint name="Right_Side_Track_Cover_joint" type="fixed">
+    <joint name="aaly__Right_Side_Track_Cover_joint" type="fixed">
       <pose>0 0 0 0 0 0</pose>
-      <parent>Right_Side_Track_Support</parent>
-      <child>Right_Side_Track_Cover</child>
+      <parent>aaly__Right_Side_Track_Support</parent>
+      <child>aaly__Right_Side_Track_Cover</child>
       <axis>
         <xyz>0 0 0</xyz>
       </axis>
     </joint>
 
-  <!-- Gazebo plugin for ROS Control -->
 
-      <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-        <robotNamespace></robotNamespace>
-        <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
-      </plugin>
+
+  <!-- Track Pads -->
+
+    <link name="right_pad1">
+      <self_collide>1</self_collide>
+      <pose>0.0276163221427 0.181842 0.0055 0 0.0 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="right_pad1_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="right_pad1_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="right_pad_joint1" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>right_pad1</parent>
+      <child>right_pad2</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="right_pad2">
+      <self_collide>1</self_collide>
+      <pose>0.0552326442854 0.181842 0.0055 0 0.0 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="right_pad2_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="right_pad2_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="right_pad_joint2" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>right_pad2</parent>
+      <child>right_pad3</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="right_pad3">
+      <self_collide>1</self_collide>
+      <pose>0.0828489664281 0.181842 0.0055 0 0.0 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="right_pad3_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="right_pad3_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="right_pad_joint3" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>right_pad3</parent>
+      <child>right_pad4</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="right_pad4">
+      <self_collide>1</self_collide>
+      <pose>0.110465288571 0.181842 0.0055 0 0.0 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="right_pad4_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="right_pad4_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="right_pad_joint4" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>right_pad4</parent>
+      <child>right_pad5</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="right_pad5">
+      <self_collide>1</self_collide>
+      <pose>0.138081610714 0.181842 0.0055 0 0.0 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="right_pad5_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="right_pad5_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="right_pad_joint5" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>right_pad5</parent>
+      <child>right_pad6</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="right_pad6">
+      <self_collide>1</self_collide>
+      <pose>0.162914940812 0.181842 0.0138133001923 0 -0.646074860385 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="right_pad6_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="right_pad6_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="right_pad_joint6" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>right_pad6</parent>
+      <child>right_pad7</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="right_pad7">
+      <self_collide>1</self_collide>
+      <pose>0.177738109568 0.181842 0.0354021610219 0 -1.29214972077 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="right_pad7_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="right_pad7_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="right_pad_joint7" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>right_pad7</parent>
+      <child>right_pad8</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="right_pad8">
+      <self_collide>1</self_collide>
+      <pose>0.176575989591 0.181842 0.0615642465857 0 -1.93822458116 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="right_pad8_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="right_pad8_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="right_pad_joint8" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>right_pad8</parent>
+      <child>right_pad9</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="right_pad9">
+      <self_collide>1</self_collide>
+      <pose>0.160569341369 0.181842 0.0827356686088 0 -2.49809150371 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="right_pad9_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="right_pad9_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="right_pad_joint9" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>right_pad9</parent>
+      <child>right_pad10</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="right_pad10">
+      <self_collide>1</self_collide>
+      <pose>0.138476284336 0.181842 0.0993054628022 0 -2.49809150371 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="right_pad10_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="right_pad10_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="right_pad_joint10" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>right_pad10</parent>
+      <child>right_pad11</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="right_pad11">
+      <self_collide>1</self_collide>
+      <pose>0.116383227302 0.181842 0.115875256996 0 -2.49809150371 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="right_pad11_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="right_pad11_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="right_pad_joint11" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>right_pad11</parent>
+      <child>right_pad12</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="right_pad12">
+      <self_collide>1</self_collide>
+      <pose>0.094290170269 0.181842 0.132445051189 0 -2.49809150371 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="right_pad12_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="right_pad12_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="right_pad_joint12" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>right_pad12</parent>
+      <child>right_pad13</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="right_pad13">
+      <self_collide>1</self_collide>
+      <pose>0.0721971132357 0.181842 0.149014845382 0 -2.49809150371 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="right_pad13_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="right_pad13_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="right_pad_joint13" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>right_pad13</parent>
+      <child>right_pad14</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="right_pad14">
+      <self_collide>1</self_collide>
+      <pose>0.0501040562023 0.181842 0.165584639576 0 -2.49809150371 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="right_pad14_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="right_pad14_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="right_pad_joint14" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>right_pad14</parent>
+      <child>right_pad15</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="right_pad15">
+      <self_collide>1</self_collide>
+      <pose>0.028010999169 0.181842 0.182154433769 0 -2.49809150371 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="right_pad15_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="right_pad15_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="right_pad_joint15" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>right_pad15</parent>
+      <child>right_pad16</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="right_pad16">
+      <self_collide>1</self_collide>
+      <pose>0.00591794213561 0.181842 0.198724227962 0 -2.49809150371 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="right_pad16_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="right_pad16_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="right_pad_joint16" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>right_pad16</parent>
+      <child>right_pad17</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="right_pad17">
+      <self_collide>1</self_collide>
+      <pose>-0.0186235486431 0.181842 0.204084863491 0 2.92819902106 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="right_pad17_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="right_pad17_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="right_pad_joint17" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>right_pad17</parent>
+      <child>right_pad18</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="right_pad18">
+      <self_collide>1</self_collide>
+      <pose>-0.0404034080019 0.181842 0.190114073407 0 2.21429747668 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="right_pad18_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="right_pad18_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="right_pad_joint18" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>right_pad18</parent>
+      <child>right_pad19</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="right_pad19">
+      <self_collide>1</self_collide>
+      <pose>-0.0569732021953 0.181842 0.168021016373 0 2.21429747668 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="right_pad19_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="right_pad19_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="right_pad_joint19" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>right_pad19</parent>
+      <child>right_pad20</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="right_pad20">
+      <self_collide>1</self_collide>
+      <pose>-0.0735429963887 0.181842 0.14592795934 0 2.21429747668 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="right_pad20_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="right_pad20_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="right_pad_joint20" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>right_pad20</parent>
+      <child>right_pad21</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="right_pad21">
+      <self_collide>1</self_collide>
+      <pose>-0.090112790582 0.181842 0.123834902307 0 2.21429747668 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="right_pad21_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="right_pad21_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="right_pad_joint21" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>right_pad21</parent>
+      <child>right_pad22</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="right_pad22">
+      <self_collide>1</self_collide>
+      <pose>-0.106682584775 0.181842 0.101741845273 0 2.21429747668 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="right_pad22_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="right_pad22_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="right_pad_joint22" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>right_pad22</parent>
+      <child>right_pad23</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="right_pad23">
+      <self_collide>1</self_collide>
+      <pose>-0.123252378969 0.181842 0.0796487882398 0 2.21429747668 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="right_pad23_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="right_pad23_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="right_pad_joint23" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>right_pad23</parent>
+      <child>right_pad24</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="right_pad24">
+      <self_collide>1</self_collide>
+      <pose>-0.139822173162 0.181842 0.0575557312065 0 2.21429747668 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="right_pad24_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="right_pad24_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="right_pad_joint24" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>right_pad24</parent>
+      <child>right_pad25</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="right_pad25">
+      <self_collide>1</self_collide>
+      <pose>-0.145182808691 0.181842 0.0330142404277 0 1.35740269427 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="right_pad25_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="right_pad25_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="right_pad_joint25" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>right_pad25</parent>
+      <child>right_pad26</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="right_pad26">
+      <self_collide>1</self_collide>
+      <pose>-0.130144109687 0.181842 0.012893139186 0 0.500507911859 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="right_pad26_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="right_pad26_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="right_pad_joint26" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>right_pad26</parent>
+      <child>right_pad27</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="right_pad27">
+      <self_collide>1</self_collide>
+      <pose>-0.104221511179 0.181842 0.00626700020638 0 -7.13568214628e-16 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="right_pad27_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="right_pad27_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="right_pad_joint27" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>right_pad27</parent>
+      <child>right_pad28</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="right_pad28">
+      <self_collide>1</self_collide>
+      <pose>-0.0766051890366 0.181842 0.00626700020638 0 -7.13568214628e-16 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="right_pad28_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="right_pad28_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="right_pad_joint28" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>right_pad28</parent>
+      <child>right_pad29</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="right_pad29">
+      <self_collide>1</self_collide>
+      <pose>-0.0489888668938 0.181842 0.00626700020638 0 -7.13568214628e-16 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="right_pad29_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="right_pad29_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="right_pad_joint29" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>right_pad29</parent>
+      <child>right_pad30</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="right_pad30">
+      <self_collide>1</self_collide>
+      <pose>-0.0213725447511 0.181842 0.00626700020638 0 -7.13568214628e-16 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="right_pad30_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="right_pad30_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="right_pad_joint30" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>right_pad30</parent>
+      <child>right_pad31</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="right_pad31">
+      <self_collide>1</self_collide>
+      <pose>0.00624377739158 0.181842 0.00626700020638 0 -7.13568214628e-16 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="right_pad31_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="right_pad31_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="right_pad_joint31" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>right_pad31</parent>
+      <child>right_pad1</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="left_pad1">
+      <self_collide>1</self_collide>
+      <pose>0.0276163221427 -0.181842 0.0055 0 0.0 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="left_pad1_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="left_pad1_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="left_pad_joint1" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>left_pad1</parent>
+      <child>left_pad2</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="left_pad2">
+      <self_collide>1</self_collide>
+      <pose>0.0552326442854 -0.181842 0.0055 0 0.0 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="left_pad2_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="left_pad2_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="left_pad_joint2" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>left_pad2</parent>
+      <child>left_pad3</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="left_pad3">
+      <self_collide>1</self_collide>
+      <pose>0.0828489664281 -0.181842 0.0055 0 0.0 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="left_pad3_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="left_pad3_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="left_pad_joint3" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>left_pad3</parent>
+      <child>left_pad4</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="left_pad4">
+      <self_collide>1</self_collide>
+      <pose>0.110465288571 -0.181842 0.0055 0 0.0 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="left_pad4_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="left_pad4_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="left_pad_joint4" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>left_pad4</parent>
+      <child>left_pad5</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="left_pad5">
+      <self_collide>1</self_collide>
+      <pose>0.138081610714 -0.181842 0.0055 0 0.0 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="left_pad5_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="left_pad5_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="left_pad_joint5" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>left_pad5</parent>
+      <child>left_pad6</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="left_pad6">
+      <self_collide>1</self_collide>
+      <pose>0.162914940812 -0.181842 0.0138133001923 0 -0.646074860385 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="left_pad6_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="left_pad6_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="left_pad_joint6" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>left_pad6</parent>
+      <child>left_pad7</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="left_pad7">
+      <self_collide>1</self_collide>
+      <pose>0.177738109568 -0.181842 0.0354021610219 0 -1.29214972077 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="left_pad7_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="left_pad7_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="left_pad_joint7" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>left_pad7</parent>
+      <child>left_pad8</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="left_pad8">
+      <self_collide>1</self_collide>
+      <pose>0.176575989591 -0.181842 0.0615642465857 0 -1.93822458116 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="left_pad8_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="left_pad8_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="left_pad_joint8" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>left_pad8</parent>
+      <child>left_pad9</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="left_pad9">
+      <self_collide>1</self_collide>
+      <pose>0.160569341369 -0.181842 0.0827356686088 0 -2.49809150371 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="left_pad9_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="left_pad9_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="left_pad_joint9" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>left_pad9</parent>
+      <child>left_pad10</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="left_pad10">
+      <self_collide>1</self_collide>
+      <pose>0.138476284336 -0.181842 0.0993054628022 0 -2.49809150371 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="left_pad10_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="left_pad10_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="left_pad_joint10" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>left_pad10</parent>
+      <child>left_pad11</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="left_pad11">
+      <self_collide>1</self_collide>
+      <pose>0.116383227302 -0.181842 0.115875256996 0 -2.49809150371 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="left_pad11_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="left_pad11_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="left_pad_joint11" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>left_pad11</parent>
+      <child>left_pad12</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="left_pad12">
+      <self_collide>1</self_collide>
+      <pose>0.094290170269 -0.181842 0.132445051189 0 -2.49809150371 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="left_pad12_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="left_pad12_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="left_pad_joint12" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>left_pad12</parent>
+      <child>left_pad13</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="left_pad13">
+      <self_collide>1</self_collide>
+      <pose>0.0721971132357 -0.181842 0.149014845382 0 -2.49809150371 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="left_pad13_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="left_pad13_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="left_pad_joint13" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>left_pad13</parent>
+      <child>left_pad14</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="left_pad14">
+      <self_collide>1</self_collide>
+      <pose>0.0501040562023 -0.181842 0.165584639576 0 -2.49809150371 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="left_pad14_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="left_pad14_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="left_pad_joint14" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>left_pad14</parent>
+      <child>left_pad15</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="left_pad15">
+      <self_collide>1</self_collide>
+      <pose>0.028010999169 -0.181842 0.182154433769 0 -2.49809150371 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="left_pad15_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="left_pad15_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="left_pad_joint15" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>left_pad15</parent>
+      <child>left_pad16</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="left_pad16">
+      <self_collide>1</self_collide>
+      <pose>0.00591794213561 -0.181842 0.198724227962 0 -2.49809150371 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="left_pad16_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="left_pad16_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="left_pad_joint16" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>left_pad16</parent>
+      <child>left_pad17</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="left_pad17">
+      <self_collide>1</self_collide>
+      <pose>-0.0186235486431 -0.181842 0.204084863491 0 2.92819902106 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="left_pad17_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="left_pad17_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="left_pad_joint17" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>left_pad17</parent>
+      <child>left_pad18</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="left_pad18">
+      <self_collide>1</self_collide>
+      <pose>-0.0404034080019 -0.181842 0.190114073407 0 2.21429747668 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="left_pad18_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="left_pad18_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="left_pad_joint18" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>left_pad18</parent>
+      <child>left_pad19</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="left_pad19">
+      <self_collide>1</self_collide>
+      <pose>-0.0569732021953 -0.181842 0.168021016373 0 2.21429747668 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="left_pad19_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="left_pad19_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="left_pad_joint19" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>left_pad19</parent>
+      <child>left_pad20</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="left_pad20">
+      <self_collide>1</self_collide>
+      <pose>-0.0735429963887 -0.181842 0.14592795934 0 2.21429747668 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="left_pad20_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="left_pad20_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="left_pad_joint20" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>left_pad20</parent>
+      <child>left_pad21</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="left_pad21">
+      <self_collide>1</self_collide>
+      <pose>-0.090112790582 -0.181842 0.123834902307 0 2.21429747668 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="left_pad21_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="left_pad21_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="left_pad_joint21" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>left_pad21</parent>
+      <child>left_pad22</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="left_pad22">
+      <self_collide>1</self_collide>
+      <pose>-0.106682584775 -0.181842 0.101741845273 0 2.21429747668 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="left_pad22_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="left_pad22_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="left_pad_joint22" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>left_pad22</parent>
+      <child>left_pad23</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="left_pad23">
+      <self_collide>1</self_collide>
+      <pose>-0.123252378969 -0.181842 0.0796487882398 0 2.21429747668 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="left_pad23_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="left_pad23_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="left_pad_joint23" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>left_pad23</parent>
+      <child>left_pad24</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="left_pad24">
+      <self_collide>1</self_collide>
+      <pose>-0.139822173162 -0.181842 0.0575557312065 0 2.21429747668 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="left_pad24_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="left_pad24_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="left_pad_joint24" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>left_pad24</parent>
+      <child>left_pad25</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="left_pad25">
+      <self_collide>1</self_collide>
+      <pose>-0.145182808691 -0.181842 0.0330142404277 0 1.35740269427 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="left_pad25_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="left_pad25_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="left_pad_joint25" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>left_pad25</parent>
+      <child>left_pad26</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="left_pad26">
+      <self_collide>1</self_collide>
+      <pose>-0.130144109687 -0.181842 0.012893139186 0 0.500507911859 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="left_pad26_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="left_pad26_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="left_pad_joint26" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>left_pad26</parent>
+      <child>left_pad27</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="left_pad27">
+      <self_collide>1</self_collide>
+      <pose>-0.104221511179 -0.181842 0.00626700020638 0 -7.13568214628e-16 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="left_pad27_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="left_pad27_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="left_pad_joint27" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>left_pad27</parent>
+      <child>left_pad28</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="left_pad28">
+      <self_collide>1</self_collide>
+      <pose>-0.0766051890366 -0.181842 0.00626700020638 0 -7.13568214628e-16 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="left_pad28_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="left_pad28_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="left_pad_joint28" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>left_pad28</parent>
+      <child>left_pad29</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="left_pad29">
+      <self_collide>1</self_collide>
+      <pose>-0.0489888668938 -0.181842 0.00626700020638 0 -7.13568214628e-16 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="left_pad29_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="left_pad29_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="left_pad_joint29" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>left_pad29</parent>
+      <child>left_pad30</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="left_pad30">
+      <self_collide>1</self_collide>
+      <pose>-0.0213725447511 -0.181842 0.00626700020638 0 -7.13568214628e-16 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="left_pad30_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="left_pad30_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="left_pad_joint30" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>left_pad30</parent>
+      <child>left_pad31</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+    <link name="left_pad31">
+      <self_collide>1</self_collide>
+      <pose>0.00624377739158 -0.181842 0.00626700020638 0 -7.13568214628e-16 0</pose>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>2.4697666666666666e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>3.586833333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>2.7276166666666668e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="left_pad31_collision">
+        <geometry>
+          <box>
+            <size>0.0275 0.054 0.011</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="left_pad31_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="left_pad_joint31" type="revolute">
+      <pose>-0.0138081610714 0 0 0 0 0</pose>
+      <parent>left_pad31</parent>
+      <child>left_pad1</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+  
+
+  <!-- Gazebo plugin for ROS Control -->
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/aaly_robot</robotNamespace>
+    </plugin>
+
+    <plugin name='differential_drive_controller'
+            filename='libgazebo_ros_diff_drive.so'>
+      <robotNamespace>/aaly_robot</robotNamespace>
+      <alwaysOn>true</alwaysOn>
+      <updateRate>100</updateRate>
+      <leftJoint>aaly__drum_joint5</leftJoint>
+      <rightJoint>aaly__drum_joint6</rightJoint>
+      <wheelSeparation>0.349</wheelSeparation>
+      <wheelDiameter>0.05885</wheelDiameter>
+      <torque>50</torque>
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <robotBaseFrame>chassis</robotBaseFrame>
+    </plugin>
 
   </model>
 </sdf>

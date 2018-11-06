@@ -1,0 +1,49 @@
+<launch>
+
+  <arg name="gui" default="true" />
+  <arg name="model" default="$(find aaly_urdf)/urdf/03-origins_test.urdf"/>
+  <arg name="rvizconfig" default="$(find aaly_urdf)/rviz/urdf.rviz" />
+
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg model)" />
+
+  <param name="use_gui" value="$(arg gui)"/>
+
+  <arg name="paused" value="false"/>
+  <arg name="use_sim_time" value="true"/>
+  <arg name="recording" value="false"/>
+  <arg name="debug" value="false"/>
+  <arg name="headless" default="false"/>
+  <arg name="x" default="0"/>
+  <arg name="y" default="0"/>
+  <arg name="z" default="1.0"/>
+  <arg name="world" default="ground" />
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch" >
+    <arg name="world_name" value="$(find aaly_urdf)/worlds/$(arg world).world" />
+    <arg name="debug" value="$(arg debug)" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="headless" value="$(arg headless)"/>
+  </include>  
+  
+  <node name="aaly_urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+      args="-urdf -param robot_description -model robot -x $(arg x) -y $(arg y) -z $(arg z)" />
+
+  <rosparam file="$(find aaly_urdf)/config/config.yaml" command="load" />
+
+  <!-- load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" args="joint_state_controller
+                      joint1_position_controller
+                      joint2_position_controller" >
+        <param name="use_gui" value="TRUE"/>
+  </node> 
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+
+</launch>

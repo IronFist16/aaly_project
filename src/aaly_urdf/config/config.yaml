@@ -1,3 +1,4 @@
+aaly_robot:
   # Publish all joint states -----------------------------------
   joint_state_controller:
     type: joint_state_controller/JointStateController
@@ -5,6 +6,16 @@
 
   # Position Controllers ---------------------------------------
   joint1_position_controller:
-    type: effort_controllers/JointPositionController
+    type: position_controllers/JointPositionController
     joint: aaly__j1
     pid: {p: 100.0, i: 0.01, d: 10.0}
+
+gazebo_ros_control:
+  pid_gains:
+    aaly__j1: 
+        p: 20.0
+        i: 0.1
+        d: 0.0
+        i_clamp: 0.2
+        antiwindup: false
+        publish_state: true

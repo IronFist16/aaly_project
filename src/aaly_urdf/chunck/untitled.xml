@@ -31,9 +31,220 @@
     <!-- From master.launch -->
       <param name="robot_description" textfile="$(find aaly_urdf)/urdf/base.urdf" />
 
+      <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg model)"  /> 
+
 
       <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" >
             <param name="use_gui" value="TRUE"/>
       </node>
 
       <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen" />
+
+      <!-- --------------- --> 
+
+      <!-- load the controllers -->
+      <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+        output="screen" args="joint_state_controller
+                          joint1_position_controller" >
+      </node>
+
+      <!-- base.urdf.xacro -->
+
+  <!-- Gazebo plugin for ROS Control -->
+
+    <gazebo>
+      <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+        <robotNamespace></robotNamespace>
+        <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+      </plugin>
+    </gazebo>
+
+
+    <gazebo>
+      <plugin name='differential_drive_controller'
+              filename='libgazebo_ros_diff_drive.so'>
+        <alwaysOn>true</alwaysOn>
+        <updateRate>100</updateRate>
+        <leftJoint>aaly__drum_joint5</leftJoint>
+        <rightJoint>aaly__drum_joint6</rightJoint>
+        <wheelSeparation>0.349</wheelSeparation>
+        <wheelDiameter>0.05885</wheelDiameter>
+        <torque>20</torque>
+        <commandTopic>cmd_vel</commandTopic>
+        <odometryTopic>odom</odometryTopic>
+        <odometryFrame>odom</odometryFrame>
+        <robotBaseFrame>aaly__base_link</robotBaseFrame>
+      </plugin>
+    </gazebo>
+
+  # Position Controllers ---------------------------------------
+  joint1_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: aaly__j1
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+    # Position Controllers ---------------------------------------
+    joint2_position_controller:
+      type: position_controllers/JointPositionController
+      joint: j9
+      pid: {p: 100.0, i: 0.01, d: 10.0}
+
+
+      <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" />
+
+
+      <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" >
+            <param name="use_gui" value="TRUE"/>
+      </node>
+
+        <remap from="joint_state" to="/aaly_robot/joint_states" />
+
+        <robotNamespace>/aaly_robot</robotNamespace>
+
+
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+
+
+    <!-- Drum Friction -->
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.50</mu>
+              <mu2>1.50</mu2>
+            </ode>
+          </friction>
+        </surface>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.51</mu>
+              <mu2>1.51</mu2>
+            </ode>
+          </friction>
+        </surface>
+
+    <gazebo>
+      <plugin name='differential_drive_controller'
+              filename='libgazebo_ros_diff_drive.so'>
+        <robotNamespace>/aaly_robot</robotNamespace>
+        <alwaysOn>true</alwaysOn>
+        <updateRate>100</updateRate>
+        <leftJoint>aaly__drum_joint5</leftJoint>
+        <rightJoint>aaly__drum_joint6</rightJoint>
+        <wheelSeparation>0.349</wheelSeparation>
+        <wheelDiameter>0.05885</wheelDiameter>
+        <torque>5</torque>
+        <commandTopic>cmd_vel</commandTopic>
+        <odometryTopic>odom</odometryTopic>
+        <odometryFrame>odom</odometryFrame>
+        <robotBaseFrame>chassis</robotBaseFrame>
+      </plugin>
+    </gazebo>
+
+
+
+
+      <inertial>        
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>0.04</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.04</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.04</izz>
+        </inertia>
+      </inertial>
+      <inertial>        
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>0.04</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.04</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.04</izz>
+        </inertia>
+      </inertial>
+
+                          mobile_base_controller
+
+  <transmission name="left_wheel_transmission">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="aaly__drum_joint5">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>  
+  </joint>
+  <actuator name="aaly__drum5">
+    <mechanicalReduction>1</mechanicalReduction>
+    <hardwareInterface>VelocityJointInterface</hardwareInterface>
+  </actuator>
+</transmission>
+ 
+<transmission name="right_wheel_transmission">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="aaly__drum_joint6">
+    <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>  
+  </joint>
+  <actuator name="aaly__drum6">
+    <mechanicalReduction>1</mechanicalReduction>
+    <hardwareInterface>VelocityJointInterface</hardwareInterface>
+  </actuator>
+</transmission>
+
+
+
+      <rosparam file="$(find aaly_urdf)/config/config_sdf.yaml" 
+        command="load" />
+
+
+      <rosparam file="$(find aaly_urdf)/config/config.yaml" 
+        command="load" />
+
+      <rosparam file="$(find aaly_urdf)/config/my_diff_drive.yaml" 
+        command="load" />
+                          mobile_base_controller
+
+    <gazebo>
+      <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+        <robotNamespace>/aaly_robot</robotNamespace>
+      </plugin>
+    </gazebo>
+
+    <link name="aaly__leg_right_front">
+      <self_collide>1</self_collide>
+      <pose>-0.034 -0.148400 0.121275 0 0 3.141592653589793</pose>
+      <inertial>        
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>1.7083333333333333e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>1.4683333333333334e-05</iyy>
+          <iyz>0.0</iyz>
+          <izz>1.0933333333333333e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="aaly__leg_right_front_collision">
+        <geometry>
+          <box>
+            <size>0.04 0.032 0.050</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="aaly__leg_right_front_visual">
+        <geometry>
+          <mesh> 
+            <uri>model://my_tracks/meshes/Leg_Right_Front.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="aaly__leg_right_front_joint" type="fixed">
+      <pose>0 0 0 0 0 0</pose>
+      <parent>aaly__knee_right_front_motor</parent>
+      <child>aaly__leg_right_front</child>
+      <axis>
+        <xyz>0 0 0</xyz>
+      </axis>
+    </joint>

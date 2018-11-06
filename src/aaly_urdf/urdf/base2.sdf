@@ -1,0 +1,300 @@
+<sdf version='1.6'>
+  <model name='aaly'>
+    <link name='aaly__base_link'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.00285 0 0.046125 0 -0 0</pose>
+        <mass>1.1</mass>
+        <inertia>
+          <ixx>0.0387675</ixx>
+          <ixy>0.004</ixy>
+          <ixz>0.00492882</ixz>
+          <iyy>0.0117002</iyy>
+          <iyz>-7.88337e-06</iyz>
+          <izz>0.0396872</izz>
+        </inertia>
+      </inertial>
+      <collision name='aaly__base_link_collision_collision'>
+        <pose frame=''>-0.07 0 0.12427 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.026988 0.3 0.026988</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='aaly__base_link_fixed_joint_lump__aaly__Left_Side_Track_Support_collision_collision_1'>
+        <pose frame=''>-0.01373 -0.15812 0.08062 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://aaly_urdf/meshes/Track_Support_Collision_Mesh.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='aaly__base_link_fixed_joint_lump__aaly__Left_Side_Track_Cover_collision_collision_2'>
+        <pose frame=''>-0.01344 -0.23111 0.07613 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://aaly_urdf/meshes/Track_Support_Collision_Mesh.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='aaly__base_link_fixed_joint_lump__aaly__drum1_collision_collision_3'>
+        <pose frame=''>-0.12283 -0.19612 0.03 1.57079 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.05124</length>
+            <radius>0.026525</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name='aaly__base_link_fixed_joint_lump__aaly__drum3_collision_collision_4'>
+        <pose frame=''>0.12484 -0.19612 0.03762 1.57079 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.05124</length>
+            <radius>0.035625</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name='aaly__base_link_fixed_joint_lump__aaly__drum5_collision_collision_5'>
+        <pose frame=''>-0.04604 -0.19612 0.15433 1.57079 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.05124</length>
+            <radius>0.026525</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name='aaly__base_link_fixed_joint_lump__aaly__Right_Side_Track_Support_collision_collision_6'>
+        <pose frame=''>-0.01373 0.15812 0.08562 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://aaly_urdf/meshes/Track_Support_Collision_Mesh.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='aaly__base_link_fixed_joint_lump__aaly__Right_Side_Track_Cover_collision_collision_7'>
+        <pose frame=''>-0.01344 0.23111 0.07612 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://aaly_urdf/meshes/Track_Support_Collision_Mesh.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='aaly__base_link_fixed_joint_lump__aaly__drum2_collision_collision_8'>
+        <pose frame=''>-0.12283 0.19612 0.03 1.57079 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.05124</length>
+            <radius>0.026525</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name='aaly__base_link_fixed_joint_lump__aaly__drum4_collision_collision_9'>
+        <pose frame=''>0.12484 0.19612 0.03762 1.57079 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.05124</length>
+            <radius>0.035625</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name='aaly__base_link_fixed_joint_lump__aaly__drum6_collision_collision_10'>
+        <pose frame=''>-0.04604 0.19612 0.15433 1.57079 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.05124</length>
+            <radius>0.026525</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='aaly__base_link_visual_visual'>
+        <pose frame=''>-0.07 0 0.12427 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://aaly_urdf/meshes/Horizontal_Support_Bar_ASB-512.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='aaly__base_link_fixed_joint_lump__aaly__Left_Side_Track_Support_visual_visual_1'>
+        <pose frame=''>-0.01373 -0.15812 0.06562 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://aaly_urdf/meshes/Track_Support_Left_Side.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='aaly__base_link_fixed_joint_lump__aaly__Left_Side_Track_Cover_visual_visual_2'>
+        <pose frame=''>-0.01344 -0.23111 0.06113 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://aaly_urdf/meshes/Track_Support_Cover_Side.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='aaly__base_link_fixed_joint_lump__aaly__drum1_visual_visual_3'>
+        <pose frame=''>-0.12283 -0.19612 0.03 1.57079 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://aaly_urdf/meshes/Lynx_Sproket6in_Hub13.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='aaly__base_link_fixed_joint_lump__aaly__drum3_visual_visual_4'>
+        <pose frame=''>0.12484 -0.19612 0.03762 1.57079 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://aaly_urdf/meshes/Lynx_Sproket9in_Hub13.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='aaly__base_link_fixed_joint_lump__aaly__drum5_visual_visual_5'>
+        <pose frame=''>-0.04604 -0.19612 0.15433 1.57079 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://aaly_urdf/meshes/Lynx_Sproket6in_Hub13.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='aaly__base_link_fixed_joint_lump__aaly__Left_Side_Track_Support_visual_visual_6'>
+        <pose frame=''>-0.01373 0.15812 0.07062 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://aaly_urdf/meshes/Track_Support_Right_Side.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='aaly__base_link_fixed_joint_lump__aaly__Right_Side_Track_Cover_visual_visual_7'>
+        <pose frame=''>-0.01344 0.23111 0.06112 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://aaly_urdf/meshes/Track_Support_Cover_Side.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='aaly__base_link_fixed_joint_lump__aaly__drum2_visual_visual_8'>
+        <pose frame=''>-0.12283 0.19612 0.03 1.57079 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://aaly_urdf/meshes/Lynx_Sproket6in_Hub13.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='aaly__base_link_fixed_joint_lump__aaly__drum4_visual_visual_9'>
+        <pose frame=''>0.12484 0.19612 0.03762 1.57079 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://aaly_urdf/meshes/Lynx_Sproket9in_Hub13.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='aaly__base_link_fixed_joint_lump__aaly__drum6_visual_visual_10'>
+        <pose frame=''>-0.04604 0.19612 0.15433 1.57079 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://aaly_urdf/meshes/Lynx_Sproket6in_Hub13.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='fixed' type='revolute'>
+      <child>aaly__base_link</child>
+      <parent>world</parent>
+      <axis>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+    <link name='aaly__motor1'>
+      <pose frame=''>-0.107 0 0.12427 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>0.05</mass>
+        <inertia>
+          <ixx>1.87917e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.70867e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1.20267e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='aaly__motor1_collision_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.04 0.032 0.05</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='aaly__motor1_visual_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://aaly_urdf/meshes/AX12-A_origin_same_as_center_of_mass.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='aaly__j1' type='revolute'>
+      <child>aaly__motor1</child>
+      <parent>aaly__base_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <static>0</static>
+    <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
+      <robotNamespace/>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+    <plugin name='differential_drive_controller' filename='libgazebo_ros_diff_drive.so'>
+      <alwaysOn>true</alwaysOn>
+      <updateRate>100</updateRate>
+      <leftJoint>aaly__drum_joint5</leftJoint>
+      <rightJoint>aaly__drum_joint6</rightJoint>
+      <wheelSeparation>0.349</wheelSeparation>
+      <wheelDiameter>0.05885</wheelDiameter>
+      <torque>20</torque>
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <robotBaseFrame>chassis</robotBaseFrame>
+    </plugin>
+  </model>
+</sdf>
