@@ -1,4 +1,9 @@
-<!-- Base link Inertia -->
+
+        <material>
+          <script>
+            Gazebo/Orange
+          </script>
+        </material><!-- Base link Inertia -->
     <inertial>
       <mass value="0.36"/>
       <origin rpy="0  0  0" xyz="0  0  0"/>
@@ -248,3 +253,10 @@
         <xyz>0 0 0</xyz>
       </axis>
     </joint>
+
+    
+        <material>
+          <script>
+            Gazebo/Orange
+          </script>
+        </material>

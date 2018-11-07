@@ -1,12 +1,12 @@
 <launch>
 
-      <arg name="model"  default="$(find aaly_urdf)/urdf/base.urdf.xacro"/>
+      <arg name="model"  default="$(find aaly_urdf)/urdf/base_sdf2.urdf.xacro"/>
       
       <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg model)"  /> 
       
       <param name="robot_description_sdf" textfile="$(find aaly_urdf)/urdf/base.sdf"  /> 
 
-      <arg name="paused" value="false"/>
+      <arg name="paused" value="true"/>
       <arg name="use_sim_time" value="true"/>
       <arg name="gui" value="true"/>
       <arg name="recording" value="false"/>
@@ -15,7 +15,7 @@
       <arg name="x" default="0"/>
       <arg name="y" default="0"/>
       <arg name="z" default="0"/>
-      <arg name="world" default="ground" />
+      <arg name="world" default="ground_plane" />
 
       <include file="$(find gazebo_ros)/launch/empty_world.launch" >
         <arg name="world_name" value="$(find aaly_urdf)/worlds/$(arg world).world" />
