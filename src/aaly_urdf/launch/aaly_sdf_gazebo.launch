@@ -1,6 +1,6 @@
 <launch>
 
-      <arg name="model"  default="$(find aaly_urdf)/urdf/base_sdf2.urdf.xacro"/>
+      <arg name="model"  default="$(find aaly_urdf)/urdf/base_sdf3.urdf.xacro"/>
       
       <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg model)"  /> 
       
@@ -15,7 +15,7 @@
       <arg name="x" default="0"/>
       <arg name="y" default="0"/>
       <arg name="z" default="0"/>
-      <arg name="world" default="ground_plane" />
+      <arg name="world" default="ground" />
 
       <include file="$(find gazebo_ros)/launch/empty_world.launch" >
         <arg name="world_name" value="$(find aaly_urdf)/worlds/$(arg world).world" />
@@ -39,10 +39,7 @@
       <!-- load the controllers -->
       <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/aaly_robot" args="joint_state_controller
                           mobile_base_controller
-                          knee_left_back_joint_position_controller
-                          knee_left_front_joint_position_controller
-                          knee_right_back_joint_position_controller
-                          knee_right_front_joint_position_controller" >
+                          legs_group_controller" >
             <param name="use_gui" value="TRUE"/>
       </node> 
 

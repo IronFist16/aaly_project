@@ -174,7 +174,7 @@
             <effort>100</effort>
             <velocity>1.0</velocity>
         </limit>
-        <xyz>-1 0 0</xyz>
+        <xyz>1 0 0</xyz>
       </axis>
     </joint>
     <!--Left Back legs-->
@@ -232,6 +232,107 @@
         <xyz>-1 0 0</xyz>
       </axis>
     </joint>
+
+    <link name="aaly__leg_left_front">
+      <self_collide>1</self_collide>
+      <pose>-0.034 0.0985 0.075405 0 0 0</pose>
+      <inertial>        
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>1.7083333333333333e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>1.4683333333333334e-05</iyy>
+          <iyz>0.0</iyz>
+          <izz>1.0933333333333333e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="aaly__leg_left_front_collision">
+        <geometry>
+          <box>
+            <size>0.04 0.032 0.050</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="aaly__leg_left_front_visual">
+        <geometry>
+          <mesh> 
+            <uri>model://my_tracks/meshes/Leg_Left_Front.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.4 0.4 0.4 1</ambient>
+          <diffuse>0.8 0.8 0.8 1</diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="aaly__leg_left_front_joint" type="fixed">
+      <pose>0 0 0 0 0 0</pose>
+      <parent>aaly__knee_left_front_motor</parent>
+      <child>aaly__leg_left_front</child>
+      <axis>
+        <xyz>0 0 0</xyz>
+      </axis>
+    </joint>
+
+    <link name="aaly__thigh_left_front_motor">
+      <self_collide>1</self_collide>
+      <pose>-0.0335 0.051000 0.071275 3.141592653589793 0 3.141592653589793</pose>
+      <inertial>        
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>1.7083333333333333e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>1.4683333333333334e-05</iyy>
+          <iyz>0.0</iyz>
+          <izz>1.0933333333333333e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="aaly__thigh_left_front_motor_collision">
+        <geometry>
+          <box>
+            <size>0.04 0.032 0.050</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="aaly__thigh_left_front_motor_visual">
+        <geometry>
+          <mesh> 
+            <uri>model://my_tracks/meshes/AX12-A_origin_same_as_center_of_mass.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1</ambient>
+          <diffuse>0.1 0.1 0.1 1</diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="aaly__thigh_left_front_joint" type="revolute">
+      <pose>0 0 0 0 0 0</pose>
+      <parent>aaly__leg_left_front</parent>
+      <child>aaly__thigh_left_front_motor</child>
+      <axis> 
+        <limit>
+            <lower>0.0</lower>
+            <upper>5.235987755982989</upper>
+            <effort>100</effort>
+            <velocity>1.0</velocity>
+        </limit>
+        <xyz>1 0 0</xyz>
+      </axis>
+    </joint>
+    <!--Left Front legs-->
+
+
+
+    <!--Right Back legs-->
     <link name="aaly__knee_right_back_motor">
       <self_collide>1</self_collide>
       <pose>-0.107 -0.114400 0.121275 0 0 0</pose>
@@ -283,6 +384,106 @@
       </axis>
     </joint>
 
+    <link name="aaly__leg_right_back">
+      <self_collide>1</self_collide>
+      <pose>-0.107240 -0.0985 0.075405 0 0 0</pose>
+      <inertial>        
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>1.7083333333333333e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>1.4683333333333334e-05</iyy>
+          <iyz>0.0</iyz>
+          <izz>1.0933333333333333e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="aaly__leg_right_back_collision">
+        <geometry>
+          <box>
+            <size>0.04 0.032 0.050</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="aaly__leg_right_back_visual">
+        <geometry>
+          <mesh> 
+            <uri>model://my_tracks/meshes/Leg_Right_Back.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.4 0.4 0.4 1</ambient>
+          <diffuse>0.8 0.8 0.8 1</diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="aaly__leg_right_back_joint" type="fixed">
+      <pose>0 0 0 0 0 0</pose>
+      <parent>aaly__knee_right_back_motor</parent>
+      <child>aaly__leg_right_back</child>
+      <axis>
+        <xyz>0 0 0</xyz>
+      </axis>
+    </joint>
+
+    <link name="aaly__thigh_right_back_motor">
+      <self_collide>1</self_collide>
+      <pose>-0.109740 -0.048000 0.075405 3.141592653589793 0 0</pose>
+      <inertial>        
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>1.7083333333333333e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>1.4683333333333334e-05</iyy>
+          <iyz>0.0</iyz>
+          <izz>1.0933333333333333e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="aaly__thigh_right_back_motor_collision">
+        <geometry>
+          <box>
+            <size>0.04 0.032 0.050</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="aaly__thigh_right_back_motor_visual">
+        <geometry>
+          <mesh> 
+            <uri>model://my_tracks/meshes/AX12-A_origin_same_as_center_of_mass.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1</ambient>
+          <diffuse>0.1 0.1 0.1 1</diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="aaly__thigh_right_back_joint" type="revolute">
+      <pose>0 0 0 0 0 0</pose>
+      <parent>aaly__leg_right_back</parent>
+      <child>aaly__thigh_right_back_motor</child>
+      <axis> 
+        <limit>
+            <lower>0.0</lower>
+            <upper>5.235987755982989</upper>
+            <effort>100</effort>
+            <velocity>1.0</velocity>
+        </limit>
+        <xyz>-1 0 0</xyz>
+      </axis>
+    </joint>
+    <!--Right Back legs-->
+
+
+
+    <!--Right Front legs-->
     <link name="aaly__knee_right_front_motor">
       <self_collide>1</self_collide>
       <pose>-0.034 -0.114400 0.121275 0 0 3.141592653589793</pose>
@@ -379,9 +580,9 @@
       </axis>
     </joint>
 
-    <link name="aaly__leg_right_back">
+    <link name="aaly__thigh_right_front_motor">
       <self_collide>1</self_collide>
-      <pose>-0.107240 -0.0985 0.075405 0 0 0</pose>
+      <pose>-0.02974 -0.051000 0.071275 3.141592653589793 0 0</pose>
       <inertial>        
         <mass>0.05</mass>
         <inertia> 
@@ -393,81 +594,43 @@
           <izz>1.0933333333333333e-05</izz>
         </inertia>
       </inertial>
-      <collision name="aaly__leg_right_back_collision">
+      <collision name="aaly__thigh_right_front_motor_collision">
         <geometry>
           <box>
             <size>0.04 0.032 0.050</size>
           </box>
         </geometry>
       </collision>
-      <visual name="aaly__leg_right_back_visual">
+      <visual name="aaly__thigh_right_front_motor_visual">
         <geometry>
           <mesh> 
-            <uri>model://my_tracks/meshes/Leg_Right_Back.stl</uri>
+            <uri>model://my_tracks/meshes/AX12-A_origin_same_as_center_of_mass.stl</uri>
           </mesh>
         </geometry>
         <material>
-          <ambient>0.4 0.4 0.4 1</ambient>
-          <diffuse>0.8 0.8 0.8 1</diffuse>
+          <ambient>0.2 0.2 0.2 1</ambient>
+          <diffuse>0.1 0.1 0.1 1</diffuse>
           <specular>0 0 0 0</specular>
           <emissive>0 0 0 1</emissive>
         </material>
       </visual>
     </link>
 
-    <joint name="aaly__leg_right_back_joint" type="fixed">
+    <joint name="aaly__thigh_right_front_joint" type="revolute">
       <pose>0 0 0 0 0 0</pose>
-      <parent>aaly__knee_right_back_motor</parent>
-      <child>aaly__leg_right_back</child>
-      <axis>
-        <xyz>0 0 0</xyz>
+      <parent>aaly__leg_right_front</parent>
+      <child>aaly__thigh_right_front_motor</child>
+      <axis> 
+        <limit>
+            <lower>0.0</lower>
+            <upper>5.235987755982989</upper>
+            <effort>100</effort>
+            <velocity>1.0</velocity>
+        </limit>
+        <xyz>-1 0 0</xyz>
       </axis>
     </joint>
-
-    <link name="aaly__leg_left_front">
-      <self_collide>1</self_collide>
-      <pose>-0.034 0.0985 0.075405 0 0 0</pose>
-      <inertial>        
-        <mass>0.05</mass>
-        <inertia> 
-          <ixx>1.7083333333333333e-05</ixx> 
-          <ixy>0.0</ixy>
-          <ixz>0.0</ixz>
-          <iyy>1.4683333333333334e-05</iyy>
-          <iyz>0.0</iyz>
-          <izz>1.0933333333333333e-05</izz>
-        </inertia>
-      </inertial>
-      <collision name="aaly__leg_left_front_collision">
-        <geometry>
-          <box>
-            <size>0.04 0.032 0.050</size>
-          </box>
-        </geometry>
-      </collision>
-      <visual name="aaly__leg_left_front_visual">
-        <geometry>
-          <mesh> 
-            <uri>model://my_tracks/meshes/Leg_Left_Front.stl</uri>
-          </mesh>
-        </geometry>
-        <material>
-          <ambient>0.4 0.4 0.4 1</ambient>
-          <diffuse>0.8 0.8 0.8 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
-      </visual>
-    </link>
-
-    <joint name="aaly__leg_left_front_joint" type="fixed">
-      <pose>0 0 0 0 0 0</pose>
-      <parent>aaly__knee_left_front_motor</parent>
-      <child>aaly__leg_left_front</child>
-      <axis>
-        <xyz>0 0 0</xyz>
-      </axis>
-    </joint>
+    <!--Right Front legs-->
 
 
 
@@ -651,7 +814,7 @@
     </joint>
     <link name="aaly__drum3">
       <self_collide>1</self_collide>
-      <pose>0.1288385 -0.19612 0.037625 1.57079632679 0 0</pose>
+      <pose>0.1298385 -0.19612 0.037625 1.57079632679 0 0</pose>
       <inertial>
         <mass>0.15</mass>
         <inertia> 
@@ -694,7 +857,7 @@
     </joint>
     <link name="aaly__drum4">
       <self_collide>1</self_collide>
-      <pose>0.1288385 0.19612 0.037625 1.57079632679 0 0</pose>
+      <pose>0.1298385 0.19612 0.037625 1.57079632679 0 0</pose>
       <inertial>
         <mass>0.15</mass>
         <inertia> 

@@ -1,11 +1,5 @@
 <?xml version="1.0" ?>
 <robot name="aaly">
-
-  <joint name="fixed" type="floating">
-      <parent link="world"/>
-      <child link="aaly__base_link"/>
-  </joint>
-
   <joint name="aaly__knee_left_back_joint" type="revolute">
     <parent link="aaly__base_link"/>
     <child link="aaly__knee_left_back_motor"/>
@@ -13,19 +7,38 @@
     <axis xyz="-1  0  0"/>
     <limit effort="100.0" lower="0.0" upper="5.23598775598" velocity="1.0"/>
   </joint>
-
+  <joint name="aaly__leg_left_back_joint" type="fixed">
+    <parent link="aaly__knee_left_back_motor"/>
+    <child link="aaly__leg_left_back"/>
+    <origin rpy="0  0  0" xyz="-0.0035  -0.0159  -0.06587"/>
+    <axis xyz="0  0  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
   <joint name="aaly__thigh_left_back_joint" type="revolute">
-    <parent link="aaly__base_link"/>
-    <child link="aaly__knee_left_back_motor"/>
-    <origin rpy="0  0  0" xyz="-0.107    0.1144   0.12127"/>
+    <parent link="aaly__leg_left_back"/>
+    <child link="aaly__thigh_left_back_motor"/>
+    <origin rpy="3.14159  0       0" xyz="0.0005  -0.0475   0.01586"/>
     <axis xyz="-1  0  0"/>
     <limit effort="100.0" lower="0.0" upper="5.23598775598" velocity="1.0"/>
   </joint>
-
   <joint name="aaly__knee_left_front_joint" type="revolute">
     <parent link="aaly__base_link"/>
     <child link="aaly__knee_left_front_motor"/>
     <origin rpy="0       0       3.14159" xyz="-0.034    0.1144   0.12127"/>
+    <axis xyz="1  0  0"/>
+    <limit effort="100.0" lower="0.0" upper="5.23598775598" velocity="1.0"/>
+  </joint>
+  <joint name="aaly__leg_left_front_joint" type="fixed">
+    <parent link="aaly__knee_left_front_motor"/>
+    <child link="aaly__leg_left_front"/>
+    <origin rpy="0       0      -3.14159" xyz="0       0.0159  -0.04587"/>
+    <axis xyz="0  0  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="aaly__thigh_left_front_joint" type="revolute">
+    <parent link="aaly__leg_left_front"/>
+    <child link="aaly__thigh_left_front_motor"/>
+    <origin rpy="3.14159  0       3.14159" xyz="0.0005  -0.0475  -0.00413"/>
     <axis xyz="1  0  0"/>
     <limit effort="100.0" lower="0.0" upper="5.23598775598" velocity="1.0"/>
   </joint>
@@ -34,6 +47,20 @@
     <child link="aaly__knee_right_back_motor"/>
     <origin rpy="0  0  0" xyz="-0.107   -0.1144   0.12127"/>
     <axis xyz="1  0  0"/>
+    <limit effort="100.0" lower="0.0" upper="5.23598775598" velocity="1.0"/>
+  </joint>
+  <joint name="aaly__leg_right_back_joint" type="fixed">
+    <parent link="aaly__knee_right_back_motor"/>
+    <child link="aaly__leg_right_back"/>
+    <origin rpy="0  0  0" xyz="-0.00024  0.0159  -0.04587"/>
+    <axis xyz="0  0  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="aaly__thigh_right_back_joint" type="revolute">
+    <parent link="aaly__leg_right_back"/>
+    <child link="aaly__thigh_right_back_motor"/>
+    <origin rpy="3.14159  0       0" xyz="0.0005  0.0475  0"/>
+    <axis xyz="-1  0  0"/>
     <limit effort="100.0" lower="0.0" upper="5.23598775598" velocity="1.0"/>
   </joint>
   <joint name="aaly__knee_right_front_joint" type="revolute">
@@ -46,9 +73,16 @@
   <joint name="aaly__leg_right_front_joint" type="fixed">
     <parent link="aaly__knee_right_front_motor"/>
     <child link="aaly__leg_right_front"/>
-    <origin rpy="0  0  0" xyz="0     0.034  0"/>
+    <origin rpy="0       0      -3.14159" xyz="-0.00376 -0.0159  -0.06587"/>
     <axis xyz="0  0  0"/>
     <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="aaly__thigh_right_front_joint" type="revolute">
+    <parent link="aaly__leg_right_front"/>
+    <child link="aaly__thigh_right_front_motor"/>
+    <origin rpy="3.14159  0       0" xyz="0.0005   0.0475   0.01586"/>
+    <axis xyz="-1  0  0"/>
+    <limit effort="100.0" lower="0.0" upper="5.23598775598" velocity="1.0"/>
   </joint>
   <joint name="aaly__Left_Track_Side_joint" type="fixed">
     <parent link="aaly__base_link"/>
@@ -81,14 +115,14 @@
   <joint name="aaly__drum_joint3" type="fixed">
     <parent link="aaly__Left_Side_Track_Support"/>
     <child link="aaly__drum3"/>
-    <origin rpy="1.57079  0       0" xyz="0.14157 -0.038   -0.033"/>
+    <origin rpy="1.57079  0       0" xyz="0.14257 -0.038   -0.033"/>
     <axis xyz="0  0 -1"/>
     <limit effort="0" lower="0" upper="0" velocity="0"/>
   </joint>
   <joint name="aaly__drum_joint4" type="fixed">
     <parent link="aaly__Right_Side_Track_Support"/>
     <child link="aaly__drum4"/>
-    <origin rpy="1.57079  0       0" xyz="0.14157  0.038   -0.033"/>
+    <origin rpy="1.57079  0       0" xyz="0.14257  0.038   -0.033"/>
     <axis xyz="0  0 -1"/>
     <limit effort="0" lower="0" upper="0" velocity="0"/>
   </joint>
@@ -120,26 +154,22 @@
     <axis xyz="0  0  0"/>
     <limit effort="0" lower="0" upper="0" velocity="0"/>
   </joint>
-
-  <!-- Used for fixing robot to Gazebo 'base_link' -->
-  <link name="world"/>
-
   <link name="aaly__base_link">
     <inertial>
       <mass value="0.36"/>
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <inertia ixx="0.0028086383999999997" ixy="0.0" ixz="0.0" iyy="4.3094400000000005e-05" iyz="0.0" izz="0.0028086383999999997"/>
     </inertial>
-    <collision name="aaly___base_link_collision">
+    <collision name="aaly__base_link_collision">
       <origin rpy="0  0  0" xyz="-0.07     0       0.12427"/>
       <geometry>
         <box size="0.026988 0.3000 0.026988"/>
       </geometry>
     </collision>
-    <visual name="aaly___base_link_visual">
+    <visual name="aaly__base_link_visual">
       <origin rpy="0  0  0" xyz="-0.07     0       0.12427"/>
       <geometry>
-        <mesh filename="package://aaly__urdf/meshes/Horizontal_Support_Bar_ASB-512.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://aaly_urdf/meshes/Horizontal_Support_Bar_ASB-512.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
   </link>
@@ -158,7 +188,45 @@
     <visual name="aaly__knee_left_back_motor_visual">
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <geometry>
-        <mesh filename="package://aaly__urdf/meshes/AX12-A_origin_same_as_center_of_mass.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://aaly_urdf/meshes/AX12-A_origin_same_as_center_of_mass.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aaly__leg_left_back">
+    <inertial>
+      <mass value="0.05"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="1.7083333333333333e-05" ixy="0.0" ixz="0.0" iyy="1.4683333333333334e-05" iyz="0.0" izz="1.0933333333333333e-05"/>
+    </inertial>
+    <collision name="aaly__leg_left_back_collision">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <box size="0.04 0.032 0.050"/>
+      </geometry>
+    </collision>
+    <visual name="aaly__leg_left_back_visual">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://aaly_urdf/meshes/Leg_Left_Back.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aaly__thigh_left_back_motor">
+    <inertial>
+      <mass value="0.05"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="1.7083333333333333e-05" ixy="0.0" ixz="0.0" iyy="1.4683333333333334e-05" iyz="0.0" izz="1.0933333333333333e-05"/>
+    </inertial>
+    <collision name="aaly__thigh_left_back_motor_collision">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <box size="0.04 0.032 0.050"/>
+      </geometry>
+    </collision>
+    <visual name="aaly__thigh_left_back_motor_visual">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://aaly_urdf/meshes/AX12-A_origin_same_as_center_of_mass.stl" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
   </link>
@@ -177,7 +245,45 @@
     <visual name="aaly__knee_left_front_motor_visual">
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <geometry>
-        <mesh filename="package://aaly__urdf/meshes/AX12-A_origin_same_as_center_of_mass.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://aaly_urdf/meshes/AX12-A_origin_same_as_center_of_mass.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aaly__leg_left_front">
+    <inertial>
+      <mass value="0.05"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="1.7083333333333333e-05" ixy="0.0" ixz="0.0" iyy="1.4683333333333334e-05" iyz="0.0" izz="1.0933333333333333e-05"/>
+    </inertial>
+    <collision name="aaly__leg_left_front_collision">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <box size="0.04 0.032 0.050"/>
+      </geometry>
+    </collision>
+    <visual name="aaly__leg_left_front_visual">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://aaly_urdf/meshes/Leg_Left_Front.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aaly__thigh_left_front_motor">
+    <inertial>
+      <mass value="0.05"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="1.7083333333333333e-05" ixy="0.0" ixz="0.0" iyy="1.4683333333333334e-05" iyz="0.0" izz="1.0933333333333333e-05"/>
+    </inertial>
+    <collision name="aaly__thigh_left_front_motor_collision">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <box size="0.04 0.032 0.050"/>
+      </geometry>
+    </collision>
+    <visual name="aaly__thigh_left_front_motor_visual">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://aaly_urdf/meshes/AX12-A_origin_same_as_center_of_mass.stl" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
   </link>
@@ -196,7 +302,45 @@
     <visual name="aaly__knee_right_back_motor_visual">
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <geometry>
-        <mesh filename="package://aaly__urdf/meshes/AX12-A_origin_same_as_center_of_mass.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://aaly_urdf/meshes/AX12-A_origin_same_as_center_of_mass.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aaly__leg_right_back">
+    <inertial>
+      <mass value="0.05"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="1.7083333333333333e-05" ixy="0.0" ixz="0.0" iyy="1.4683333333333334e-05" iyz="0.0" izz="1.0933333333333333e-05"/>
+    </inertial>
+    <collision name="aaly__leg_right_back_collision">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <box size="0.04 0.032 0.050"/>
+      </geometry>
+    </collision>
+    <visual name="aaly__leg_right_back_visual">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://aaly_urdf/meshes/Leg_Right_Back.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aaly__thigh_right_back_motor">
+    <inertial>
+      <mass value="0.05"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="1.7083333333333333e-05" ixy="0.0" ixz="0.0" iyy="1.4683333333333334e-05" iyz="0.0" izz="1.0933333333333333e-05"/>
+    </inertial>
+    <collision name="aaly__thigh_right_back_motor_collision">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <box size="0.04 0.032 0.050"/>
+      </geometry>
+    </collision>
+    <visual name="aaly__thigh_right_back_motor_visual">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://aaly_urdf/meshes/AX12-A_origin_same_as_center_of_mass.stl" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
   </link>
@@ -215,7 +359,7 @@
     <visual name="aaly__knee_right_front_motor_visual">
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <geometry>
-        <mesh filename="package://aaly__urdf/meshes/AX12-A_origin_same_as_center_of_mass.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://aaly_urdf/meshes/AX12-A_origin_same_as_center_of_mass.stl" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
   </link>
@@ -234,7 +378,26 @@
     <visual name="aaly__leg_right_front_visual">
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <geometry>
-        <mesh filename="package://aaly__urdf/meshes/Leg_Right_Front.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://aaly_urdf/meshes/Leg_Right_Front.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aaly__thigh_right_front_motor">
+    <inertial>
+      <mass value="0.05"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="1.7083333333333333e-05" ixy="0.0" ixz="0.0" iyy="1.4683333333333334e-05" iyz="0.0" izz="1.0933333333333333e-05"/>
+    </inertial>
+    <collision name="aaly__thigh_right_front_motor_collision">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <box size="0.04 0.032 0.050"/>
+      </geometry>
+    </collision>
+    <visual name="aaly__thigh_right_front_motor_visual">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://aaly_urdf/meshes/AX12-A_origin_same_as_center_of_mass.stl" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
   </link>
@@ -244,16 +407,16 @@
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <inertia ixx="1.7083333333333333e-05" ixy="0.0" ixz="0.0" iyy="1.4683333333333334e-05" iyz="0.0" izz="1.0933333333333333e-05"/>
     </inertial>
-    <collision name="aaly___Left_Side_Track_Support_collision">
+    <collision name="aaly__Left_Side_Track_Support_collision">
       <origin rpy="0  0  0" xyz="0     0     0.015"/>
       <geometry>
-        <mesh filename="package://aaly__urdf/meshes/Track_Support_Collision_Mesh.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://aaly_urdf/meshes/Track_Support_Collision_Mesh.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
-    <visual name="aaly___Left_Side_Track_Support_visual">
+    <visual name="aaly__Left_Side_Track_Support_visual">
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <geometry>
-        <mesh filename="package://aaly__urdf/meshes/Track_Support_Left_Side.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://aaly_urdf/meshes/Track_Support_Left_Side.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
   </link>
@@ -263,16 +426,16 @@
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <inertia ixx="1.7083333333333333e-05" ixy="0.0" ixz="0.0" iyy="1.4683333333333334e-05" iyz="0.0" izz="1.0933333333333333e-05"/>
     </inertial>
-    <collision name="aaly___Right_Side_Track_Support_collision">
+    <collision name="aaly__Right_Side_Track_Support_collision">
       <origin rpy="0  0  0" xyz="0     0     0.015"/>
       <geometry>
-        <mesh filename="package://aaly__urdf/meshes/Track_Support_Collision_Mesh.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://aaly_urdf/meshes/Track_Support_Collision_Mesh.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
-    <visual name="aaly___Left_Side_Track_Support_visual">
+    <visual name="aaly__Left_Side_Track_Support_visual">
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <geometry>
-        <mesh filename="package://aaly__urdf/meshes/Track_Support_Right_Side.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://aaly_urdf/meshes/Track_Support_Right_Side.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
   </link>
@@ -282,16 +445,16 @@
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <inertia ixx="4.0003370625000006e-05" ixy="0.0" ixz="0.0" iyy="4.0003370625000006e-05" iyz="0.0" izz="3.624778125000001e-05"/>
     </inertial>
-    <collision name="aaly___drum1_collision">
+    <collision name="aaly__drum1_collision">
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <geometry>
         <cylinder length="0.05124" radius="0.026925"/>
       </geometry>
     </collision>
-    <visual name="aaly___drum1_visual">
+    <visual name="aaly__drum1_visual">
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <geometry>
-        <mesh filename="package://aaly__urdf/meshes/Lynx_Sproket6in_Hub13.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://aaly_urdf/meshes/Lynx_Sproket6in_Hub13.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
   </link>
@@ -301,16 +464,16 @@
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <inertia ixx="4.0003370625000006e-05" ixy="0.0" ixz="0.0" iyy="4.0003370625000006e-05" iyz="0.0" izz="3.624778125000001e-05"/>
     </inertial>
-    <collision name="aaly___drum2_collision">
+    <collision name="aaly__drum2_collision">
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <geometry>
         <cylinder length="0.05124" radius="0.026925"/>
       </geometry>
     </collision>
-    <visual name="aaly___drum2_visual">
+    <visual name="aaly__drum2_visual">
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <geometry>
-        <mesh filename="package://aaly__urdf/meshes/Lynx_Sproket6in_Hub13.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://aaly_urdf/meshes/Lynx_Sproket6in_Hub13.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
   </link>
@@ -320,16 +483,16 @@
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <inertia ixx="5.5414245624999996e-05" ixy="0.0" ixz="0.0" iyy="5.5414245624999996e-05" iyz="0.0" izz="0.000100604296875"/>
     </inertial>
-    <collision name="aaly___drum3_collision">
+    <collision name="aaly__drum3_collision">
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <geometry>
         <cylinder length="0.05124" radius="0.036625"/>
       </geometry>
     </collision>
-    <visual name="aaly___drum3_visual">
+    <visual name="aaly__drum3_visual">
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <geometry>
-        <mesh filename="package://aaly__urdf/meshes/Lynx_Sproket9in_Hub13.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://aaly_urdf/meshes/Lynx_Sproket9in_Hub13.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
   </link>
@@ -339,16 +502,16 @@
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <inertia ixx="5.5414245624999996e-05" ixy="0.0" ixz="0.0" iyy="5.5414245624999996e-05" iyz="0.0" izz="0.000100604296875"/>
     </inertial>
-    <collision name="aaly___drum4_collision">
+    <collision name="aaly__drum4_collision">
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <geometry>
         <cylinder length="0.05124" radius="0.036625"/>
       </geometry>
     </collision>
-    <visual name="aaly___drum4_visual">
+    <visual name="aaly__drum4_visual">
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <geometry>
-        <mesh filename="package://aaly__urdf/meshes/Lynx_Sproket9in_Hub13.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://aaly_urdf/meshes/Lynx_Sproket9in_Hub13.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
   </link>
@@ -358,16 +521,16 @@
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <inertia ixx="4.0003370625000006e-05" ixy="0.0" ixz="0.0" iyy="4.0003370625000006e-05" iyz="0.0" izz="3.624778125000001e-05"/>
     </inertial>
-    <collision name="aaly___drum5_collision">
+    <collision name="aaly__drum5_collision">
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <geometry>
         <cylinder length="0.05124" radius="0.027025"/>
       </geometry>
     </collision>
-    <visual name="aaly___drum5_visual">
+    <visual name="aaly__drum5_visual">
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <geometry>
-        <mesh filename="package://aaly__urdf/meshes/Lynx_Sproket6in_Hub13.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://aaly_urdf/meshes/Lynx_Sproket6in_Hub13.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
   </link>
@@ -377,16 +540,16 @@
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <inertia ixx="4.0003370625000006e-05" ixy="0.0" ixz="0.0" iyy="4.0003370625000006e-05" iyz="0.0" izz="3.624778125000001e-05"/>
     </inertial>
-    <collision name="aaly___drum6_collision">
+    <collision name="aaly__drum6_collision">
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <geometry>
         <cylinder length="0.05124" radius="0.027025"/>
       </geometry>
     </collision>
-    <visual name="aaly___drum6_visual">
+    <visual name="aaly__drum6_visual">
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <geometry>
-        <mesh filename="package://aaly__urdf/meshes/Lynx_Sproket6in_Hub13.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://aaly_urdf/meshes/Lynx_Sproket6in_Hub13.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
   </link>
@@ -396,16 +559,16 @@
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <inertia ixx="1.7083333333333333e-05" ixy="0.0" ixz="0.0" iyy="1.4683333333333334e-05" iyz="0.0" izz="1.0933333333333333e-05"/>
     </inertial>
-    <collision name="aaly___Left_Side_Track_Cover_collision">
+    <collision name="aaly__Left_Side_Track_Cover_collision">
       <origin rpy="0  0  0" xyz="0     0     0.015"/>
       <geometry>
-        <mesh filename="package://aaly__urdf/meshes/Track_Support_Collision_Mesh.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://aaly_urdf/meshes/Track_Support_Collision_Mesh.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
-    <visual name="aaly___Left_Side_Track_Cover_visual">
+    <visual name="aaly__Left_Side_Track_Cover_visual">
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <geometry>
-        <mesh filename="package://aaly__urdf/meshes/Track_Support_Cover_Side.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://aaly_urdf/meshes/Track_Support_Cover_Side.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
   </link>
@@ -415,22 +578,19 @@
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <inertia ixx="1.7083333333333333e-05" ixy="0.0" ixz="0.0" iyy="1.4683333333333334e-05" iyz="0.0" izz="1.0933333333333333e-05"/>
     </inertial>
-    <collision name="aaly___Right_Side_Track_Cover_collision">
+    <collision name="aaly__Right_Side_Track_Cover_collision">
       <origin rpy="0  0  0" xyz="0     0     0.015"/>
       <geometry>
-        <mesh filename="package://aaly__urdf/meshes/Track_Support_Collision_Mesh.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://aaly_urdf/meshes/Track_Support_Collision_Mesh.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </collision>
-    <visual name="aaly___Right_Side_Track_Cover_visual">
+    <visual name="aaly__Right_Side_Track_Cover_visual">
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <geometry>
-        <mesh filename="package://aaly__urdf/meshes/Track_Support_Cover_Side.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://aaly_urdf/meshes/Track_Support_Cover_Side.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
   </link>
-
-
-
 
   <transmission name="tran1">
     <type>transmission_interface/SimpleTransmission</type>
@@ -475,5 +635,49 @@
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
+  <transmission name="tran5">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="aaly__thigh_left_back_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="aaly__thigh_left_back_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran6">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="aaly__thigh_left_front_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="aaly__thigh_left_front_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran7">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="aaly__thigh_right_back_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="aaly__thigh_right_back_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran8">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="aaly__thigh_right_front_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="aaly__thigh_right_front_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
 
 </robot>
+
