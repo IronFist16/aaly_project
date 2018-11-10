@@ -14,7 +14,7 @@
     <axis xyz="0  0  0"/>
     <limit effort="0" lower="0" upper="0" velocity="0"/>
   </joint>
-  <joint name="aaly__thigh_left_back_joint" type="revolute">
+  <joint name="aaly__thigh_left_back_motor_joint" type="revolute">
     <parent link="aaly__leg_left_back"/>
     <child link="aaly__thigh_left_back_motor"/>
     <origin rpy="3.14159  0       0" xyz="0.0005  -0.0475   0.01586"/>
@@ -35,7 +35,7 @@
     <axis xyz="0  0  0"/>
     <limit effort="0" lower="0" upper="0" velocity="0"/>
   </joint>
-  <joint name="aaly__thigh_left_front_joint" type="revolute">
+  <joint name="aaly__thigh_left_front_motor_joint" type="revolute">
     <parent link="aaly__leg_left_front"/>
     <child link="aaly__thigh_left_front_motor"/>
     <origin rpy="3.14159  0       3.14159" xyz="0.0005  -0.0475  -0.00413"/>
@@ -56,7 +56,7 @@
     <axis xyz="0  0  0"/>
     <limit effort="0" lower="0" upper="0" velocity="0"/>
   </joint>
-  <joint name="aaly__thigh_right_back_joint" type="revolute">
+  <joint name="aaly__thigh_right_back_motor_joint" type="revolute">
     <parent link="aaly__leg_right_back"/>
     <child link="aaly__thigh_right_back_motor"/>
     <origin rpy="3.14159  0       0" xyz="0.0005  0.0475  0"/>
@@ -77,7 +77,7 @@
     <axis xyz="0  0  0"/>
     <limit effort="0" lower="0" upper="0" velocity="0"/>
   </joint>
-  <joint name="aaly__thigh_right_front_joint" type="revolute">
+  <joint name="aaly__thigh_right_front_motor_joint" type="revolute">
     <parent link="aaly__leg_right_front"/>
     <child link="aaly__thigh_right_front_motor"/>
     <origin rpy="3.14159  0       0" xyz="0.0005   0.0475   0.01586"/>
@@ -637,7 +637,7 @@
   </transmission>
   <transmission name="tran5">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="aaly__thigh_left_back_joint">
+    <joint name="aaly__thigh_left_back_motor_joint">
       <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     </joint>
     <actuator name="aaly__thigh_left_back_motor">
@@ -648,7 +648,7 @@
 
   <transmission name="tran6">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="aaly__thigh_left_front_joint">
+    <joint name="aaly__thigh_left_front_motor_joint">
       <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     </joint>
     <actuator name="aaly__thigh_left_front_motor">
@@ -659,7 +659,7 @@
 
   <transmission name="tran7">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="aaly__thigh_right_back_joint">
+    <joint name="aaly__thigh_right_back_motor_joint">
       <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     </joint>
     <actuator name="aaly__thigh_right_back_motor">
@@ -670,7 +670,7 @@
 
   <transmission name="tran8">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="aaly__thigh_right_front_joint">
+    <joint name="aaly__thigh_right_front_motor_joint">
       <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     </joint>
     <actuator name="aaly__thigh_right_front_motor">
