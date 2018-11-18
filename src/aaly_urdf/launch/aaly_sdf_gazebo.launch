@@ -38,7 +38,6 @@
 
       <!-- load the controllers -->
       <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/aaly_robot" args="joint_state_controller
-                          mobile_base_controller
                           legs_group_controller" >
             <param name="use_gui" value="TRUE"/>
       </node> 
