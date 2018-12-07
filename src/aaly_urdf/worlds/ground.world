@@ -3,6 +3,12 @@
   <!-- We use a custom world for the rrbot so that the camera angle is launched correctly -->
 
   <world name="default">
+    
+    <gui>
+      <camera name="user_camera">
+        <pose>0.853991 -0.335600 0.476534 -0.000001 0.407643 2.724196</pose>
+      </camera>
+    </gui>
 
     <light name='sun' type='directional'>
       <cast_shadows>1</cast_shadows>

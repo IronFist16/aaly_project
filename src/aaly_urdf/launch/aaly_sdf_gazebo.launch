@@ -1,10 +1,10 @@
 <launch>
 
-      <arg name="model"  default="$(find aaly_urdf)/urdf/base_sdf3.urdf.xacro"/>
+      <arg name="model"  default="$(find aaly_urdf)/urdf/base_sdf4.urdf.xacro"/>
       
       <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg model)"  /> 
       
-      <param name="robot_description_sdf" textfile="$(find aaly_urdf)/urdf/base.sdf"  /> 
+      <param name="robot_description_sdf" textfile="$(find aaly_urdf)/urdf/base3_working_on_multipleJointOneLink.sdf"  /> 
 
       <arg name="paused" value="true"/>
       <arg name="use_sim_time" value="true"/>
@@ -27,7 +27,7 @@
       </include>  
 
       <node name="aaly_urdf_spawner" pkg="gazebo_ros" type="spawn_model" output="screen" 
-        args="-sdf -param robot_description_sdf -model aaly -x $(arg x) -y $(arg y) -z $(arg z)" >
+        args="-sdf -param robot_description_sdf -model aaly -x $(arg x) -y $(arg y) -z $(arg z) -J aaly__knee_left_back_joint 0.01 -J aaly__knee_left_front_joint 0.01 -J aaly__knee_right_back_joint 0.01 -J aaly__knee_right_front_joint 0.01 -J aaly__thigh_left_back_motor_joint 0.01 -J aaly__thigh_left_front_motor_joint 0.01 -J aaly__thigh_right_back_motor_joint 0.01 -J aaly__thigh_right_front_motor_joint 0.01 -J aaly__body_front_right_joint 0.01 -J aaly__body_back_right_joint 0.01 -J aaly__body_front_left_joint 0.01 -J aaly__body_back_left_joint 0.01" >
       </node> 
 
       <rosparam file="$(find aaly_urdf)/config/config_sdf.yaml" 

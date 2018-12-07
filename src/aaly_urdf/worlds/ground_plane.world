@@ -9,5 +9,10 @@
     <include>
       <uri>model://ground_plane</uri>
     </include>
+    <gui>
+      <camera name="user_camera">
+        <pose>0.853991 -0.335600 0.476534 -0.000001 0.407643 2.724196</pose>
+      </camera>
+    </gui>
   </world>
 </sdf>

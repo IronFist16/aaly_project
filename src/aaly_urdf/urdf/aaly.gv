@@ -1,0 +1,107 @@
+digraph G {
+node [shape=box];
+"aaly__base_link" [label="aaly__base_link"];
+"aaly__Left_Side_Track_Support" [label="aaly__Left_Side_Track_Support"];
+"aaly__Left_Side_Track_Cover" [label="aaly__Left_Side_Track_Cover"];
+"aaly__drum1" [label="aaly__drum1"];
+"aaly__drum3" [label="aaly__drum3"];
+"aaly__drum5" [label="aaly__drum5"];
+"aaly__Right_Side_Track_Support" [label="aaly__Right_Side_Track_Support"];
+"aaly__Right_Side_Track_Cover" [label="aaly__Right_Side_Track_Cover"];
+"aaly__drum2" [label="aaly__drum2"];
+"aaly__drum4" [label="aaly__drum4"];
+"aaly__drum6" [label="aaly__drum6"];
+"aaly__knee_left_back_motor" [label="aaly__knee_left_back_motor"];
+"aaly__leg_left_back" [label="aaly__leg_left_back"];
+"aaly__thigh_left_back_motor" [label="aaly__thigh_left_back_motor"];
+"aaly__thigh_left_back_F3" [label="aaly__thigh_left_back_F3"];
+"aaly__thigh_left_back" [label="aaly__thigh_left_back"];
+"aaly__body" [label="aaly__body"];
+"aaly__knee_left_front_motor" [label="aaly__knee_left_front_motor"];
+"aaly__leg_left_front" [label="aaly__leg_left_front"];
+"aaly__thigh_left_front_motor" [label="aaly__thigh_left_front_motor"];
+"aaly__thigh_left_front_F3" [label="aaly__thigh_left_front_F3"];
+"aaly__thigh_left_front" [label="aaly__thigh_left_front"];
+"aaly__body" [label="aaly__body"];
+"aaly__knee_right_back_motor" [label="aaly__knee_right_back_motor"];
+"aaly__leg_right_back" [label="aaly__leg_right_back"];
+"aaly__thigh_right_back_motor" [label="aaly__thigh_right_back_motor"];
+"aaly__thigh_right_back_F3" [label="aaly__thigh_right_back_F3"];
+"aaly__thigh_right_back" [label="aaly__thigh_right_back"];
+"aaly__body" [label="aaly__body"];
+"aaly__knee_right_front_motor" [label="aaly__knee_right_front_motor"];
+"aaly__leg_right_front" [label="aaly__leg_right_front"];
+"aaly__thigh_right_front_motor" [label="aaly__thigh_right_front_motor"];
+"aaly__thigh_right_front_F3" [label="aaly__thigh_right_front_F3"];
+"aaly__thigh_right_front" [label="aaly__thigh_right_front"];
+"aaly__body" [label="aaly__body"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"aaly__base_link" -> "aaly__Left_Track_Side_joint" [label="xyz: -0.01373 -0.15812 0.07062 \nrpy: 0 -0 0"]
+"aaly__Left_Track_Side_joint" -> "aaly__Left_Side_Track_Support"
+"aaly__Left_Side_Track_Support" -> "aaly__Left_Side_Track_Cover_joint" [label="xyz: 0.00029 -0.07299 -0.00899 \nrpy: 0 -0 0"]
+"aaly__Left_Side_Track_Cover_joint" -> "aaly__Left_Side_Track_Cover"
+"aaly__Left_Side_Track_Support" -> "aaly__drum_joint1" [label="xyz: -0.1111 -0.038 -0.04062 \nrpy: 1.57079 -0 0"]
+"aaly__drum_joint1" -> "aaly__drum1"
+"aaly__Left_Side_Track_Support" -> "aaly__drum_joint3" [label="xyz: 0.14257 -0.038 -0.033 \nrpy: 1.57079 -0 0"]
+"aaly__drum_joint3" -> "aaly__drum3"
+"aaly__Left_Side_Track_Support" -> "aaly__drum_joint5" [label="xyz: -0.03231 -0.038 0.08371 \nrpy: 1.57079 -0 0"]
+"aaly__drum_joint5" -> "aaly__drum5"
+"aaly__base_link" -> "aaly__Right_Track_Side_joint" [label="xyz: -0.01373 0.15812 0.07062 \nrpy: 0 -0 0"]
+"aaly__Right_Track_Side_joint" -> "aaly__Right_Side_Track_Support"
+"aaly__Right_Side_Track_Support" -> "aaly__Right_Side_Track_Cover_joint" [label="xyz: 0.00029 0.07299 -0.00899 \nrpy: 0 -0 0"]
+"aaly__Right_Side_Track_Cover_joint" -> "aaly__Right_Side_Track_Cover"
+"aaly__Right_Side_Track_Support" -> "aaly__drum_joint2" [label="xyz: -0.1111 0.038 -0.04062 \nrpy: 1.57079 -0 0"]
+"aaly__drum_joint2" -> "aaly__drum2"
+"aaly__Right_Side_Track_Support" -> "aaly__drum_joint4" [label="xyz: 0.14257 0.038 -0.033 \nrpy: 1.57079 -0 0"]
+"aaly__drum_joint4" -> "aaly__drum4"
+"aaly__Right_Side_Track_Support" -> "aaly__drum_joint6" [label="xyz: -0.03231 0.038 0.08371 \nrpy: 1.57079 -0 0"]
+"aaly__drum_joint6" -> "aaly__drum6"
+"aaly__base_link" -> "aaly__knee_left_back_joint" [label="xyz: -0.107 0.1144 0.12127 \nrpy: 0 -0 0"]
+"aaly__knee_left_back_joint" -> "aaly__knee_left_back_motor"
+"aaly__knee_left_back_motor" -> "aaly__leg_left_back_joint" [label="xyz: -0.0035 -0.0159 -0.06587 \nrpy: 0 -0 0"]
+"aaly__leg_left_back_joint" -> "aaly__leg_left_back"
+"aaly__leg_left_back" -> "aaly__thigh_left_back_motor_joint" [label="xyz: 0.0005 -0.0475 0.01586 \nrpy: 3.14159 -0 0"]
+"aaly__thigh_left_back_motor_joint" -> "aaly__thigh_left_back_motor"
+"aaly__thigh_left_back_motor" -> "aaly__thigh_left_back_F3_joint" [label="xyz: 0 0 -0.03872 \nrpy: -3.14159 -0 -1.57079"]
+"aaly__thigh_left_back_F3_joint" -> "aaly__thigh_left_back_F3"
+"aaly__thigh_left_back_F3" -> "aaly__thigh_left_back_joint" [label="xyz: -0.001 0 0.023 \nrpy: 0 0 -1.57079"]
+"aaly__thigh_left_back_joint" -> "aaly__thigh_left_back"
+"aaly__thigh_left_back" -> "aaly__body_front_right_joint" [label="xyz: -0.03573 -0.00013 0.042 \nrpy: 0 -0 0"]
+"aaly__body_front_right_joint" -> "aaly__body"
+"aaly__base_link" -> "aaly__knee_left_front_joint" [label="xyz: -0.034 0.1144 0.12127 \nrpy: 0 -0 3.14159"]
+"aaly__knee_left_front_joint" -> "aaly__knee_left_front_motor"
+"aaly__knee_left_front_motor" -> "aaly__leg_left_front_joint" [label="xyz: 0 0.0159 -0.04587 \nrpy: 0 0 -3.14159"]
+"aaly__leg_left_front_joint" -> "aaly__leg_left_front"
+"aaly__leg_left_front" -> "aaly__thigh_left_front_motor_joint" [label="xyz: 0.0005 -0.0475 -0.00413 \nrpy: 3.14159 -0 3.14159"]
+"aaly__thigh_left_front_motor_joint" -> "aaly__thigh_left_front_motor"
+"aaly__thigh_left_front_motor" -> "aaly__thigh_left_front_F3_joint" [label="xyz: 0 0 -0.03872 \nrpy: 3.14159 -0 1.57079"]
+"aaly__thigh_left_front_F3_joint" -> "aaly__thigh_left_front_F3"
+"aaly__thigh_left_front_F3" -> "aaly__thigh_left_joint" [label="xyz: -0.001 0 0.023 \nrpy: 0 0 -1.57079"]
+"aaly__thigh_left_joint" -> "aaly__thigh_left_front"
+"aaly__thigh_left_front" -> "aaly__body_front_right_joint" [label="xyz: -0.03573 -0.00013 0.042 \nrpy: 0 -0 0"]
+"aaly__body_front_right_joint" -> "aaly__body"
+"aaly__base_link" -> "aaly__knee_right_back_joint" [label="xyz: -0.107 -0.1144 0.12127 \nrpy: 0 -0 0"]
+"aaly__knee_right_back_joint" -> "aaly__knee_right_back_motor"
+"aaly__knee_right_back_motor" -> "aaly__leg_right_back_joint" [label="xyz: -0.00024 0.0159 -0.04587 \nrpy: 0 -0 0"]
+"aaly__leg_right_back_joint" -> "aaly__leg_right_back"
+"aaly__leg_right_back" -> "aaly__thigh_right_back_motor_joint" [label="xyz: 0.0005 0.0475 0 \nrpy: 3.14159 -0 0"]
+"aaly__thigh_right_back_motor_joint" -> "aaly__thigh_right_back_motor"
+"aaly__thigh_right_back_motor" -> "aaly__thigh_right_back_F3_joint" [label="xyz: 0 0.0005 -0.03872 \nrpy: -3.14159 -0 -1.57079"]
+"aaly__thigh_right_back_F3_joint" -> "aaly__thigh_right_back_F3"
+"aaly__thigh_right_back_F3" -> "aaly__thigh_right_back_joint" [label="xyz: -0.0005 0 0.023 \nrpy: 0 0 -1.57079"]
+"aaly__thigh_right_back_joint" -> "aaly__thigh_right_back"
+"aaly__thigh_right_back" -> "aaly__body_front_right_joint" [label="xyz: -0.03573 -0.00013 0.042 \nrpy: 0 -0 0"]
+"aaly__body_front_right_joint" -> "aaly__body"
+"aaly__base_link" -> "aaly__knee_right_front_joint" [label="xyz: -0.034 -0.1144 0.12127 \nrpy: 0 -0 3.14159"]
+"aaly__knee_right_front_joint" -> "aaly__knee_right_front_motor"
+"aaly__knee_right_front_motor" -> "aaly__leg_right_front_joint" [label="xyz: -0.00376 -0.0159 -0.06587 \nrpy: 0 0 -3.14159"]
+"aaly__leg_right_front_joint" -> "aaly__leg_right_front"
+"aaly__leg_right_front" -> "aaly__thigh_right_front_motor_joint" [label="xyz: 0.0005 0.0475 0.01586 \nrpy: 3.14159 -0 0"]
+"aaly__thigh_right_front_motor_joint" -> "aaly__thigh_right_front_motor"
+"aaly__thigh_right_front_motor" -> "aaly__thigh_right_front_F3_joint" [label="xyz: -0.00025 0.0005 -0.03872 \nrpy: -3.14159 -0 -1.57079"]
+"aaly__thigh_right_front_F3_joint" -> "aaly__thigh_right_front_F3"
+"aaly__thigh_right_front_F3" -> "aaly__thigh_right_joint" [label="xyz: -0.0005 0 0.023 \nrpy: 0 0 -1.57079"]
+"aaly__thigh_right_joint" -> "aaly__thigh_right_front"
+"aaly__thigh_right_front" -> "aaly__body_front_right_joint" [label="xyz: -0.03573 -0.00013 0.042 \nrpy: 0 -0 0"]
+"aaly__body_front_right_joint" -> "aaly__body"
+}

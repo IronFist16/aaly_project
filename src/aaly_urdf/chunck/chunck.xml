@@ -1,0 +1,493 @@
+
+    <joint name="aaly__body_front_right_joint" type="revolute">
+      <pose>-0.03573 -0.05200 -0.065 0 0 0</pose>
+      <parent>aaly__thigh_right_front</parent>
+      <child>aaly__body</child>
+      <axis> 
+        <xyz>1 0 0</xyz>
+      </axis>
+    </joint>
+
+    <joint name="aaly__body_back_right_joint" type="revolute">
+      <pose>-0.04427 -0.052 -0.065 0 0 0</pose>
+      <parent>aaly__thigh_right_back</parent>
+      <child>aaly__body</child>
+      <axis> 
+        <xyz>1 0 0</xyz>
+      </axis>
+    </joint>
+
+    <joint name="aaly__body_front_left_joint" type="revolute">
+      <pose>-0.03573 0.05200 -0.065 0 0 0</pose>
+      <parent>aaly__thigh_left_front</parent>
+      <child>aaly__body</child>
+      <axis> 
+        <xyz>1 0 0</xyz>
+      </axis>
+    </joint>
+
+    <joint name="aaly__body_back_left_joint" type="revolute">
+      <pose>-0.04427 0.052 -0.065 0 0 0</pose>
+      <parent>aaly__thigh_left_back</parent>
+      <child>aaly__body</child>
+      <axis> 
+        <xyz>1 0 0</xyz>
+      </axis>
+    </joint>
+
+
+
+
+    <!-- BODY XACRO -->
+  <joint name="aaly__body_front_right_joint" type="continuous">
+    <parent link="aaly__thigh_right_front"/>
+    <child link="aaly__body"/>
+    <origin rpy="0       0      -1.57079" xyz="-0.00013  0.07146  0.0655"/>
+    <axis xyz="1  0  0"/>
+  </joint>
+  <joint name="aaly__body_back_right_joint" type="continuous">
+    <parent link="aaly__thigh_right_back"/>
+    <child link="aaly__body"/>
+    <origin rpy="0       0.023   -1.57079" xyz="-0.00013 -0.00097  0.04248"/>
+    <axis xyz="1  0  0"/>
+  </joint>
+  <joint name="aaly__body_front_left_joint" type="continuous">
+    <parent link="aaly__thigh_left_front"/>
+    <child link="aaly__body"/>
+    <origin rpy="0       0      -1.57079" xyz="0.00186  0.07045  0.0655"/>
+    <axis xyz="1  0  0"/>
+  </joint>
+  <joint name="aaly__body_back_left_joint" type="continuous">
+    <parent link="aaly__thigh_left_back"/>
+    <child link="aaly__body"/>
+    <origin rpy="0       0      -1.57079" xyz="0.00186  0       0.07049"/>
+    <axis xyz="1  0  0"/>
+  </joint>
+
+  <!--Try2 -->
+
+    <!-- Body -->
+
+    <link name="aaly__body">
+      <self_collide>1</self_collide>
+      <pose>-0.06573 -0.000135 0.235000 0 0 0</pose>
+      <inertial>        
+        <mass>0.5</mass>
+        <inertia> 
+          <ixx>0.002110537983145438</ixx> 
+          <ixy>6.068160057964515e-06</ixy>
+          <ixz>5.782219040307764e-05</ixz>
+          <iyy>0.0025371464552802047</iyy>
+          <iyz>-3.9203677986423195e-06</iyz>
+          <izz>0.003081784306452865</izz>
+        </inertia>
+      </inertial>
+      <collision name="aaly__body_collision">
+        <geometry>
+          <box>
+            <size>0.14 0.14 0.12</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="aaly__body_visual">
+        <geometry>
+          <mesh> 
+            <uri>model://my_tracks/meshes/Wall-E_Body.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.4 0.4 0.4 1</ambient>
+          <diffuse>0.8 0.8 0.8 1</diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="aaly__body_front_right_joint" type="revolute">
+      <pose>0.04073 -0.05200 -0.065 0 0 0</pose>
+      <parent>aaly__thigh_right_front</parent>
+      <child>aaly__body</child>
+      <axis> 
+        <xyz>1 0 0</xyz>
+      </axis>
+    </joint>
+
+    <joint name="aaly__body_back_right_joint" type="revolute">
+      <pose>-0.04573 -0.052 -0.065 0 0 0</pose>
+      <parent>aaly__thigh_right_back</parent>
+      <child>aaly__body</child>
+      <axis> 
+        <xyz>1 0 0</xyz>
+      </axis>
+    </joint>
+
+    <joint name="aaly__body_front_left_joint" type="revolute">
+      <pose>0.04073 0.05200 -0.065 0 0 0</pose>
+      <parent>aaly__thigh_left_front</parent>
+      <child>aaly__body</child>
+      <axis> 
+        <xyz>1 0 0</xyz>
+      </axis>
+    </joint>
+
+    <joint name="aaly__body_back_left_joint" type="revolute">
+      <pose>-0.04573 0.052 -0.065 0 0 0</pose>
+      <parent>aaly__thigh_left_back</parent>
+      <child>aaly__body</child>
+      <axis> 
+        <xyz>1 0 0</xyz>
+      </axis>
+    </joint>
+
+    <!-- Body -->
+  <link name="aaly__body">
+    <inertial>
+      <mass value="0.15"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="0.0004221075966290876" ixy="1.213632011592903e-06" ixz="1.1564438080615529e-05" iyy="0.0005074292910560409" iyz="-7.84073559728464e-07" izz="0.000616356861290573"/>
+    </inertial>
+    <collision name="aaly__body_collision">
+      <origin rpy="0  0  0" xyz="0.04427 -0.052    0.06"/>
+      <geometry>
+        <box size="0.14 0.14 0.12"/>
+      </geometry>
+    </collision>
+    <visual name="aaly__body_visual">
+      <origin rpy="0  0  0" xyz="0.04427 -0.052    0.06"/>
+      <geometry>
+        <mesh filename="package://aaly_urdf/meshes/Wall-E_Body.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="aaly__body">
+    <inertial>
+      <mass value="0.5"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="0.002110537983145438" ixy="6.068160057964515e-06" ixz="5.782219040307764e-05" iyy="0.0025371464552802047" iyz="-3.9203677986423195e-06" izz="0.003081784306452865"/>
+    </inertial>
+    <collision name="aaly__body_collision">
+      <origin rpy="0  0  0" xyz="0.04427 -0.052    0.06"/>
+      <geometry>
+        <box size="0.14 0.14 0.12"/>
+      </geometry>
+    </collision>
+    <visual name="aaly__body_visual">
+      <origin rpy="0  0  0" xyz="0.04427 -0.052    0.06"/>
+      <geometry>
+        <mesh filename="package://aaly_urdf/meshes/Wall-E_Body.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+
+
+  <joint name="aaly__body_front_right_joint" type="revolute">
+    <parent link="aaly__thigh_right_front"/>
+    <child link="aaly__body"/>
+    <origin rpy="0       0      -1.57079" xyz="-0.00013  0.07146  0.0655"/>
+    <axis xyz="1  0  0"/>
+    <limit effort="1" lower="-3.14159" upper="3.14159" velocity="1"/>
+  </joint>
+  <joint name="aaly__body_back_right_joint" type="revolute">
+    <parent link="aaly__thigh_right_back"/>
+    <child link="aaly__body"/>
+    <origin rpy="0       0.023   -1.57079" xyz="-0.00013 -0.00097  0.04248"/>
+    <axis xyz="1  0  0"/>
+    <limit effort="1" lower="-3.14159" upper="3.14159" velocity="1"/>
+  </joint>
+  <joint name="aaly__body_front_left_joint" type="revolute">
+    <parent link="aaly__thigh_left_front"/>
+    <child link="aaly__body"/>
+    <origin rpy="0       0      -1.57079" xyz="0.00186  0.07045  0.0655"/>
+    <axis xyz="1  0  0"/>
+    <limit effort="1" lower="-3.14159" upper="3.14159" velocity="1"/>
+  </joint>
+  <joint name="aaly__body_back_left_joint" type="revolute">
+    <parent link="aaly__thigh_left_back"/>
+    <child link="aaly__body"/>
+    <origin rpy="0       0      -1.57079" xyz="0.00186  0       0.07049"/>
+    <axis xyz="1  0  0"/>
+    <limit effort="1" llower="-3.14159" upper="3.14159" velocity="1"/>
+  </joint>
+  
+
+  <!--- Body1 Body2 Joint -->
+
+    <joint name="aaly__body1_body2_joint" type="revolute">
+      <pose>-0.045 0 0.06 0 0 0</pose>
+      <parent>aaly__body1</parent>
+      <child>aaly__body2</child>
+      <axis> 
+        <xyz>1 0 0</xyz>
+      </axis>
+    </joint>     
+
+        <mass>0.15</mass>
+        <inertia> 
+          <ixx>0.000425</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.000241</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.000306</izz>
+        </inertia>
+
+
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>0.0001417</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>8.041666666666667e-05</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.00010208</izz>
+        </inertia>
+
+    <joint name="aaly__body1_body2_joint" type="fixed">
+      <pose>-0.040 0 0.00 0 0 0</pose>
+      <parent>aaly__body1</parent>
+      <child>aaly__body2</child>
+      <axis> 
+        <xyz>0 0 0</xyz>
+      </axis>
+    </joint>
+
+<!-- TWO BODY TRY -->
+
+    <link name="aaly__body1">
+      <self_collide>1</self_collide>
+      <pose>-0.07 -0.0650 0.235000 0 0 1.57079632679</pose>
+      <inertial>        
+        <mass>0.01</mass>
+        <inertia> 
+          <ixx>2.8333333333333332e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>8.041666666666667e-05</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.00010208333333333335</izz>
+        </inertia>
+      </inertial>
+      <collision name="aaly__body1_collision">
+        <geometry>
+          <box>
+            <size>0.07 0.14 0.12</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="aaly__body1_visual">
+        <geometry>
+          <box>
+            <size>0.07 0.14 0.12</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.4 0.4 0.4 1</ambient>
+          <diffuse>0.8 0.8 0.8 1</diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+
+    <link name="aaly__body2">
+      <self_collide>1</self_collide>
+      <pose>-0.07 0.0650 0.235000 0 0 1.57079632679</pose>
+      <inertial>        
+        <mass>0.01</mass>
+        <inertia> 
+          <ixx>2.8333333333333332e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>8.041666666666667e-05</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.00010208333333333335</izz>
+        </inertia>
+      </inertial>
+      <collision name="aaly__body2_collision">
+        <geometry>
+          <box>
+            <size>0.07 0.14 0.12</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="aaly__body2_visual">
+        <geometry>
+          <box>
+            <size>0.07 0.14 0.12</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.4 0.4 0.4 1</ambient>
+          <diffuse>0.8 0.8 0.8 1</diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="aaly__body_front_right_joint" type="fixed">
+      <pose>0 0.05200 -0.065 0 0 0</pose>
+      <parent>aaly__thigh_right_front</parent>
+      <child>aaly__body1</child>
+      <axis> 
+        <xyz>0 0 0</xyz>
+      </axis>
+    </joint>
+
+    <joint name="aaly__body_back_right_joint" type="fixed">
+      <pose>0 -0.052 -0.065 0 0 0</pose>
+      <parent>aaly__thigh_right_back</parent>
+      <child>aaly__body1</child>
+      <axis> 
+        <xyz>0 0 0</xyz>
+      </axis>
+    </joint>
+
+    <joint name="aaly__body_front_left_joint" type="fixed">
+      <pose>0 0.05200 -0.065 0 0 0</pose>
+      <parent>aaly__thigh_left_front</parent>
+      <child>aaly__body2</child>
+      <axis> 
+        <xyz>0 0 0</xyz>
+      </axis>
+    </joint>
+
+    <joint name="aaly__body_back_left_joint" type="fixed">
+      <pose>0 -0.052 -0.065 0 0 0</pose>
+      <parent>aaly__thigh_left_back</parent>
+      <child>aaly__body2</child>
+      <axis> 
+        <xyz>0 0 0</xyz>
+      </axis>
+    </joint>
+
+    <joint name="aaly__body24_joint" type="fixed">
+      <pose>0 -0.045 0 0 0 0</pose>
+      <parent>aaly__body2</parent>
+      <child>aaly__body4</child>
+      <axis> 
+        <xyz>0 0 0</xyz>
+      </axis>
+    </joint>
+
+    <joint name="aaly__body13_joint" type="fixed">
+      <pose>0 -0.045 0 0 0 0</pose>
+      <parent>aaly__body1</parent>
+      <child>aaly__body3</child>
+      <axis> 
+        <xyz>0 0 0</xyz>
+      </axis>
+    </joint>
+
+    <joint name="aaly__body12_joint" type="revolute">
+      <pose>0 -0.050 0.06 0 0 0</pose>
+      <parent>aaly__body1</parent>
+      <child>aaly__body2</child>
+      <axis> 
+        <xyz>1 0 0</xyz>
+      </axis>
+    </joint>
+
+    <joint name="aaly__body34_joint" type="revolute">
+      <pose>0 -0.050 0.06 0 0 0</pose>
+      <parent>aaly__body3</parent>
+      <child>aaly__body4</child>
+      <axis> 
+        <xyz>1 0 0</xyz>
+      </axis>
+    </joint>
+
+    <!-- ---->
+
+
+    <joint name="aaly__body13_joint" type="revolute">
+      <pose>0 -0.045 0.06 0 0 0</pose>
+      <parent>aaly__body1</parent>
+      <child>aaly__body3</child>
+      <axis> 
+        <xyz>1 0 0</xyz>
+      </axis>
+    </joint>
+
+    <joint name="aaly__body24_joint" type="revolute">
+      <pose>0 -0.045 0.06 0 0 0</pose>
+      <parent>aaly__body2</parent>
+      <child>aaly__body4</child>
+      <axis> 
+        <xyz>1 0 0</xyz>
+      </axis>
+    </joint>
+
+    <!--   --->
+    
+
+  <transmission name="tran9">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="aaly__body_front_right_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="body_front_right_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran10">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="aaly__body_back_right_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="body_back_right_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran11">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="aaly__body_front_left_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="body_front_left_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran12">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="aaly__body_back_left_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="body_back_left_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+      - aaly__body_front_right_joint
+      - aaly__body_back_right_joint
+      - aaly__body_front_left_joint
+      - aaly__body_back_left_joint
+
+  # Position Controllers ---------------------------------------
+  body_front_right_joint_position_controller:
+    type: position_controllers/JointPositionController
+    joint: aaly__body_front_right_joint
+
+  # Position Controllers ---------------------------------------
+  body_back_right_joint_position_controller:
+    type: position_controllers/JointPositionController
+    joint: aaly__body_back_right_joint
+
+  # Position Controllers ---------------------------------------
+  body_front_left_joint_position_controller:
+    type: position_controllers/JointPositionController
+    joint: aaly__body_front_left_joint
+
+  # Position Controllers ---------------------------------------
+  body_back_left_joint_position_controller:
+    type: position_controllers/JointPositionController
+    joint: aaly__body_back_left_joint
+

@@ -179,7 +179,7 @@
     </joint>
 
     <link name="aaly__thigh_left_back_F3">
-      <self_collide>1</self_collide>
+      <self_collide>0</self_collide>
       <pose>-0.110000 0.051000 0.110000 0 0 1.57079632679</pose>
       <inertial>        
         <mass>0.01</mass>
@@ -224,7 +224,7 @@
     </joint>
 
     <link name="aaly__thigh_left_back">
-      <self_collide>1</self_collide>
+      <self_collide>0</self_collide>
       <pose>-0.110000 0.05000 0.133000 0 0 0</pose>
       <inertial>        
         <mass>0.02</mass>
@@ -1035,6 +1035,12 @@
       <parent>aaly__thigh_right_front</parent>
       <child>aaly__body</child>
       <axis> 
+        <limit>
+            <lower>0.0</lower>
+            <upper>5.235987755982989</upper>
+            <effort>10000</effort>
+            <velocity>1.0</velocity>
+        </limit>
         <xyz>1 0 0</xyz>
       </axis>
     </joint>
@@ -1044,6 +1050,12 @@
       <parent>aaly__thigh_right_back</parent>
       <child>aaly__body</child>
       <axis> 
+        <limit>
+            <lower>0.0</lower>
+            <upper>5.235987755982989</upper>
+            <effort>10000</effort>
+            <velocity>1.0</velocity>
+        </limit>
         <xyz>1 0 0</xyz>
       </axis>
     </joint>
@@ -1053,6 +1065,12 @@
       <parent>aaly__thigh_left_front</parent>
       <child>aaly__body</child>
       <axis> 
+        <limit>
+            <lower>0.0</lower>
+            <upper>5.235987755982989</upper>
+            <effort>10000</effort>
+            <velocity>1.0</velocity>
+        </limit>
         <xyz>1 0 0</xyz>
       </axis>
     </joint>
@@ -1062,6 +1080,12 @@
       <parent>aaly__thigh_left_back</parent>
       <child>aaly__body</child>
       <axis> 
+        <limit>
+            <lower>0.0</lower>
+            <upper>5.235987755982989</upper>
+            <effort>10000</effort>
+            <velocity>1.0</velocity>
+        </limit>
         <xyz>1 0 0</xyz>
       </axis>
     </joint>

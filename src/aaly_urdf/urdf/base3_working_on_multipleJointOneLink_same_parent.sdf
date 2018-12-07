@@ -76,7 +76,7 @@
         <limit>
             <lower>0.0</lower>
             <upper>5.235987755982989</upper>
-            <effort>100</effort>
+            <effort>200</effort>
             <velocity>1.0</velocity>
         </limit>
         <xyz>-1 0 0</xyz>
@@ -173,7 +173,7 @@
         <limit>
             <lower>0.0</lower>
             <upper>5.235987755982989</upper>
-            <effort>100</effort>
+            <effort>200</effort>
             <velocity>1.0</velocity>
         </limit>
         <xyz>1 0 0</xyz>
@@ -274,7 +274,7 @@
         <limit>
             <lower>0.0</lower>
             <upper>5.235987755982989</upper>
-            <effort>100</effort>
+            <effort>200</effort>
             <velocity>1.0</velocity>
         </limit>
         <xyz>-1 0 0</xyz>
@@ -371,7 +371,7 @@
         <limit>
             <lower>0.0</lower>
             <upper>5.235987755982989</upper>
-            <effort>100</effort>
+            <effort>200</effort>
             <velocity>1.0</velocity>
         </limit>
         <xyz>1 0 0</xyz>
@@ -472,7 +472,7 @@
         <limit>
             <lower>0.0</lower>
             <upper>5.235987755982989</upper>
-            <effort>100</effort>
+            <effort>200</effort>
             <velocity>1.0</velocity>
         </limit>
         <xyz>1 0 0</xyz>
@@ -569,7 +569,7 @@
         <limit>
             <lower>0.0</lower>
             <upper>5.235987755982989</upper>
-            <effort>100</effort>
+            <effort>200</effort>
             <velocity>1.0</velocity>
         </limit>
         <xyz>-1 0 0</xyz>
@@ -670,7 +670,7 @@
         <limit>
             <lower>0.0</lower>
             <upper>5.235987755982989</upper>
-            <effort>100</effort>
+            <effort>200</effort>
             <velocity>1.0</velocity>
         </limit>
         <xyz>1 0 0</xyz>
@@ -767,7 +767,7 @@
         <limit>
             <lower>0.0</lower>
             <upper>5.235987755982989</upper>
-            <effort>100</effort>
+            <effort>200</effort>
             <velocity>1.0</velocity>
         </limit>
         <xyz>-1 0 0</xyz>
@@ -826,15 +826,15 @@
     <link name="aaly__body">
       <self_collide>1</self_collide>
       <pose>-0.06573 -0.000135 0.235000 0 0 0</pose>
-      <inertial>        
-        <mass>0.5</mass>
+      <inertial>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>0.002110537983145438</ixx> 
-          <ixy>6.068160057964515e-06</ixy>
-          <ixz>5.782219040307764e-05</ixz>
-          <iyy>0.0025371464552802047</iyy>
-          <iyz>-3.9203677986423195e-06</iyz>
-          <izz>0.003081784306452865</izz>
+          <ixx>0.0001417</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>8.041666666666667e-05</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.00010208</izz>
         </inertia>
       </inertial>
       <collision name="aaly__body_collision">
@@ -860,36 +860,36 @@
     </link>
 
     <joint name="aaly__body_front_right_joint" type="revolute">
-      <pose>0.04073 -0.05200 -0.065 0 0 0</pose>
-      <parent>aaly__thigh_right_front</parent>
-      <child>aaly__body</child>
+      <pose>0.0 0.0 0.065 0 0 0</pose>
+      <parent>aaly__body</parent>
+      <child>aaly__thigh_right_front</child>
       <axis> 
         <xyz>1 0 0</xyz>
       </axis>
     </joint>
 
     <joint name="aaly__body_back_right_joint" type="revolute">
-      <pose>-0.04573 -0.052 -0.065 0 0 0</pose>
-      <parent>aaly__thigh_right_back</parent>
-      <child>aaly__body</child>
+      <pose>0.0 0.0 0.065 0 0 0</pose>
+      <parent>aaly__body</parent>
+      <child>aaly__thigh_right_back</child>
       <axis> 
         <xyz>1 0 0</xyz>
       </axis>
     </joint>
 
     <joint name="aaly__body_front_left_joint" type="revolute">
-      <pose>0.04073 0.05200 -0.065 0 0 0</pose>
-      <parent>aaly__thigh_left_front</parent>
-      <child>aaly__body</child>
+      <pose>0.0 0.0 0.065 0 0 0</pose>
+      <parent>aaly__body</parent>
+      <child>aaly__thigh_left_front</child>
       <axis> 
         <xyz>1 0 0</xyz>
       </axis>
     </joint>
 
     <joint name="aaly__body_back_left_joint" type="revolute">
-      <pose>-0.04573 0.052 -0.065 0 0 0</pose>
-      <parent>aaly__thigh_left_back</parent>
-      <child>aaly__body</child>
+      <pose>0.0 0.0 0.065 0 0 0</pose>
+      <parent>aaly__body</parent>
+      <child>aaly__thigh_left_back</child>
       <axis> 
         <xyz>1 0 0</xyz>
       </axis>

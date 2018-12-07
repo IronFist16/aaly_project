@@ -1,3 +1,4 @@
+<?xml version="1.0" ?>
 <sdf version="1.4">
   <model name="aaly">
     <link name="aaly__base_link">
@@ -6,12 +7,12 @@
       <inertial>
         <mass>0.36</mass>
         <inertia> 
-          <ixx>0.002814604013121458</ixx> 
+          <ixx>0.0028086383999999997</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>7.17760831593746e-05</iyy>
+          <iyy>4.3094400000000005e-05</iyy>
           <iyz>0.0</iyz>
-          <izz>0.0028301708345758957</izz>
+          <izz>0.0028086383999999997</izz>
         </inertia>
       </inertial>
       <collision name="base_link_collision">
@@ -34,16 +35,15 @@
     <link name="aaly__knee_left_back_motor">
       <self_collide>1</self_collide>
       <pose>-0.107 0.114400 0.121275 0 0 0</pose>
-      <inertial>
-        <pose>0 0 -0.012 0 0 0</pose>     
+      <inertial>        
         <mass>0.05</mass>
         <inertia> 
-          <ixx>1.2166047261762851e-05</ixx> 
+          <ixx>1.7083333333333333e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>1.4468363602365426e-05</iyy>
+          <iyy>1.4683333333333334e-05</iyy>
           <iyz>0.0</iyz>
-          <izz>7.993829324731787e-06</izz>
+          <izz>1.0933333333333333e-05</izz>
         </inertia>
       </inertial>
       <collision name="aaly__knee_left_back_motor_collision">
@@ -73,10 +73,11 @@
       <parent>aaly__base_link</parent>
       <child>aaly__knee_left_back_motor</child>
       <axis> 
+        <initial_position>0.01</initial_position>
         <limit>
             <lower>0.0</lower>
             <upper>5.235987755982989</upper>
-            <effort>100</effort>
+            <effort>1000</effort>
             <velocity>1.0</velocity>
         </limit>
         <xyz>-1 0 0</xyz>
@@ -85,16 +86,16 @@
 
     <link name="aaly__leg_left_back">
       <self_collide>1</self_collide>
-      <pose>-0.108500 0.0905 0.065050 0 0 0</pose>
-      <inertial>       
-        <mass>0.04</mass>
+      <pose>-0.110500 0.0985 0.055405 0 0 0</pose>
+      <inertial>        
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>2.69490184257131e-05</ixx> 
+          <ixx>9.270833333333334e-06</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>1.843324918045141e-05</iyy>
+          <iyy>9.270833333333334e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>3.454538603564566e-05</izz>
+          <izz>1.3333333333333333e-05</izz>
         </inertia>
       </inertial>
       <collision name="aaly__leg_left_back_collision">
@@ -131,16 +132,15 @@
     <link name="aaly__thigh_left_back_motor">
       <self_collide>1</self_collide>
       <pose>-0.110000 0.051000 0.071275 3.141592653589793 0 0</pose>
-      <inertial>
-        <pose>0 0 -0.012 0 0 0</pose>      
+      <inertial>        
         <mass>0.05</mass>
         <inertia> 
-          <ixx>1.2166047261762851e-05</ixx> 
+          <ixx>1.7083333333333333e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>1.4468363602365426e-05</iyy>
+          <iyy>1.4683333333333334e-05</iyy>
           <iyz>0.0</iyz>
-          <izz>7.993829324731787e-06</izz>
+          <izz>1.0933333333333333e-05</izz>
         </inertia>
       </inertial>
       <collision name="aaly__thigh_left_back_motor_collision">
@@ -170,41 +170,87 @@
       <parent>aaly__leg_left_back</parent>
       <child>aaly__thigh_left_back_motor</child>
       <axis> 
+        <initial_position>0.01</initial_position>
         <limit>
             <lower>0.0</lower>
             <upper>5.235987755982989</upper>
-            <effort>100</effort>
+            <effort>1000</effort>
             <velocity>1.0</velocity>
         </limit>
         <xyz>1 0 0</xyz>
       </axis>
     </joint>
 
-    <link name="aaly__thigh_left_back">
-      <self_collide>1</self_collide>
-      <pose>-0.110000 0.05000 0.127500 0 0 1.57079632679</pose>
+    <link name="aaly__thigh_left_back_F3">
+      <self_collide>0</self_collide>
+      <pose>-0.110000 0.051000 0.110000 0 0 1.57079632679</pose>
       <inertial>        
-        <mass>0.03</mass>
+        <mass>0.01</mass>
         <inertia> 
-          <ixx>2.0103848503359805e-05</ixx> 
+          <ixx>1.4733333333333336e-06</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>1.2296884544899207e-05</iyy>
+          <iyy>7.533333333333332e-07</iyy>
           <iyz>0.0</iyz>
-          <izz>1.2205253512522909e-05</izz>
+          <izz>2.22e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name="aaly__thigh_left_back_F3_collision">
+        <geometry>
+          <mesh> 
+            <uri>model://my_tracks/meshes/F3.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="aaly__thigh_left_back_F3_visual">
+        <geometry>
+          <mesh> 
+            <uri>model://my_tracks/meshes/F3.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.4 0.4 0.4 1</ambient>
+          <diffuse>0.8 0.8 0.8 1</diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="aaly__thigh_left_back_F3_joint" type="fixed">
+      <pose>0 0 0 0 0 0</pose>
+      <parent>aaly__thigh_left_back_motor</parent>
+      <child>aaly__thigh_left_back_F3</child>
+      <axis> 
+        <xyz>0 0 0</xyz>
+      </axis>
+    </joint>
+
+    <link name="aaly__thigh_left_back">
+      <self_collide>0</self_collide>
+      <pose>-0.110000 0.05000 0.133000 0 0 0</pose>
+      <inertial>        
+        <mass>0.02</mass>
+        <inertia> 
+          <ixx>3.2066666666666663e-06</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>4.166666666666667e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>4.373333333333333e-06</izz>
         </inertia>
       </inertial>
       <collision name="aaly__thigh_left_back_collision">
         <geometry>
-          <box>
-            <size>0.04 0.032 0.030</size>
-          </box>
+          <mesh> 
+            <uri>model://my_tracks/meshes/F4.stl</uri>
+          </mesh>
         </geometry>
       </collision>
       <visual name="aaly__thigh_left_back_visual">
         <geometry>
           <mesh> 
-            <uri>model://my_tracks/meshes/Thigh.dae</uri>
+            <uri>model://my_tracks/meshes/F4.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -217,8 +263,8 @@
     </link>
 
     <joint name="aaly__thigh_left_back_joint" type="fixed">
-      <pose>0 0 -0.023 0 0 0</pose>
-      <parent>aaly__thigh_left_back_motor</parent>
+      <pose>0 0 0 0 0 0</pose>
+      <parent>aaly__thigh_left_back_F3</parent>
       <child>aaly__thigh_left_back</child>
       <axis> 
         <xyz>0 0 0</xyz>
@@ -232,16 +278,15 @@
     <link name="aaly__knee_left_front_motor">
       <self_collide>1</self_collide>
       <pose>-0.034 0.114400 0.121275 0 0 3.141592653589793</pose>
-      <inertial>
-        <pose>0 0 -0.012 0 0 0</pose>        
+      <inertial>        
         <mass>0.05</mass>
         <inertia> 
-          <ixx>1.2166047261762851e-05</ixx> 
+          <ixx>1.7083333333333333e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>1.4468363602365426e-05</iyy>
+          <iyy>1.4683333333333334e-05</iyy>
           <iyz>0.0</iyz>
-          <izz>7.993829324731787e-06</izz>
+          <izz>1.0933333333333333e-05</izz>
         </inertia>
       </inertial>
       <collision name="aaly__knee_left_front_motor_collision">
@@ -271,10 +316,11 @@
       <parent>aaly__base_link</parent>
       <child>aaly__knee_left_front_motor</child>
       <axis> 
+        <initial_position>0.01</initial_position>
         <limit>
             <lower>0.0</lower>
             <upper>5.235987755982989</upper>
-            <effort>100</effort>
+            <effort>1000</effort>
             <velocity>1.0</velocity>
         </limit>
         <xyz>-1 0 0</xyz>
@@ -283,16 +329,16 @@
 
     <link name="aaly__leg_left_front">
       <self_collide>1</self_collide>
-      <pose>-0.03024 0.0905 0.065050 0 0 0</pose>
-      <inertial>         
-        <mass>0.04</mass>
+      <pose>-0.034 0.0985 0.075405 0 0 0</pose>
+      <inertial>        
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>2.69490184257131e-05</ixx> 
+          <ixx>9.270833333333334e-06</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>1.843324918045141e-05</iyy>
+          <iyy>9.270833333333334e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>3.454538603564566e-05</izz>
+          <izz>1.3333333333333333e-05</izz>
         </inertia>
       </inertial>
       <collision name="aaly__leg_left_front_collision">
@@ -329,16 +375,15 @@
     <link name="aaly__thigh_left_front_motor">
       <self_collide>1</self_collide>
       <pose>-0.031000 0.051000 0.071275 3.141592653589793 0 3.141592653589793</pose>
-      <inertial>
-        <pose>0 0 -0.012 0 0 0</pose>        
+      <inertial>        
         <mass>0.05</mass>
         <inertia> 
-          <ixx>1.2166047261762851e-05</ixx> 
+          <ixx>1.7083333333333333e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>1.4468363602365426e-05</iyy>
+          <iyy>1.4683333333333334e-05</iyy>
           <iyz>0.0</iyz>
-          <izz>7.993829324731787e-06</izz>
+          <izz>1.0933333333333333e-05</izz>
         </inertia>
       </inertial>
       <collision name="aaly__thigh_left_front_motor_collision">
@@ -368,41 +413,87 @@
       <parent>aaly__leg_left_front</parent>
       <child>aaly__thigh_left_front_motor</child>
       <axis> 
+        <initial_position>0.01</initial_position>
         <limit>
             <lower>0.0</lower>
             <upper>5.235987755982989</upper>
-            <effort>100</effort>
+            <effort>1000</effort>
             <velocity>1.0</velocity>
         </limit>
         <xyz>1 0 0</xyz>
       </axis>
     </joint>
 
-    <link name="aaly__thigh_left_front">
+    <link name="aaly__thigh_left_front_F3">
       <self_collide>1</self_collide>
-      <pose>-0.031000 0.05000 0.127500 0 0 1.57079632679</pose>
+      <pose>-0.031000 0.051000 0.110000 0 0 1.57079632679</pose>
       <inertial>        
-        <mass>0.03</mass>
+        <mass>0.01</mass>
         <inertia> 
-          <ixx>2.0103848503359805e-05</ixx> 
+          <ixx>1.4733333333333336e-06</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>1.2296884544899207e-05</iyy>
+          <iyy>7.533333333333332e-07</iyy>
           <iyz>0.0</iyz>
-          <izz>1.2205253512522909e-05</izz>
+          <izz>2.22e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name="aaly__thigh_left_front_F3_collision">
+        <geometry>
+          <mesh> 
+            <uri>model://my_tracks/meshes/F3.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="aaly__thigh_left_front_F3_visual">
+        <geometry>
+          <mesh> 
+            <uri>model://my_tracks/meshes/F3.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.4 0.4 0.4 1</ambient>
+          <diffuse>0.8 0.8 0.8 1</diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="aaly__thigh_left_front_F3_joint" type="fixed">
+      <pose>0 0 0 0 0 0</pose>
+      <parent>aaly__thigh_left_front_motor</parent>
+      <child>aaly__thigh_left_front_F3</child>
+      <axis> 
+        <xyz>0 0 0</xyz>
+      </axis>
+    </joint>
+
+    <link name="aaly__thigh_left_front">
+      <self_collide>1</self_collide>
+      <pose>-0.031000 0.05000 0.133000 0 0 0</pose>
+      <inertial>        
+        <mass>0.02</mass>
+        <inertia> 
+          <ixx>3.2066666666666663e-06</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>4.166666666666667e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>4.373333333333333e-06</izz>
         </inertia>
       </inertial>
       <collision name="aaly__thigh_left_front_collision">
         <geometry>
-          <box>
-            <size>0.04 0.032 0.030</size>
-          </box>
+          <mesh> 
+            <uri>model://my_tracks/meshes/F4.stl</uri>
+          </mesh>
         </geometry>
       </collision>
       <visual name="aaly__thigh_left_front_visual">
         <geometry>
           <mesh> 
-            <uri>model://my_tracks/meshes/Thigh.dae</uri>
+            <uri>model://my_tracks/meshes/F4.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -415,8 +506,8 @@
     </link>
 
     <joint name="aaly__thigh_left_joint" type="fixed">
-      <pose>0 0 -0.023 0 0 0</pose>
-      <parent>aaly__thigh_left_front_motor</parent>
+      <pose>0 0 0 0 0 0</pose>
+      <parent>aaly__thigh_left_front_F3</parent>
       <child>aaly__thigh_left_front</child>
       <axis> 
         <xyz>0 0 0</xyz>
@@ -430,16 +521,15 @@
     <link name="aaly__knee_right_back_motor">
       <self_collide>1</self_collide>
       <pose>-0.107 -0.114400 0.121275 0 0 0</pose>
-      <inertial>
-        <pose>0 0 -0.012 0 0 0</pose>        
+      <inertial>        
         <mass>0.05</mass>
         <inertia> 
-          <ixx>1.2166047261762851e-05</ixx> 
+          <ixx>1.7083333333333333e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>1.4468363602365426e-05</iyy>
+          <iyy>1.4683333333333334e-05</iyy>
           <iyz>0.0</iyz>
-          <izz>7.993829324731787e-06</izz>
+          <izz>1.0933333333333333e-05</izz>
         </inertia>
       </inertial>
       <collision name="aaly__knee_right_back_motor_collision">
@@ -469,10 +559,11 @@
       <parent>aaly__base_link</parent>
       <child>aaly__knee_right_back_motor</child>
       <axis> 
+        <initial_position>0.01</initial_position>
         <limit>
             <lower>0.0</lower>
             <upper>5.235987755982989</upper>
-            <effort>100</effort>
+            <effort>1000</effort>
             <velocity>1.0</velocity>
         </limit>
         <xyz>1 0 0</xyz>
@@ -481,16 +572,16 @@
 
     <link name="aaly__leg_right_back">
       <self_collide>1</self_collide>
-      <pose>-0.108500 -0.0905 0.065050 0 0 0</pose>
+      <pose>-0.107240 -0.0985 0.075405 0 0 0</pose>
       <inertial>        
-        <mass>0.04</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>2.69490184257131e-05</ixx> 
+          <ixx>9.270833333333334e-06</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>1.843324918045141e-05</iyy>
+          <iyy>9.270833333333334e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>3.454538603564566e-05</izz>
+          <izz>1.3333333333333333e-05</izz>
         </inertia>
       </inertial>
       <collision name="aaly__leg_right_back_collision">
@@ -527,16 +618,15 @@
     <link name="aaly__thigh_right_back_motor">
       <self_collide>1</self_collide>
       <pose>-0.110000 -0.051000 0.071275 3.141592653589793 0 0</pose>
-      <inertial>
-        <pose>0 0 -0.012 0 0 0</pose>        
+      <inertial>        
         <mass>0.05</mass>
         <inertia> 
-          <ixx>1.2166047261762851e-05</ixx> 
+          <ixx>1.7083333333333333e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>1.4468363602365426e-05</iyy>
+          <iyy>1.4683333333333334e-05</iyy>
           <iyz>0.0</iyz>
-          <izz>7.993829324731787e-06</izz>
+          <izz>1.0933333333333333e-05</izz>
         </inertia>
       </inertial>
       <collision name="aaly__thigh_right_back_motor_collision">
@@ -566,41 +656,87 @@
       <parent>aaly__leg_right_back</parent>
       <child>aaly__thigh_right_back_motor</child>
       <axis> 
+        <initial_position>0.01</initial_position>
         <limit>
             <lower>0.0</lower>
             <upper>5.235987755982989</upper>
-            <effort>100</effort>
+            <effort>1000</effort>
             <velocity>1.0</velocity>
         </limit>
         <xyz>-1 0 0</xyz>
       </axis>
     </joint>
 
-    <link name="aaly__thigh_right_back">
+    <link name="aaly__thigh_right_back_F3">
       <self_collide>1</self_collide>
-      <pose>-0.110000 -0.05200 0.127500 0 0 1.57079632679</pose>
+      <pose>-0.110000 -0.051500 0.110000 0 0 1.57079632679</pose>
       <inertial>        
-        <mass>0.03</mass>
+        <mass>0.01</mass>
         <inertia> 
-          <ixx>2.0103848503359805e-05</ixx> 
+          <ixx>1.4733333333333336e-06</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>1.2296884544899207e-05</iyy>
+          <iyy>7.533333333333332e-07</iyy>
           <iyz>0.0</iyz>
-          <izz>1.2205253512522909e-05</izz>
+          <izz>2.22e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name="aaly__thigh_right_back_F3_collision">
+        <geometry>
+          <mesh> 
+            <uri>model://my_tracks/meshes/F3.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="aaly__thigh_right_back_F3_visual">
+        <geometry>
+          <mesh> 
+            <uri>model://my_tracks/meshes/F3.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.4 0.4 0.4 1</ambient>
+          <diffuse>0.8 0.8 0.8 1</diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="aaly__thigh_right_back_F3_joint" type="fixed">
+      <pose>0 0 0 0 0 0</pose>
+      <parent>aaly__thigh_right_back_motor</parent>
+      <child>aaly__thigh_right_back_F3</child>
+      <axis> 
+        <xyz>0 0 0</xyz>
+      </axis>
+    </joint>
+
+    <link name="aaly__thigh_right_back">
+      <self_collide>1</self_collide>
+      <pose>-0.110000 -0.05200 0.133000 0 0 0</pose>
+      <inertial>        
+        <mass>0.02</mass>
+        <inertia> 
+          <ixx>3.2066666666666663e-06</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>4.166666666666667e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>4.373333333333333e-06</izz>
         </inertia>
       </inertial>
       <collision name="aaly__thigh_right_back_collision">
         <geometry>
-          <box>
-            <size>0.04 0.032 0.030</size>
-          </box>
+          <mesh> 
+            <uri>model://my_tracks/meshes/F4.stl</uri>
+          </mesh>
         </geometry>
       </collision>
       <visual name="aaly__thigh_right_back_visual">
         <geometry>
           <mesh> 
-            <uri>model://my_tracks/meshes/Thigh.dae</uri>
+            <uri>model://my_tracks/meshes/F4.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -613,8 +749,8 @@
     </link>
 
     <joint name="aaly__thigh_right_back_joint" type="fixed">
-      <pose>0 0 0 -0.023 0 0</pose>
-      <parent>aaly__thigh_right_back_motor</parent>
+      <pose>0 0 0 0 0 0</pose>
+      <parent>aaly__thigh_right_back_F3</parent>
       <child>aaly__thigh_right_back</child>
       <axis> 
         <xyz>0 0 0</xyz>
@@ -628,16 +764,15 @@
     <link name="aaly__knee_right_front_motor">
       <self_collide>1</self_collide>
       <pose>-0.034 -0.114400 0.121275 0 0 3.141592653589793</pose>
-      <inertial> 
-        <pose>0 0 -0.012 0 0 0</pose>       
+      <inertial>        
         <mass>0.05</mass>
         <inertia> 
-          <ixx>1.2166047261762851e-05</ixx> 
+          <ixx>1.7083333333333333e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>1.4468363602365426e-05</iyy>
+          <iyy>1.4683333333333334e-05</iyy>
           <iyz>0.0</iyz>
-          <izz>7.993829324731787e-06</izz>
+          <izz>1.0933333333333333e-05</izz>
         </inertia>
       </inertial>
       <collision name="aaly__knee_right_front_motor_collision">
@@ -667,10 +802,11 @@
       <parent>aaly__base_link</parent>
       <child>aaly__knee_right_front_motor</child>
       <axis> 
+        <initial_position>0.01</initial_position>
         <limit>
             <lower>0.0</lower>
             <upper>5.235987755982989</upper>
-            <effort>100</effort>
+            <effort>1000</effort>
             <velocity>1.0</velocity>
         </limit>
         <xyz>1 0 0</xyz>
@@ -679,16 +815,16 @@
 
     <link name="aaly__leg_right_front">
       <self_collide>1</self_collide>
-      <pose>-0.03024 -0.0905 0.065050 0 0 0</pose>
+      <pose>-0.03024 -0.0985 0.055405 0 0 0</pose>
       <inertial>        
-        <mass>0.04</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>2.69490184257131e-05</ixx> 
+          <ixx>9.270833333333334e-06</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>1.843324918045141e-05</iyy>
+          <iyy>9.270833333333334e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>3.454538603564566e-05</izz>
+          <izz>1.3333333333333333e-05</izz>
         </inertia>
       </inertial>
       <collision name="aaly__leg_right_front_collision">
@@ -725,16 +861,15 @@
     <link name="aaly__thigh_right_front_motor">
       <self_collide>1</self_collide>
       <pose>-0.02974 -0.051000 0.071275 3.141592653589793 0 0</pose>
-      <inertial>
-        <pose>0 0 -0.012 0 0 0</pose>        
+      <inertial>        
         <mass>0.05</mass>
         <inertia> 
-          <ixx>1.2166047261762851e-05</ixx> 
+          <ixx>1.7083333333333333e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>1.4468363602365426e-05</iyy>
+          <iyy>1.4683333333333334e-05</iyy>
           <iyz>0.0</iyz>
-          <izz>7.993829324731787e-06</izz>
+          <izz>1.0933333333333333e-05</izz>
         </inertia>
       </inertial>
       <collision name="aaly__thigh_right_front_motor_collision">
@@ -764,41 +899,87 @@
       <parent>aaly__leg_right_front</parent>
       <child>aaly__thigh_right_front_motor</child>
       <axis> 
+        <initial_position>0.01</initial_position>
         <limit>
             <lower>0.0</lower>
             <upper>5.235987755982989</upper>
-            <effort>100</effort>
+            <effort>1000</effort>
             <velocity>1.0</velocity>
         </limit>
         <xyz>-1 0 0</xyz>
       </axis>
     </joint>
 
-    <link name="aaly__thigh_right_front">
+    <link name="aaly__thigh_right_front_F3">
       <self_collide>1</self_collide>
-      <pose>-0.030000 -0.05200 0.127500 0 0 1.57079632679</pose>
+      <pose>-0.030000 -0.051500 0.110000 0 0 1.57079632679</pose>
       <inertial>        
-        <mass>0.03</mass>
+        <mass>0.01</mass>
         <inertia> 
-          <ixx>2.0103848503359805e-05</ixx> 
+          <ixx>1.4733333333333336e-06</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>1.2296884544899207e-05</iyy>
+          <iyy>7.533333333333332e-07</iyy>
           <iyz>0.0</iyz>
-          <izz>1.2205253512522909e-05</izz>
+          <izz>2.22e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name="aaly__thigh_right_front_F3_collision">
+        <geometry>
+          <mesh> 
+            <uri>model://my_tracks/meshes/F3.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="aaly__thigh_right_front_F3_visual">
+        <geometry>
+          <mesh> 
+            <uri>model://my_tracks/meshes/F3.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.4 0.4 0.4 1</ambient>
+          <diffuse>0.8 0.8 0.8 1</diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+
+    <joint name="aaly__thigh_right_front_F3_joint" type="fixed">
+      <pose>0 0 0 0 0 0</pose>
+      <parent>aaly__thigh_right_front_motor</parent>
+      <child>aaly__thigh_right_front_F3</child>
+      <axis> 
+        <xyz>0 0 0</xyz>
+      </axis>
+    </joint>
+
+    <link name="aaly__thigh_right_front">
+      <self_collide>1</self_collide>
+      <pose>-0.030000 -0.05200 0.133000 0 0 0</pose>
+      <inertial>        
+        <mass>0.02</mass>
+        <inertia> 
+          <ixx>3.2066666666666663e-06</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>4.166666666666667e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>4.373333333333333e-06</izz>
         </inertia>
       </inertial>
       <collision name="aaly__thigh_right_front_collision">
         <geometry>
-          <box>
-            <size>0.04 0.032 0.030</size>
-          </box>
+          <mesh> 
+            <uri>model://my_tracks/meshes/F4.stl</uri>
+          </mesh>
         </geometry>
       </collision>
       <visual name="aaly__thigh_right_front_visual">
         <geometry>
           <mesh> 
-            <uri>model://my_tracks/meshes/Thigh.dae</uri>
+            <uri>model://my_tracks/meshes/F4.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -811,8 +992,8 @@
     </link>
 
     <joint name="aaly__thigh_right_joint" type="fixed">
-      <pose>0 0 -0.023 0 0 0</pose>
-      <parent>aaly__thigh_right_front_motor</parent>
+      <pose>0 0 0 0 0 0</pose>
+      <parent>aaly__thigh_right_front_F3</parent>
       <child>aaly__thigh_right_front</child>
       <axis> 
         <xyz>0 0 0</xyz>
@@ -821,97 +1002,22 @@
     <!--Right Front legs-->
 
 
-    <!-- Body -->
 
-    <link name="aaly__body">
-      <self_collide>1</self_collide>
-      <pose>-0.06573 -0.000135 0.235000 0 0 0</pose>
-      <inertial>        
-        <mass>0.5</mass>
-        <inertia> 
-          <ixx>0.002110537983145438</ixx> 
-          <ixy>6.068160057964515e-06</ixy>
-          <ixz>5.782219040307764e-05</ixz>
-          <iyy>0.0025371464552802047</iyy>
-          <iyz>-3.9203677986423195e-06</iyz>
-          <izz>0.003081784306452865</izz>
-        </inertia>
-      </inertial>
-      <collision name="aaly__body_collision">
-        <geometry>
-          <box>
-            <size>0.14 0.14 0.12</size>
-          </box>
-        </geometry>
-      </collision>
-      <visual name="aaly__body_visual">
-        <geometry>
-          <mesh> 
-            <uri>model://my_tracks/meshes/Wall-E_Body.stl</uri>
-          </mesh>
-        </geometry>
-        <material>
-          <ambient>0.4 0.4 0.4 1</ambient>
-          <diffuse>0.8 0.8 0.8 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
-      </visual>
-    </link>
-
-    <joint name="aaly__body_front_right_joint" type="revolute">
-      <pose>0.04073 -0.05200 -0.065 0 0 0</pose>
-      <parent>aaly__thigh_right_front</parent>
-      <child>aaly__body</child>
-      <axis> 
-        <xyz>1 0 0</xyz>
-      </axis>
-    </joint>
-
-    <joint name="aaly__body_back_right_joint" type="revolute">
-      <pose>-0.04573 -0.052 -0.065 0 0 0</pose>
-      <parent>aaly__thigh_right_back</parent>
-      <child>aaly__body</child>
-      <axis> 
-        <xyz>1 0 0</xyz>
-      </axis>
-    </joint>
-
-    <joint name="aaly__body_front_left_joint" type="revolute">
-      <pose>0.04073 0.05200 -0.065 0 0 0</pose>
-      <parent>aaly__thigh_left_front</parent>
-      <child>aaly__body</child>
-      <axis> 
-        <xyz>1 0 0</xyz>
-      </axis>
-    </joint>
-
-    <joint name="aaly__body_back_left_joint" type="revolute">
-      <pose>-0.04573 0.052 -0.065 0 0 0</pose>
-      <parent>aaly__thigh_left_back</parent>
-      <child>aaly__body</child>
-      <axis> 
-        <xyz>1 0 0</xyz>
-      </axis>
-    </joint>
-
-
-
-    <link name="aaly__Right_Side_Track_Support">
+    <link name="aaly__Left_Side_Track_Support">
       <self_collide>1</self_collide>
       <pose>-0.0137385 -0.15812 0.070625 0 0 0</pose>
       <inertial>        
-        <mass>0.15</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>0.00010520383183873306</ixx> 
-          <ixy>-9.148702320585518e-07</ixy>
-          <ixz>3.7647066170409417e-05</ixz>
-          <iyy>0.00032229348287662684</iyy>
-          <iyz>2.722753728174257e-06</iyz>
-          <izz>0.0002182293357979667</izz>
+          <ixx>1.7083333333333333e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>1.4683333333333334e-05</iyy>
+          <iyz>0.0</iyz>
+          <izz>1.0933333333333333e-05</izz>
         </inertia>
       </inertial>
-      <collision name="Right_Side_Track_Support_collision">
+      <collision name="Left_Side_Track_Support_collision">
         <pose>0 0 0.015 0 0 0</pose>
         <geometry>
           <mesh>
@@ -925,7 +1031,7 @@
           </friction>
         </surface>
       </collision>
-      <visual name="Right_Side_Track_Support_visual">
+      <visual name="Left_Side_Track_Support_visual">
         <geometry>
           <mesh>
             <uri>model://my_tracks/meshes/Track_Support_Left_Side.dae</uri>
@@ -933,30 +1039,30 @@
         </geometry>
       </visual>
     </link>
-    <joint name="aaly__Right_Track_Side_joint" type="fixed">
-      <pose>-0.05749 0.004 0.05773 0 0 0</pose>
+    <joint name="aaly__Left_Track_Side_joint" type="fixed">
+      <pose>0 0 0 0 0 0</pose>
       <parent>aaly__base_link</parent>
-      <child>aaly__Right_Side_Track_Support</child>
+      <child>aaly__Left_Side_Track_Support</child>
       <axis>
         <xyz>0 0 0</xyz>
       </axis>
     </joint>
 
-    <link name="aaly__Left_Side_Track_Support">
+    <link name="aaly__Right_Side_Track_Support">
       <self_collide>1</self_collide>
       <pose>-0.0137385 0.15812 0.070625 0 0 0</pose>
-      <inertial>       
-        <mass>0.15</mass>
+      <inertial>        
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>0.00010520383183873306</ixx> 
-          <ixy>-9.148702320585518e-07</ixy>
-          <ixz>3.7647066170409417e-05</ixz>
-          <iyy>0.00032229348287662684</iyy>
-          <iyz>2.722753728174257e-06</iyz>
-          <izz>0.0002182293357979667</izz>
+          <ixx>1.7083333333333333e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>1.4683333333333334e-05</iyy>
+          <iyz>0.0</iyz>
+          <izz>1.0933333333333333e-05</izz>
         </inertia>
       </inertial> 
-      <collision name="Left_Side_Track_Support_collision">
+      <collision name="Right_Side_Track_Support_collision">
         <pose>0 0 0.015 0 0 0</pose>
         <geometry>
           <mesh>
@@ -978,10 +1084,10 @@
         </geometry>
       </visual>
     </link>
-    <joint name="aaly__Left_Track_Side_joint" type="fixed">
-      <pose>-0.05749 -0.004 0.05773 0 0 0</pose>
+    <joint name="aaly__Right_Track_Side_joint" type="fixed">
+      <pose>0 0 0 0 0 0</pose>
       <parent>aaly__base_link</parent>
-      <child>aaly__Left_Side_Track_Support</child>
+      <child>aaly__Right_Side_Track_Support</child>
       <axis>
         <xyz>0 0 0</xyz>
       </axis>
@@ -991,15 +1097,15 @@
     <link name="aaly__drum1">
       <self_collide>1</self_collide>
       <pose>-0.1248385 -0.19612 0.030 1.57079632679 0 0</pose>
-      <inertial> 
+      <inertial>        
         <mass>0.1</mass>
         <inertia> 
-          <ixx>2.787405275215884e-05</ixx> 
+          <ixx>4.0003370625000006e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>2.7903424778241207e-05</iyy>
+          <iyy>4.0003370625000006e-05</iyy>
           <iyz>0.0</iyz>
-          <izz>1.7975679962403806e-05</izz>
+          <izz>3.624778125000001e-05</izz>
         </inertia>
       </inertial>
       <collision name="drum1_collision">
@@ -1025,7 +1131,7 @@
     </link>
     <joint name="aaly__drum_joint1" type="revolute">
       <pose>0 0 0 0 0 0</pose>
-      <parent>aaly__Right_Side_Track_Support</parent>
+      <parent>aaly__Left_Side_Track_Support</parent>
       <child>aaly__drum1</child>
       <axis>
         <xyz>0 1 0</xyz>
@@ -1038,12 +1144,12 @@
       <inertial>
         <mass>0.1</mass>
         <inertia> 
-          <ixx>2.787405275215884e-05</ixx> 
+          <ixx>4.0003370625000006e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>2.7903424778241207e-05</iyy>
+          <iyy>4.0003370625000006e-05</iyy>
           <iyz>0.0</iyz>
-          <izz>1.7975679962403806e-05</izz>
+          <izz>3.624778125000001e-05</izz>
         </inertia>
       </inertial>
       <collision name="drum2_collision">
@@ -1069,7 +1175,7 @@
     </link>
     <joint name="aaly__drum_joint2" type="revolute">
       <pose>0 0 0 0 0 0</pose>
-      <parent>aaly__Left_Side_Track_Support</parent>
+      <parent>aaly__Right_Side_Track_Support</parent>
       <child>aaly__drum2</child>
       <axis>
         <xyz>0 1 0</xyz>
@@ -1079,14 +1185,14 @@
       <self_collide>1</self_collide>
       <pose>0.1288385 -0.19612 0.037625 1.57079632679 0 0</pose>
       <inertial>
-        <mass>0.2</mass>
+        <mass>0.5</mass>
         <inertia> 
-          <ixx>0.00010790475895594018</ixx> 
+          <ixx>0.00027707122812499995</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>0.00010774994581540083</iyy>
+          <iyy>0.00027707122812499995</iyy>
           <iyz>0.0</iyz>
-          <izz>0.00012753506517633218</izz>
+          <izz>0.00033534765625</izz>
         </inertia>
       </inertial>
       <collision name="drum3_collision">
@@ -1112,7 +1218,7 @@
     </link>
     <joint name="aaly__drum_joint3" type="revolute">
       <pose>0 0 0 0 0 0</pose>
-      <parent>aaly__Right_Side_Track_Support</parent>
+      <parent>aaly__Left_Side_Track_Support</parent>
       <child>aaly__drum3</child>
       <axis>
         <xyz>0 1 0</xyz>
@@ -1122,14 +1228,14 @@
       <self_collide>1</self_collide>
       <pose>0.1288385 0.19612 0.037625 1.57079632679 0 0</pose>
       <inertial>
-        <mass>0.2</mass>
+        <mass>0.5</mass>
         <inertia> 
-          <ixx>0.00010790475895594018</ixx> 
+          <ixx>0.00027707122812499995</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>0.00010774994581540083</iyy>
+          <iyy>0.00027707122812499995</iyy>
           <iyz>0.0</iyz>
-          <izz>0.00012753506517633218</izz>
+          <izz>0.00033534765625</izz>
         </inertia>
       </inertial>
       <collision name="drum4_collision">
@@ -1155,7 +1261,7 @@
     </link>
     <joint name="aaly__drum_joint4" type="revolute">
       <pose>0 0 0 0 0 0</pose>
-      <parent>aaly__Left_Side_Track_Support</parent>
+      <parent>aaly__Right_Side_Track_Support</parent>
       <child>aaly__drum4</child>
       <axis>
         <xyz>0 1 0</xyz>
@@ -1167,12 +1273,12 @@
       <inertial>
         <mass>0.1</mass>
         <inertia> 
-          <ixx>2.787405275215884e-05</ixx> 
+          <ixx>4.0003370625000006e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>2.7903424778241207e-05</iyy>
+          <iyy>4.0003370625000006e-05</iyy>
           <iyz>0.0</iyz>
-          <izz>1.7975679962403806e-05</izz>
+          <izz>3.624778125000001e-05</izz>
         </inertia>
       </inertial>
       <collision name="drum5_collision">
@@ -1198,7 +1304,7 @@
     </link>
     <joint name="aaly__drum_joint5" type="revolute">
       <pose>0 0 0 0 0 0</pose>
-      <parent>aaly__Right_Side_Track_Support</parent>
+      <parent>aaly__Left_Side_Track_Support</parent>
       <child>aaly__drum5</child>
       <axis>
         <xyz>0 1 0</xyz>
@@ -1211,12 +1317,12 @@
       <inertial>
         <mass>0.1</mass>
         <inertia> 
-          <ixx>2.787405275215884e-05</ixx> 
+          <ixx>4.0003370625000006e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>2.7903424778241207e-05</iyy>
+          <iyy>4.0003370625000006e-05</iyy>
           <iyz>0.0</iyz>
-          <izz>1.7975679962403806e-05</izz>
+          <izz>3.624778125000001e-05</izz>
         </inertia>
       </inertial>
       <collision name="drum6_collision">
@@ -1242,7 +1348,7 @@
     </link>
     <joint name="aaly__drum_joint6" type="revolute">
       <pose>0 0 0 0 0 0</pose>
-      <parent>aaly__Left_Side_Track_Support</parent>
+      <parent>aaly__Right_Side_Track_Support</parent>
       <child>aaly__drum6</child>
       <axis>
         <xyz>0 1 0</xyz>
@@ -1252,63 +1358,18 @@
 
 
 
-    <link name="aaly__Right_Side_Track_Cover">
-      <self_collide>1</self_collide>
-      <pose>-0.0134385 -0.23112 0.061625 0 0 0</pose>
-      <inertial>       
-        <mass>0.15</mass>
-        <inertia> 
-          <ixx>0.00010520383183873306</ixx> 
-          <ixy>-9.148702320585518e-07</ixy>
-          <ixz>3.7647066170409417e-05</ixz>
-          <iyy>0.00032229348287662684</iyy>
-          <iyz>2.722753728174257e-06</iyz>
-          <izz>0.0002182293357979667</izz>
-        </inertia>
-      </inertial>
-      <collision name="Right_Side_Track_Cover_collision">
-        <pose>0 0 0.015 0 0 0</pose>
-        <geometry>
-          <mesh>
-            <uri>model://my_tracks/meshes/Track_Support_Collision_Mesh.dae</uri>
-          </mesh>
-        </geometry>
-        <surface>
-          <friction>
-            <!--<ode><mu>100000.0</mu><mu2>100000.0</mu2></ode>-->
-            <ode><mu>0.0</mu><mu2>0.0</mu2></ode>
-          </friction>
-        </surface>
-      </collision>
-      <visual name="Right_Side_Track_Cover_visual">
-        <geometry>
-          <mesh>
-            <uri>model://my_tracks/meshes/Track_Support_Cover_Side.dae</uri>
-          </mesh>
-        </geometry>
-      </visual>
-    </link>
-    <joint name="aaly__Right_Side_Track_Cover_joint" type="fixed">
-      <pose>0 0 0 0 0 0</pose>
-      <parent>aaly__Right_Side_Track_Support</parent>
-      <child>aaly__Right_Side_Track_Cover</child>
-      <axis>
-        <xyz>0 0 0</xyz>
-      </axis>
-    </joint>
-
     <link name="aaly__Left_Side_Track_Cover">
       <self_collide>1</self_collide>
-      <pose>-0.0134385 0.23112 0.061625 0 0 0</pose>
-      <inertial>       
-        <mass>0.15</mass>
+      <pose>-0.0134385 -0.23112 0.061625 0 0 0</pose>
+      <inertial>        
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>0.00010520383183873306</ixx> 
-          <ixy>-9.148702320585518e-07</ixy>
-          <ixz>3.7647066170409417e-05</ixz>
-          <iyy>0.00032229348287662684</iyy>
-          <iyz>2.722753728174257e-06</iyz>
-          <izz>0.0002182293357979667</izz>
+          <ixx>1.7083333333333333e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>1.4683333333333334e-05</iyy>
+          <iyz>0.0</iyz>
+          <izz>1.0933333333333333e-05</izz>
         </inertia>
       </inertial>
       <collision name="Left_Side_Track_Cover_collision">
@@ -1320,6 +1381,7 @@
         </geometry>
         <surface>
           <friction>
+            <!--<ode><mu>100000.0</mu><mu2>100000.0</mu2></ode>-->
             <ode><mu>0.0</mu><mu2>0.0</mu2></ode>
           </friction>
         </surface>
@@ -1343,20 +1405,66 @@
 
 
 
+    <link name="aaly__Right_Side_Track_Cover">
+      <self_collide>1</self_collide>
+      <pose>-0.0134385 0.23112 0.061625 0 0 0</pose>
+      <inertial>        
+        <mass>0.05</mass>
+        <inertia> 
+          <ixx>1.7083333333333333e-05</ixx> 
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>1.4683333333333334e-05</iyy>
+          <iyz>0.0</iyz>
+          <izz>1.0933333333333333e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="Right_Side_Track_Cover_collision">
+        <pose>0 0 0.015 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Track_Support_Collision_Mesh.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode><mu>0.0</mu><mu2>0.0</mu2></ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="Right_Side_Track_Cover_visual">
+        <geometry>
+          <mesh>
+            <uri>model://my_tracks/meshes/Track_Support_Cover_Side.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="aaly__Right_Side_Track_Cover_joint" type="fixed">
+      <pose>0 0 0 0 0 0</pose>
+      <parent>aaly__Right_Side_Track_Support</parent>
+      <child>aaly__Right_Side_Track_Cover</child>
+      <axis>
+        <xyz>0 0 0</xyz>
+      </axis>
+    </joint>
+
+
+
   <!-- Track Pads -->
 
     <link name="right_pad1">
       <self_collide>1</self_collide>
-      <pose>0.0276163221427 0.191842 0.0055 0 0.0 0</pose>
+      <pose>0.0276163221427 0.181842 0.0055 0 0.0 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="right_pad1_collision">
@@ -1372,12 +1480,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="right_pad_joint1" type="revolute">
@@ -1390,16 +1492,16 @@
     </joint>
     <link name="right_pad2">
       <self_collide>1</self_collide>
-      <pose>0.0552326442854 0.191842 0.0055 0 0.0 0</pose>
+      <pose>0.0552326442854 0.181842 0.0055 0 0.0 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="right_pad2_collision">
@@ -1415,12 +1517,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="right_pad_joint2" type="revolute">
@@ -1433,16 +1529,16 @@
     </joint>
     <link name="right_pad3">
       <self_collide>1</self_collide>
-      <pose>0.0828489664281 0.191842 0.0055 0 0.0 0</pose>
+      <pose>0.0828489664281 0.181842 0.0055 0 0.0 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="right_pad3_collision">
@@ -1458,12 +1554,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="right_pad_joint3" type="revolute">
@@ -1476,16 +1566,16 @@
     </joint>
     <link name="right_pad4">
       <self_collide>1</self_collide>
-      <pose>0.110465288571 0.191842 0.0055 0 0.0 0</pose>
+      <pose>0.110465288571 0.181842 0.0055 0 0.0 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="right_pad4_collision">
@@ -1501,12 +1591,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="right_pad_joint4" type="revolute">
@@ -1519,16 +1603,16 @@
     </joint>
     <link name="right_pad5">
       <self_collide>1</self_collide>
-      <pose>0.138081610714 0.191842 0.0055 0 0.0 0</pose>
+      <pose>0.138081610714 0.181842 0.0055 0 0.0 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="right_pad5_collision">
@@ -1544,12 +1628,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="right_pad_joint5" type="revolute">
@@ -1562,16 +1640,16 @@
     </joint>
     <link name="right_pad6">
       <self_collide>1</self_collide>
-      <pose>0.162914940812 0.191842 0.0138133001923 0 -0.646074860385 0</pose>
+      <pose>0.162914940812 0.181842 0.0138133001923 0 -0.646074860385 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="right_pad6_collision">
@@ -1587,12 +1665,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="right_pad_joint6" type="revolute">
@@ -1605,16 +1677,16 @@
     </joint>
     <link name="right_pad7">
       <self_collide>1</self_collide>
-      <pose>0.177738109568 0.191842 0.0354021610219 0 -1.29214972077 0</pose>
+      <pose>0.177738109568 0.181842 0.0354021610219 0 -1.29214972077 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="right_pad7_collision">
@@ -1630,12 +1702,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="right_pad_joint7" type="revolute">
@@ -1648,16 +1714,16 @@
     </joint>
     <link name="right_pad8">
       <self_collide>1</self_collide>
-      <pose>0.176575989591 0.191842 0.0615642465857 0 -1.93822458116 0</pose>
+      <pose>0.176575989591 0.181842 0.0615642465857 0 -1.93822458116 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="right_pad8_collision">
@@ -1673,12 +1739,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="right_pad_joint8" type="revolute">
@@ -1691,16 +1751,16 @@
     </joint>
     <link name="right_pad9">
       <self_collide>1</self_collide>
-      <pose>0.160569341369 0.191842 0.0827356686088 0 -2.49809150371 0</pose>
+      <pose>0.160569341369 0.181842 0.0827356686088 0 -2.49809150371 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="right_pad9_collision">
@@ -1716,12 +1776,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="right_pad_joint9" type="revolute">
@@ -1734,16 +1788,16 @@
     </joint>
     <link name="right_pad10">
       <self_collide>1</self_collide>
-      <pose>0.138476284336 0.191842 0.0993054628022 0 -2.49809150371 0</pose>
+      <pose>0.138476284336 0.181842 0.0993054628022 0 -2.49809150371 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="right_pad10_collision">
@@ -1759,12 +1813,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="right_pad_joint10" type="revolute">
@@ -1777,16 +1825,16 @@
     </joint>
     <link name="right_pad11">
       <self_collide>1</self_collide>
-      <pose>0.116383227302 0.191842 0.115875256996 0 -2.49809150371 0</pose>
+      <pose>0.116383227302 0.181842 0.115875256996 0 -2.49809150371 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="right_pad11_collision">
@@ -1802,12 +1850,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="right_pad_joint11" type="revolute">
@@ -1820,16 +1862,16 @@
     </joint>
     <link name="right_pad12">
       <self_collide>1</self_collide>
-      <pose>0.094290170269 0.191842 0.132445051189 0 -2.49809150371 0</pose>
+      <pose>0.094290170269 0.181842 0.132445051189 0 -2.49809150371 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="right_pad12_collision">
@@ -1845,12 +1887,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="right_pad_joint12" type="revolute">
@@ -1863,16 +1899,16 @@
     </joint>
     <link name="right_pad13">
       <self_collide>1</self_collide>
-      <pose>0.0721971132357 0.191842 0.149014845382 0 -2.49809150371 0</pose>
+      <pose>0.0721971132357 0.181842 0.149014845382 0 -2.49809150371 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="right_pad13_collision">
@@ -1888,12 +1924,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="right_pad_joint13" type="revolute">
@@ -1906,16 +1936,16 @@
     </joint>
     <link name="right_pad14">
       <self_collide>1</self_collide>
-      <pose>0.0501040562023 0.191842 0.165584639576 0 -2.49809150371 0</pose>
+      <pose>0.0501040562023 0.181842 0.165584639576 0 -2.49809150371 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="right_pad14_collision">
@@ -1931,12 +1961,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="right_pad_joint14" type="revolute">
@@ -1949,16 +1973,16 @@
     </joint>
     <link name="right_pad15">
       <self_collide>1</self_collide>
-      <pose>0.028010999169 0.191842 0.182154433769 0 -2.49809150371 0</pose>
+      <pose>0.028010999169 0.181842 0.182154433769 0 -2.49809150371 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="right_pad15_collision">
@@ -1974,12 +1998,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="right_pad_joint15" type="revolute">
@@ -1992,16 +2010,16 @@
     </joint>
     <link name="right_pad16">
       <self_collide>1</self_collide>
-      <pose>0.00591794213561 0.191842 0.198724227962 0 -2.49809150371 0</pose>
+      <pose>0.00591794213561 0.181842 0.198724227962 0 -2.49809150371 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="right_pad16_collision">
@@ -2017,12 +2035,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="right_pad_joint16" type="revolute">
@@ -2035,16 +2047,16 @@
     </joint>
     <link name="right_pad17">
       <self_collide>1</self_collide>
-      <pose>-0.0186235486431 0.191842 0.204084863491 0 2.92819902106 0</pose>
+      <pose>-0.0186235486431 0.181842 0.204084863491 0 2.92819902106 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="right_pad17_collision">
@@ -2060,12 +2072,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="right_pad_joint17" type="revolute">
@@ -2078,16 +2084,16 @@
     </joint>
     <link name="right_pad18">
       <self_collide>1</self_collide>
-      <pose>-0.0404034080019 0.191842 0.190114073407 0 2.21429747668 0</pose>
+      <pose>-0.0404034080019 0.181842 0.190114073407 0 2.21429747668 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="right_pad18_collision">
@@ -2103,12 +2109,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="right_pad_joint18" type="revolute">
@@ -2121,16 +2121,16 @@
     </joint>
     <link name="right_pad19">
       <self_collide>1</self_collide>
-      <pose>-0.0569732021953 0.191842 0.168021016373 0 2.21429747668 0</pose>
+      <pose>-0.0569732021953 0.181842 0.168021016373 0 2.21429747668 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="right_pad19_collision">
@@ -2146,12 +2146,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="right_pad_joint19" type="revolute">
@@ -2164,16 +2158,16 @@
     </joint>
     <link name="right_pad20">
       <self_collide>1</self_collide>
-      <pose>-0.0735429963887 0.191842 0.14592795934 0 2.21429747668 0</pose>
+      <pose>-0.0735429963887 0.181842 0.14592795934 0 2.21429747668 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="right_pad20_collision">
@@ -2189,12 +2183,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="right_pad_joint20" type="revolute">
@@ -2207,16 +2195,16 @@
     </joint>
     <link name="right_pad21">
       <self_collide>1</self_collide>
-      <pose>-0.090112790582 0.191842 0.123834902307 0 2.21429747668 0</pose>
+      <pose>-0.090112790582 0.181842 0.123834902307 0 2.21429747668 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="right_pad21_collision">
@@ -2232,12 +2220,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="right_pad_joint21" type="revolute">
@@ -2250,16 +2232,16 @@
     </joint>
     <link name="right_pad22">
       <self_collide>1</self_collide>
-      <pose>-0.106682584775 0.191842 0.101741845273 0 2.21429747668 0</pose>
+      <pose>-0.106682584775 0.181842 0.101741845273 0 2.21429747668 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="right_pad22_collision">
@@ -2275,12 +2257,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="right_pad_joint22" type="revolute">
@@ -2293,16 +2269,16 @@
     </joint>
     <link name="right_pad23">
       <self_collide>1</self_collide>
-      <pose>-0.123252378969 0.191842 0.0796487882398 0 2.21429747668 0</pose>
+      <pose>-0.123252378969 0.181842 0.0796487882398 0 2.21429747668 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="right_pad23_collision">
@@ -2318,12 +2294,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="right_pad_joint23" type="revolute">
@@ -2336,16 +2306,16 @@
     </joint>
     <link name="right_pad24">
       <self_collide>1</self_collide>
-      <pose>-0.139822173162 0.191842 0.0575557312065 0 2.21429747668 0</pose>
+      <pose>-0.139822173162 0.181842 0.0575557312065 0 2.21429747668 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="right_pad24_collision">
@@ -2361,12 +2331,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="right_pad_joint24" type="revolute">
@@ -2379,16 +2343,16 @@
     </joint>
     <link name="right_pad25">
       <self_collide>1</self_collide>
-      <pose>-0.145182808691 0.191842 0.0330142404277 0 1.35740269427 0</pose>
+      <pose>-0.145182808691 0.181842 0.0330142404277 0 1.35740269427 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="right_pad25_collision">
@@ -2404,12 +2368,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="right_pad_joint25" type="revolute">
@@ -2422,16 +2380,16 @@
     </joint>
     <link name="right_pad26">
       <self_collide>1</self_collide>
-      <pose>-0.130144109687 0.191842 0.012893139186 0 0.500507911859 0</pose>
+      <pose>-0.130144109687 0.181842 0.012893139186 0 0.500507911859 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="right_pad26_collision">
@@ -2447,12 +2405,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="right_pad_joint26" type="revolute">
@@ -2465,16 +2417,16 @@
     </joint>
     <link name="right_pad27">
       <self_collide>1</self_collide>
-      <pose>-0.104221511179 0.191842 0.00626700020638 0 -7.13568214628e-16 0</pose>
+      <pose>-0.104221511179 0.181842 0.00626700020638 0 -7.13568214628e-16 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="right_pad27_collision">
@@ -2490,12 +2442,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="right_pad_joint27" type="revolute">
@@ -2508,16 +2454,16 @@
     </joint>
     <link name="right_pad28">
       <self_collide>1</self_collide>
-      <pose>-0.0766051890366 0.191842 0.00626700020638 0 -7.13568214628e-16 0</pose>
+      <pose>-0.0766051890366 0.181842 0.00626700020638 0 -7.13568214628e-16 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="right_pad28_collision">
@@ -2533,12 +2479,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="right_pad_joint28" type="revolute">
@@ -2551,16 +2491,16 @@
     </joint>
     <link name="right_pad29">
       <self_collide>1</self_collide>
-      <pose>-0.0489888668938 0.191842 0.00626700020638 0 -7.13568214628e-16 0</pose>
+      <pose>-0.0489888668938 0.181842 0.00626700020638 0 -7.13568214628e-16 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="right_pad29_collision">
@@ -2576,12 +2516,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="right_pad_joint29" type="revolute">
@@ -2594,16 +2528,16 @@
     </joint>
     <link name="right_pad30">
       <self_collide>1</self_collide>
-      <pose>-0.0213725447511 0.191842 0.00626700020638 0 -7.13568214628e-16 0</pose>
+      <pose>-0.0213725447511 0.181842 0.00626700020638 0 -7.13568214628e-16 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="right_pad30_collision">
@@ -2619,12 +2553,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="right_pad_joint30" type="revolute">
@@ -2637,16 +2565,16 @@
     </joint>
     <link name="right_pad31">
       <self_collide>1</self_collide>
-      <pose>0.00624377739158 0.191842 0.00626700020638 0 -7.13568214628e-16 0</pose>
+      <pose>0.00624377739158 0.181842 0.00626700020638 0 -7.13568214628e-16 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="right_pad31_collision">
@@ -2662,12 +2590,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="right_pad_joint31" type="revolute">
@@ -2680,16 +2602,16 @@
     </joint>
     <link name="left_pad1">
       <self_collide>1</self_collide>
-      <pose>0.0276163221427 -0.191842 0.0055 0 0.0 0</pose>
+      <pose>0.0276163221427 -0.181842 0.0055 0 0.0 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="left_pad1_collision">
@@ -2705,12 +2627,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="left_pad_joint1" type="revolute">
@@ -2723,16 +2639,16 @@
     </joint>
     <link name="left_pad2">
       <self_collide>1</self_collide>
-      <pose>0.0552326442854 -0.191842 0.0055 0 0.0 0</pose>
+      <pose>0.0552326442854 -0.181842 0.0055 0 0.0 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="left_pad2_collision">
@@ -2748,12 +2664,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="left_pad_joint2" type="revolute">
@@ -2766,16 +2676,16 @@
     </joint>
     <link name="left_pad3">
       <self_collide>1</self_collide>
-      <pose>0.0828489664281 -0.191842 0.0055 0 0.0 0</pose>
+      <pose>0.0828489664281 -0.181842 0.0055 0 0.0 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="left_pad3_collision">
@@ -2791,12 +2701,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="left_pad_joint3" type="revolute">
@@ -2809,16 +2713,16 @@
     </joint>
     <link name="left_pad4">
       <self_collide>1</self_collide>
-      <pose>0.110465288571 -0.191842 0.0055 0 0.0 0</pose>
+      <pose>0.110465288571 -0.181842 0.0055 0 0.0 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="left_pad4_collision">
@@ -2834,12 +2738,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="left_pad_joint4" type="revolute">
@@ -2852,16 +2750,16 @@
     </joint>
     <link name="left_pad5">
       <self_collide>1</self_collide>
-      <pose>0.138081610714 -0.191842 0.0055 0 0.0 0</pose>
+      <pose>0.138081610714 -0.181842 0.0055 0 0.0 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="left_pad5_collision">
@@ -2877,12 +2775,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="left_pad_joint5" type="revolute">
@@ -2895,16 +2787,16 @@
     </joint>
     <link name="left_pad6">
       <self_collide>1</self_collide>
-      <pose>0.162914940812 -0.191842 0.0138133001923 0 -0.646074860385 0</pose>
+      <pose>0.162914940812 -0.181842 0.0138133001923 0 -0.646074860385 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="left_pad6_collision">
@@ -2920,12 +2812,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="left_pad_joint6" type="revolute">
@@ -2938,16 +2824,16 @@
     </joint>
     <link name="left_pad7">
       <self_collide>1</self_collide>
-      <pose>0.177738109568 -0.191842 0.0354021610219 0 -1.29214972077 0</pose>
+      <pose>0.177738109568 -0.181842 0.0354021610219 0 -1.29214972077 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="left_pad7_collision">
@@ -2963,12 +2849,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="left_pad_joint7" type="revolute">
@@ -2981,16 +2861,16 @@
     </joint>
     <link name="left_pad8">
       <self_collide>1</self_collide>
-      <pose>0.176575989591 -0.191842 0.0615642465857 0 -1.93822458116 0</pose>
+      <pose>0.176575989591 -0.181842 0.0615642465857 0 -1.93822458116 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="left_pad8_collision">
@@ -3006,12 +2886,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="left_pad_joint8" type="revolute">
@@ -3024,16 +2898,16 @@
     </joint>
     <link name="left_pad9">
       <self_collide>1</self_collide>
-      <pose>0.160569341369 -0.191842 0.0827356686088 0 -2.49809150371 0</pose>
+      <pose>0.160569341369 -0.181842 0.0827356686088 0 -2.49809150371 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="left_pad9_collision">
@@ -3049,12 +2923,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="left_pad_joint9" type="revolute">
@@ -3067,16 +2935,16 @@
     </joint>
     <link name="left_pad10">
       <self_collide>1</self_collide>
-      <pose>0.138476284336 -0.191842 0.0993054628022 0 -2.49809150371 0</pose>
+      <pose>0.138476284336 -0.181842 0.0993054628022 0 -2.49809150371 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="left_pad10_collision">
@@ -3092,12 +2960,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="left_pad_joint10" type="revolute">
@@ -3110,16 +2972,16 @@
     </joint>
     <link name="left_pad11">
       <self_collide>1</self_collide>
-      <pose>0.116383227302 -0.191842 0.115875256996 0 -2.49809150371 0</pose>
+      <pose>0.116383227302 -0.181842 0.115875256996 0 -2.49809150371 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="left_pad11_collision">
@@ -3135,12 +2997,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="left_pad_joint11" type="revolute">
@@ -3153,16 +3009,16 @@
     </joint>
     <link name="left_pad12">
       <self_collide>1</self_collide>
-      <pose>0.094290170269 -0.191842 0.132445051189 0 -2.49809150371 0</pose>
+      <pose>0.094290170269 -0.181842 0.132445051189 0 -2.49809150371 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="left_pad12_collision">
@@ -3178,12 +3034,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="left_pad_joint12" type="revolute">
@@ -3196,16 +3046,16 @@
     </joint>
     <link name="left_pad13">
       <self_collide>1</self_collide>
-      <pose>0.0721971132357 -0.191842 0.149014845382 0 -2.49809150371 0</pose>
+      <pose>0.0721971132357 -0.181842 0.149014845382 0 -2.49809150371 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="left_pad13_collision">
@@ -3221,12 +3071,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="left_pad_joint13" type="revolute">
@@ -3239,16 +3083,16 @@
     </joint>
     <link name="left_pad14">
       <self_collide>1</self_collide>
-      <pose>0.0501040562023 -0.191842 0.165584639576 0 -2.49809150371 0</pose>
+      <pose>0.0501040562023 -0.181842 0.165584639576 0 -2.49809150371 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="left_pad14_collision">
@@ -3264,12 +3108,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="left_pad_joint14" type="revolute">
@@ -3282,16 +3120,16 @@
     </joint>
     <link name="left_pad15">
       <self_collide>1</self_collide>
-      <pose>0.028010999169 -0.191842 0.182154433769 0 -2.49809150371 0</pose>
+      <pose>0.028010999169 -0.181842 0.182154433769 0 -2.49809150371 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="left_pad15_collision">
@@ -3307,12 +3145,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="left_pad_joint15" type="revolute">
@@ -3325,16 +3157,16 @@
     </joint>
     <link name="left_pad16">
       <self_collide>1</self_collide>
-      <pose>0.00591794213561 -0.191842 0.198724227962 0 -2.49809150371 0</pose>
+      <pose>0.00591794213561 -0.181842 0.198724227962 0 -2.49809150371 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="left_pad16_collision">
@@ -3350,12 +3182,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="left_pad_joint16" type="revolute">
@@ -3368,16 +3194,16 @@
     </joint>
     <link name="left_pad17">
       <self_collide>1</self_collide>
-      <pose>-0.0186235486431 -0.191842 0.204084863491 0 2.92819902106 0</pose>
+      <pose>-0.0186235486431 -0.181842 0.204084863491 0 2.92819902106 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="left_pad17_collision">
@@ -3393,12 +3219,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="left_pad_joint17" type="revolute">
@@ -3411,16 +3231,16 @@
     </joint>
     <link name="left_pad18">
       <self_collide>1</self_collide>
-      <pose>-0.0404034080019 -0.191842 0.190114073407 0 2.21429747668 0</pose>
+      <pose>-0.0404034080019 -0.181842 0.190114073407 0 2.21429747668 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="left_pad18_collision">
@@ -3436,12 +3256,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="left_pad_joint18" type="revolute">
@@ -3454,16 +3268,16 @@
     </joint>
     <link name="left_pad19">
       <self_collide>1</self_collide>
-      <pose>-0.0569732021953 -0.191842 0.168021016373 0 2.21429747668 0</pose>
+      <pose>-0.0569732021953 -0.181842 0.168021016373 0 2.21429747668 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="left_pad19_collision">
@@ -3479,12 +3293,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="left_pad_joint19" type="revolute">
@@ -3497,16 +3305,16 @@
     </joint>
     <link name="left_pad20">
       <self_collide>1</self_collide>
-      <pose>-0.0735429963887 -0.191842 0.14592795934 0 2.21429747668 0</pose>
+      <pose>-0.0735429963887 -0.181842 0.14592795934 0 2.21429747668 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="left_pad20_collision">
@@ -3522,12 +3330,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="left_pad_joint20" type="revolute">
@@ -3540,16 +3342,16 @@
     </joint>
     <link name="left_pad21">
       <self_collide>1</self_collide>
-      <pose>-0.090112790582 -0.191842 0.123834902307 0 2.21429747668 0</pose>
+      <pose>-0.090112790582 -0.181842 0.123834902307 0 2.21429747668 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="left_pad21_collision">
@@ -3565,12 +3367,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="left_pad_joint21" type="revolute">
@@ -3583,16 +3379,16 @@
     </joint>
     <link name="left_pad22">
       <self_collide>1</self_collide>
-      <pose>-0.106682584775 -0.191842 0.101741845273 0 2.21429747668 0</pose>
+      <pose>-0.106682584775 -0.181842 0.101741845273 0 2.21429747668 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="left_pad22_collision">
@@ -3608,12 +3404,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="left_pad_joint22" type="revolute">
@@ -3626,16 +3416,16 @@
     </joint>
     <link name="left_pad23">
       <self_collide>1</self_collide>
-      <pose>-0.123252378969 -0.191842 0.0796487882398 0 2.21429747668 0</pose>
+      <pose>-0.123252378969 -0.181842 0.0796487882398 0 2.21429747668 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="left_pad23_collision">
@@ -3651,12 +3441,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="left_pad_joint23" type="revolute">
@@ -3669,16 +3453,16 @@
     </joint>
     <link name="left_pad24">
       <self_collide>1</self_collide>
-      <pose>-0.139822173162 -0.191842 0.0575557312065 0 2.21429747668 0</pose>
+      <pose>-0.139822173162 -0.181842 0.0575557312065 0 2.21429747668 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="left_pad24_collision">
@@ -3694,12 +3478,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="left_pad_joint24" type="revolute">
@@ -3712,16 +3490,16 @@
     </joint>
     <link name="left_pad25">
       <self_collide>1</self_collide>
-      <pose>-0.145182808691 -0.191842 0.0330142404277 0 1.35740269427 0</pose>
+      <pose>-0.145182808691 -0.181842 0.0330142404277 0 1.35740269427 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="left_pad25_collision">
@@ -3737,12 +3515,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="left_pad_joint25" type="revolute">
@@ -3755,16 +3527,16 @@
     </joint>
     <link name="left_pad26">
       <self_collide>1</self_collide>
-      <pose>-0.130144109687 -0.191842 0.012893139186 0 0.500507911859 0</pose>
+      <pose>-0.130144109687 -0.181842 0.012893139186 0 0.500507911859 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="left_pad26_collision">
@@ -3780,12 +3552,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="left_pad_joint26" type="revolute">
@@ -3798,16 +3564,16 @@
     </joint>
     <link name="left_pad27">
       <self_collide>1</self_collide>
-      <pose>-0.104221511179 -0.191842 0.00626700020638 0 -7.13568214628e-16 0</pose>
+      <pose>-0.104221511179 -0.181842 0.00626700020638 0 -7.13568214628e-16 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="left_pad27_collision">
@@ -3823,12 +3589,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="left_pad_joint27" type="revolute">
@@ -3841,16 +3601,16 @@
     </joint>
     <link name="left_pad28">
       <self_collide>1</self_collide>
-      <pose>-0.0766051890366 -0.191842 0.00626700020638 0 -7.13568214628e-16 0</pose>
+      <pose>-0.0766051890366 -0.181842 0.00626700020638 0 -7.13568214628e-16 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="left_pad28_collision">
@@ -3866,12 +3626,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="left_pad_joint28" type="revolute">
@@ -3884,16 +3638,16 @@
     </joint>
     <link name="left_pad29">
       <self_collide>1</self_collide>
-      <pose>-0.0489888668938 -0.191842 0.00626700020638 0 -7.13568214628e-16 0</pose>
+      <pose>-0.0489888668938 -0.181842 0.00626700020638 0 -7.13568214628e-16 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="left_pad29_collision">
@@ -3909,12 +3663,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="left_pad_joint29" type="revolute">
@@ -3927,16 +3675,16 @@
     </joint>
     <link name="left_pad30">
       <self_collide>1</self_collide>
-      <pose>-0.0213725447511 -0.191842 0.00626700020638 0 -7.13568214628e-16 0</pose>
+      <pose>-0.0213725447511 -0.181842 0.00626700020638 0 -7.13568214628e-16 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="left_pad30_collision">
@@ -3952,12 +3700,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="left_pad_joint30" type="revolute">
@@ -3970,16 +3712,16 @@
     </joint>
     <link name="left_pad31">
       <self_collide>1</self_collide>
-      <pose>0.00624377739158 -0.191842 0.00626700020638 0 -7.13568214628e-16 0</pose>
+      <pose>0.00624377739158 -0.181842 0.00626700020638 0 -7.13568214628e-16 0</pose>
       <inertial>
-        <mass>0.035</mass>
+        <mass>0.05</mass>
         <inertia> 
-          <ixx>8.251900108577635e-06</ixx> 
+          <ixx>2.4697666666666666e-05</ixx> 
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>3.3659066232356143e-06</iyy>
+          <iyy>3.586833333333333e-06</iyy>
           <iyz>0.0</iyz>
-          <izz>1.1020629750271444e-05</izz>
+          <izz>2.7276166666666668e-05</izz>
         </inertia>
       </inertial>
       <collision name="left_pad31_collision">
@@ -3995,12 +3737,6 @@
             <uri>model://my_tracks/meshes/Lynx_Track_2in.dae</uri>
           </mesh>
         </geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient>
-          <diffuse>0.1 0.1 0.1 1</diffuse>
-          <specular>0 0 0 0</specular>
-          <emissive>0 0 0 1</emissive>
-        </material>
       </visual>
     </link>
     <joint name="left_pad_joint31" type="revolute">

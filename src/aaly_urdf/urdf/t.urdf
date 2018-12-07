@@ -1,0 +1,2428 @@
+<?xml version="1.0" ?>
+<robot name="aaly">
+  <joint name="aaly__knee_left_back_joint" type="revolute">
+    <parent link="aaly__base_link"/>
+    <child link="aaly__knee_left_back_motor"/>
+    <origin rpy="0  0  0" xyz="-0.107    0.1144   0.12127"/>
+    <axis xyz="-1  0  0"/>
+    <limit effort="200.0" lower="0.0" upper="5.23598775598" velocity="1.0"/>
+  </joint>
+  <joint name="aaly__leg_left_back_joint" type="fixed">
+    <parent link="aaly__knee_left_back_motor"/>
+    <child link="aaly__leg_left_back"/>
+    <origin rpy="0  0  0" xyz="-0.0015  -0.0239  -0.05622"/>
+    <axis xyz="0  0  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="aaly__thigh_left_back_motor_joint" type="revolute">
+    <parent link="aaly__leg_left_back"/>
+    <child link="aaly__thigh_left_back_motor"/>
+    <origin rpy="3.14159  0       0" xyz="-0.0015  -0.0395   0.00622"/>
+    <axis xyz="1  0  0"/>
+    <limit effort="200.0" lower="0.0" upper="5.23598775598" velocity="1.0"/>
+  </joint>
+  <joint name="aaly__thigh_left_back_joint" type="fixed">
+    <parent link="aaly__thigh_left_back_motor"/>
+    <child link="aaly__thigh_left_back"/>
+    <origin rpy="-3.14159  0      -1.57079" xyz="0       0.001   -0.03322"/>
+    <axis xyz="0  0  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="aaly__knee_left_front_joint" type="revolute">
+    <parent link="aaly__base_link"/>
+    <child link="aaly__knee_left_front_motor"/>
+    <origin rpy="0       0       3.14159" xyz="-0.034    0.1144   0.12127"/>
+    <axis xyz="1  0  0"/>
+    <limit effort="200.0" lower="0.0" upper="5.23598775598" velocity="1.0"/>
+  </joint>
+  <joint name="aaly__leg_left_front_joint" type="fixed">
+    <parent link="aaly__knee_left_front_motor"/>
+    <child link="aaly__leg_left_front"/>
+    <origin rpy="0       0      -3.14159" xyz="-0.00376  0.0239  -0.05622"/>
+    <axis xyz="0  0  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="aaly__thigh_left_front_motor_joint" type="revolute">
+    <parent link="aaly__leg_left_front"/>
+    <child link="aaly__thigh_left_front_motor"/>
+    <origin rpy="3.14159  0       3.14159" xyz="-0.00076 -0.0395   0.00622"/>
+    <axis xyz="-1  0  0"/>
+    <limit effort="200.0" lower="0.0" upper="5.23598775598" velocity="1.0"/>
+  </joint>
+  <joint name="aaly__thigh_left_joint" type="fixed">
+    <parent link="aaly__thigh_left_front_motor"/>
+    <child link="aaly__thigh_left_front"/>
+    <origin rpy="3.14159  0       1.57079" xyz="0      -0.001   -0.03322"/>
+    <axis xyz="0  0  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="aaly__knee_right_back_joint" type="revolute">
+    <parent link="aaly__base_link"/>
+    <child link="aaly__knee_right_back_motor"/>
+    <origin rpy="0  0  0" xyz="-0.107   -0.1144   0.12127"/>
+    <axis xyz="1  0  0"/>
+    <limit effort="200.0" lower="0.0" upper="5.23598775598" velocity="1.0"/>
+  </joint>
+  <joint name="aaly__leg_right_back_joint" type="fixed">
+    <parent link="aaly__knee_right_back_motor"/>
+    <child link="aaly__leg_right_back"/>
+    <origin rpy="0  0  0" xyz="-0.0015   0.0239  -0.05622"/>
+    <axis xyz="0  0  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="aaly__thigh_right_back_motor_joint" type="revolute">
+    <parent link="aaly__leg_right_back"/>
+    <child link="aaly__thigh_right_back_motor"/>
+    <origin rpy="3.14159  0       0" xyz="-0.0015   0.0395   0.00622"/>
+    <axis xyz="-1  0  0"/>
+    <limit effort="200.0" lower="0.0" upper="5.23598775598" velocity="1.0"/>
+  </joint>
+  <joint name="aaly__thigh_right_back_joint" type="fixed">
+    <parent link="aaly__thigh_right_back_motor"/>
+    <child link="aaly__thigh_right_back"/>
+    <origin rpy="3.11859  0      -1.57079" xyz="0       0.001   -0.05622"/>
+    <axis xyz="0  0  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="aaly__knee_right_front_joint" type="revolute">
+    <parent link="aaly__base_link"/>
+    <child link="aaly__knee_right_front_motor"/>
+    <origin rpy="0       0       3.14159" xyz="-0.034   -0.1144   0.12127"/>
+    <axis xyz="-1  0  0"/>
+    <limit effort="200.0" lower="0.0" upper="5.23598775598" velocity="1.0"/>
+  </joint>
+  <joint name="aaly__leg_right_front_joint" type="fixed">
+    <parent link="aaly__knee_right_front_motor"/>
+    <child link="aaly__leg_right_front"/>
+    <origin rpy="0       0      -3.14159" xyz="-0.00376 -0.0239  -0.05622"/>
+    <axis xyz="0  0  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="aaly__thigh_right_front_motor_joint" type="revolute">
+    <parent link="aaly__leg_right_front"/>
+    <child link="aaly__thigh_right_front_motor"/>
+    <origin rpy="3.14159  0       0" xyz="0.0005   0.0395   0.00622"/>
+    <axis xyz="-1  0  0"/>
+    <limit effort="200.0" lower="0.0" upper="5.23598775598" velocity="1.0"/>
+  </joint>
+  <joint name="aaly__thigh_right_joint" type="fixed">
+    <parent link="aaly__thigh_right_front_motor"/>
+    <child link="aaly__thigh_right_front"/>
+    <origin rpy="-3.14159  0      -1.57079" xyz="-0.00025  0.001   -0.03322"/>
+    <axis xyz="0  0  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="aaly__body_front_right_joint" type="fixed">
+    <parent link="aaly__thigh_right_front"/>
+    <child link="aaly__body1"/>
+    <origin rpy="0       0      -1.57079" xyz="0      0      0.0655"/>
+    <axis xyz="1  0  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="aaly__body_back_right_joint" type="fixed">
+    <parent link="aaly__thigh_right_back"/>
+    <child link="aaly__body2"/>
+    <origin rpy="0       0.023   -1.57079" xyz="0      -0.00097  0.04248"/>
+    <axis xyz="1  0  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="aaly__body_front_left_joint" type="fixed">
+    <parent link="aaly__thigh_left_front"/>
+    <child link="aaly__body3"/>
+    <origin rpy="0       0      -1.57079" xyz="0.002  -0.001   0.0655"/>
+    <axis xyz="1  0  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="aaly__body_back_left_joint" type="fixed">
+    <parent link="aaly__thigh_left_back"/>
+    <child link="aaly__body4"/>
+    <origin rpy="0       0      -1.57079" xyz="0.002   0      0.0655"/>
+    <axis xyz="1  0  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="aaly__body12_joint" type="fixed">
+    <parent link="aaly__body1"/>
+    <child link="aaly__body2"/>
+    <origin rpy="0  0  0" xyz="-0.035  0     0.065"/>
+    <axis xyz="1  0  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="aaly__body34_joint" type="fixed">
+    <parent link="aaly__body3"/>
+    <child link="aaly__body4"/>
+    <origin rpy="0  0  0" xyz="-0.035  0     0.065"/>
+    <axis xyz="1  0  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="aaly__Right_Track_Side_joint" type="fixed">
+    <parent link="aaly__base_link"/>
+    <child link="aaly__Right_Side_Track_Support"/>
+    <origin rpy="0  0  0" xyz="-0.07122 -0.15412  0.12835"/>
+    <axis xyz="0  0  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="aaly__Left_Track_Side_joint" type="fixed">
+    <parent link="aaly__base_link"/>
+    <child link="aaly__Left_Side_Track_Support"/>
+    <origin rpy="0  0  0" xyz="-0.07122  0.15412  0.12835"/>
+    <axis xyz="0  0  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="aaly__drum_joint1" type="fixed">
+    <parent link="aaly__Right_Side_Track_Support"/>
+    <child link="aaly__drum1"/>
+    <origin rpy="1.57079  0       0" xyz="-0.05361 -0.042   -0.09835"/>
+    <axis xyz="0  0 -1"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="aaly__drum_joint2" type="fixed">
+    <parent link="aaly__Left_Side_Track_Support"/>
+    <child link="aaly__drum2"/>
+    <origin rpy="1.57079  0       0" xyz="-0.05361  0.042   -0.09835"/>
+    <axis xyz="0  0 -1"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="aaly__drum_joint3" type="fixed">
+    <parent link="aaly__Right_Side_Track_Support"/>
+    <child link="aaly__drum3"/>
+    <origin rpy="1.57079  0       0" xyz="0.20006 -0.042   -0.09073"/>
+    <axis xyz="0  0 -1"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="aaly__drum_joint4" type="fixed">
+    <parent link="aaly__Left_Side_Track_Support"/>
+    <child link="aaly__drum4"/>
+    <origin rpy="1.57079  0       0" xyz="0.20006  0.042   -0.09073"/>
+    <axis xyz="0  0 -1"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="aaly__drum_joint5" type="fixed">
+    <parent link="aaly__Right_Side_Track_Support"/>
+    <child link="aaly__drum5"/>
+    <origin rpy="1.57079  0       0" xyz="0.02517 -0.042    0.02598"/>
+    <axis xyz="0  0 -1"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="aaly__drum_joint6" type="fixed">
+    <parent link="aaly__Left_Side_Track_Support"/>
+    <child link="aaly__drum6"/>
+    <origin rpy="1.57079  0       0" xyz="0.02517  0.042    0.02598"/>
+    <axis xyz="0  0 -1"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="aaly__Right_Side_Track_Cover_joint" type="fixed">
+    <parent link="aaly__Right_Side_Track_Support"/>
+    <child link="aaly__Right_Side_Track_Cover"/>
+    <origin rpy="0  0  0" xyz="0.05779 -0.077   -0.06673"/>
+    <axis xyz="0  0  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="aaly__Left_Side_Track_Cover_joint" type="fixed">
+    <parent link="aaly__Left_Side_Track_Support"/>
+    <child link="aaly__Left_Side_Track_Cover"/>
+    <origin rpy="0  0  0" xyz="0.05779  0.077   -0.06673"/>
+    <axis xyz="0  0  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="right_pad_joint1" type="fixed">
+    <parent link="right_pad1"/>
+    <child link="right_pad2"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="right_pad_joint2" type="fixed">
+    <parent link="right_pad2"/>
+    <child link="right_pad3"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="right_pad_joint3" type="fixed">
+    <parent link="right_pad3"/>
+    <child link="right_pad4"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="right_pad_joint4" type="fixed">
+    <parent link="right_pad4"/>
+    <child link="right_pad5"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="right_pad_joint5" type="fixed">
+    <parent link="right_pad5"/>
+    <child link="right_pad6"/>
+    <origin rpy="0      -0.64607  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="right_pad_joint6" type="fixed">
+    <parent link="right_pad6"/>
+    <child link="right_pad7"/>
+    <origin rpy="0      -0.64607  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="right_pad_joint7" type="fixed">
+    <parent link="right_pad7"/>
+    <child link="right_pad8"/>
+    <origin rpy="0      -0.64607  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="right_pad_joint8" type="fixed">
+    <parent link="right_pad8"/>
+    <child link="right_pad9"/>
+    <origin rpy="0      -0.55986  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="right_pad_joint9" type="fixed">
+    <parent link="right_pad9"/>
+    <child link="right_pad10"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="right_pad_joint10" type="fixed">
+    <parent link="right_pad10"/>
+    <child link="right_pad11"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="right_pad_joint11" type="fixed">
+    <parent link="right_pad11"/>
+    <child link="right_pad12"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="right_pad_joint12" type="fixed">
+    <parent link="right_pad12"/>
+    <child link="right_pad13"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="right_pad_joint13" type="fixed">
+    <parent link="right_pad13"/>
+    <child link="right_pad14"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="right_pad_joint14" type="fixed">
+    <parent link="right_pad14"/>
+    <child link="right_pad15"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="right_pad_joint15" type="fixed">
+    <parent link="right_pad15"/>
+    <child link="right_pad16"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="right_pad_joint16" type="fixed">
+    <parent link="right_pad16"/>
+    <child link="right_pad17"/>
+    <origin rpy="0      -0.85689  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="right_pad_joint17" type="fixed">
+    <parent link="right_pad17"/>
+    <child link="right_pad18"/>
+    <origin rpy="0     -0.7139  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="right_pad_joint18" type="fixed">
+    <parent link="right_pad18"/>
+    <child link="right_pad19"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="right_pad_joint19" type="fixed">
+    <parent link="right_pad19"/>
+    <child link="right_pad20"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="right_pad_joint20" type="fixed">
+    <parent link="right_pad20"/>
+    <child link="right_pad21"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="right_pad_joint21" type="fixed">
+    <parent link="right_pad21"/>
+    <child link="right_pad22"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="right_pad_joint22" type="fixed">
+    <parent link="right_pad22"/>
+    <child link="right_pad23"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="right_pad_joint23" type="fixed">
+    <parent link="right_pad23"/>
+    <child link="right_pad24"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="right_pad_joint24" type="fixed">
+    <parent link="right_pad24"/>
+    <child link="right_pad25"/>
+    <origin rpy="0      -0.85689  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="right_pad_joint25" type="fixed">
+    <parent link="right_pad25"/>
+    <child link="right_pad26"/>
+    <origin rpy="0      -0.85689  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="right_pad_joint26" type="fixed">
+    <parent link="right_pad26"/>
+    <child link="right_pad27"/>
+    <origin rpy="0     -0.5005  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="right_pad_joint27" type="fixed">
+    <parent link="right_pad27"/>
+    <child link="right_pad28"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="right_pad_joint28" type="fixed">
+    <parent link="right_pad28"/>
+    <child link="right_pad29"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="right_pad_joint29" type="fixed">
+    <parent link="right_pad29"/>
+    <child link="right_pad30"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="right_pad_joint30" type="fixed">
+    <parent link="right_pad30"/>
+    <child link="right_pad31"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="right_pad_joint31" type="fixed">
+    <parent link="right_pad31"/>
+    <child link="right_pad1"/>
+    <origin rpy="0  0  0" xyz="0.02137  0      -0.00076"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="left_pad_joint1" type="fixed">
+    <parent link="left_pad1"/>
+    <child link="left_pad2"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="left_pad_joint2" type="fixed">
+    <parent link="left_pad2"/>
+    <child link="left_pad3"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="left_pad_joint3" type="fixed">
+    <parent link="left_pad3"/>
+    <child link="left_pad4"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="left_pad_joint4" type="fixed">
+    <parent link="left_pad4"/>
+    <child link="left_pad5"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="left_pad_joint5" type="fixed">
+    <parent link="left_pad5"/>
+    <child link="left_pad6"/>
+    <origin rpy="0      -0.64607  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="left_pad_joint6" type="fixed">
+    <parent link="left_pad6"/>
+    <child link="left_pad7"/>
+    <origin rpy="0      -0.64607  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="left_pad_joint7" type="fixed">
+    <parent link="left_pad7"/>
+    <child link="left_pad8"/>
+    <origin rpy="0      -0.64607  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="left_pad_joint8" type="fixed">
+    <parent link="left_pad8"/>
+    <child link="left_pad9"/>
+    <origin rpy="0      -0.55986  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="left_pad_joint9" type="fixed">
+    <parent link="left_pad9"/>
+    <child link="left_pad10"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="left_pad_joint10" type="fixed">
+    <parent link="left_pad10"/>
+    <child link="left_pad11"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="left_pad_joint11" type="fixed">
+    <parent link="left_pad11"/>
+    <child link="left_pad12"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="left_pad_joint12" type="fixed">
+    <parent link="left_pad12"/>
+    <child link="left_pad13"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="left_pad_joint13" type="fixed">
+    <parent link="left_pad13"/>
+    <child link="left_pad14"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="left_pad_joint14" type="fixed">
+    <parent link="left_pad14"/>
+    <child link="left_pad15"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="left_pad_joint15" type="fixed">
+    <parent link="left_pad15"/>
+    <child link="left_pad16"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="left_pad_joint16" type="fixed">
+    <parent link="left_pad16"/>
+    <child link="left_pad17"/>
+    <origin rpy="0      -0.85689  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="left_pad_joint17" type="fixed">
+    <parent link="left_pad17"/>
+    <child link="left_pad18"/>
+    <origin rpy="0     -0.7139  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="left_pad_joint18" type="fixed">
+    <parent link="left_pad18"/>
+    <child link="left_pad19"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="left_pad_joint19" type="fixed">
+    <parent link="left_pad19"/>
+    <child link="left_pad20"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="left_pad_joint20" type="fixed">
+    <parent link="left_pad20"/>
+    <child link="left_pad21"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="left_pad_joint21" type="fixed">
+    <parent link="left_pad21"/>
+    <child link="left_pad22"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="left_pad_joint22" type="fixed">
+    <parent link="left_pad22"/>
+    <child link="left_pad23"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="left_pad_joint23" type="fixed">
+    <parent link="left_pad23"/>
+    <child link="left_pad24"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="left_pad_joint24" type="fixed">
+    <parent link="left_pad24"/>
+    <child link="left_pad25"/>
+    <origin rpy="0      -0.85689  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="left_pad_joint25" type="fixed">
+    <parent link="left_pad25"/>
+    <child link="left_pad26"/>
+    <origin rpy="0      -0.85689  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="left_pad_joint26" type="fixed">
+    <parent link="left_pad26"/>
+    <child link="left_pad27"/>
+    <origin rpy="0     -0.5005  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="left_pad_joint27" type="fixed">
+    <parent link="left_pad27"/>
+    <child link="left_pad28"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="left_pad_joint28" type="fixed">
+    <parent link="left_pad28"/>
+    <child link="left_pad29"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="left_pad_joint29" type="fixed">
+    <parent link="left_pad29"/>
+    <child link="left_pad30"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="left_pad_joint30" type="fixed">
+    <parent link="left_pad30"/>
+    <child link="left_pad31"/>
+    <origin rpy="0  0  0" xyz="0.02761  0       0"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="left_pad_joint31" type="fixed">
+    <parent link="left_pad31"/>
+    <child link="left_pad1"/>
+    <origin rpy="0  0  0" xyz="0.02137  0      -0.00076"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <link name="aaly__base_link">
+    <inertial>
+      <mass value="0.36"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="0.002814604013121458" ixy="0.0" ixz="0.0" iyy="7.17760831593746e-05" iyz="0.0" izz="0.0028301708345758957"/>
+    </inertial>
+    <collision name="base_link_collision">
+      <origin rpy="0  0  0" xyz="-0.07     0       0.12427"/>
+      <geometry>
+        <box size="0.026988 0.3000 0.026988"/>
+      </geometry>
+    </collision>
+    <visual name="base_link_visual">
+      <origin rpy="0  0  0" xyz="-0.07     0       0.12427"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Horizontal_Support_Bar_ASB-512.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aaly__knee_left_back_motor">
+    <inertial>
+      <mass value="0.05"/>
+      <origin rpy="0  0  0" xyz="0     0    -0.012"/>
+      <inertia ixx="1.2166047261762851e-05" ixy="0.0" ixz="0.0" iyy="1.4468363602365426e-05" iyz="0.0" izz="7.993829324731787e-06"/>
+    </inertial>
+    <collision name="aaly__knee_left_back_motor_collision">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <box size="0.04 0.032 0.050"/>
+      </geometry>
+    </collision>
+    <visual name="aaly__knee_left_back_motor_visual">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/AX12-A_origin_same_as_center_of_mass.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aaly__leg_left_back">
+    <inertial>
+      <mass value="0.04"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="2.69490184257131e-05" ixy="0.0" ixz="0.0" iyy="1.843324918045141e-05" iyz="0.0" izz="3.454538603564566e-05"/>
+    </inertial>
+    <collision name="aaly__leg_left_back_collision">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <box size="0.04 0.04 0.025"/>
+      </geometry>
+    </collision>
+    <visual name="aaly__leg_left_back_visual">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Leg_Left_Back.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aaly__thigh_left_back_motor">
+    <inertial>
+      <mass value="0.05"/>
+      <origin rpy="0  0  0" xyz="0     0    -0.012"/>
+      <inertia ixx="1.2166047261762851e-05" ixy="0.0" ixz="0.0" iyy="1.4468363602365426e-05" iyz="0.0" izz="7.993829324731787e-06"/>
+    </inertial>
+    <collision name="aaly__thigh_left_back_motor_collision">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <box size="0.04 0.032 0.050"/>
+      </geometry>
+    </collision>
+    <visual name="aaly__thigh_left_back_motor_visual">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/AX12-A_origin_same_as_center_of_mass.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aaly__thigh_left_back">
+    <inertial>
+      <mass value="0.03"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="2.0103848503359805e-05" ixy="0.0" ixz="0.0" iyy="1.2296884544899207e-05" iyz="0.0" izz="1.2205253512522909e-05"/>
+    </inertial>
+    <collision name="aaly__thigh_left_back_collision">
+      <origin rpy="0  0  0" xyz="0     0     0.023"/>
+      <geometry>
+        <box size="0.04 0.032 0.030"/>
+      </geometry>
+    </collision>
+    <visual name="aaly__thigh_left_back_visual">
+      <origin rpy="0  0  0" xyz="0     0     0.023"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Thigh.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aaly__knee_left_front_motor">
+    <inertial>
+      <mass value="0.05"/>
+      <origin rpy="0  0  0" xyz="0     0    -0.012"/>
+      <inertia ixx="1.2166047261762851e-05" ixy="0.0" ixz="0.0" iyy="1.4468363602365426e-05" iyz="0.0" izz="7.993829324731787e-06"/>
+    </inertial>
+    <collision name="aaly__knee_left_front_motor_collision">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <box size="0.04 0.032 0.050"/>
+      </geometry>
+    </collision>
+    <visual name="aaly__knee_left_front_motor_visual">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/AX12-A_origin_same_as_center_of_mass.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aaly__leg_left_front">
+    <inertial>
+      <mass value="0.04"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="2.69490184257131e-05" ixy="0.0" ixz="0.0" iyy="1.843324918045141e-05" iyz="0.0" izz="3.454538603564566e-05"/>
+    </inertial>
+    <collision name="aaly__leg_left_front_collision">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <box size="0.04 0.04 0.025"/>
+      </geometry>
+    </collision>
+    <visual name="aaly__leg_left_front_visual">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Leg_Left_Front.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aaly__thigh_left_front_motor">
+    <inertial>
+      <mass value="0.05"/>
+      <origin rpy="0  0  0" xyz="0     0    -0.012"/>
+      <inertia ixx="1.2166047261762851e-05" ixy="0.0" ixz="0.0" iyy="1.4468363602365426e-05" iyz="0.0" izz="7.993829324731787e-06"/>
+    </inertial>
+    <collision name="aaly__thigh_left_front_motor_collision">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <box size="0.04 0.032 0.050"/>
+      </geometry>
+    </collision>
+    <visual name="aaly__thigh_left_front_motor_visual">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/AX12-A_origin_same_as_center_of_mass.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aaly__thigh_left_front">
+    <inertial>
+      <mass value="0.03"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="2.0103848503359805e-05" ixy="0.0" ixz="0.0" iyy="1.2296884544899207e-05" iyz="0.0" izz="1.2205253512522909e-05"/>
+    </inertial>
+    <collision name="aaly__thigh_left_front_collision">
+      <origin rpy="0  0  0" xyz="0     0     0.023"/>
+      <geometry>
+        <box size="0.04 0.032 0.030"/>
+      </geometry>
+    </collision>
+    <visual name="aaly__thigh_left_front_visual">
+      <origin rpy="0  0  0" xyz="0     0     0.023"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Thigh.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aaly__knee_right_back_motor">
+    <inertial>
+      <mass value="0.05"/>
+      <origin rpy="0  0  0" xyz="0     0    -0.012"/>
+      <inertia ixx="1.2166047261762851e-05" ixy="0.0" ixz="0.0" iyy="1.4468363602365426e-05" iyz="0.0" izz="7.993829324731787e-06"/>
+    </inertial>
+    <collision name="aaly__knee_right_back_motor_collision">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <box size="0.04 0.032 0.050"/>
+      </geometry>
+    </collision>
+    <visual name="aaly__knee_right_back_motor_visual">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/AX12-A_origin_same_as_center_of_mass.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aaly__leg_right_back">
+    <inertial>
+      <mass value="0.04"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="2.69490184257131e-05" ixy="0.0" ixz="0.0" iyy="1.843324918045141e-05" iyz="0.0" izz="3.454538603564566e-05"/>
+    </inertial>
+    <collision name="aaly__leg_right_back_collision">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <box size="0.04 0.04 0.025"/>
+      </geometry>
+    </collision>
+    <visual name="aaly__leg_right_back_visual">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Leg_Right_Back.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aaly__thigh_right_back_motor">
+    <inertial>
+      <mass value="0.05"/>
+      <origin rpy="0  0  0" xyz="0     0    -0.012"/>
+      <inertia ixx="1.2166047261762851e-05" ixy="0.0" ixz="0.0" iyy="1.4468363602365426e-05" iyz="0.0" izz="7.993829324731787e-06"/>
+    </inertial>
+    <collision name="aaly__thigh_right_back_motor_collision">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <box size="0.04 0.032 0.050"/>
+      </geometry>
+    </collision>
+    <visual name="aaly__thigh_right_back_motor_visual">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/AX12-A_origin_same_as_center_of_mass.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aaly__thigh_right_back">
+    <inertial>
+      <mass value="0.03"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="2.0103848503359805e-05" ixy="0.0" ixz="0.0" iyy="1.2296884544899207e-05" iyz="0.0" izz="1.2205253512522909e-05"/>
+    </inertial>
+    <collision name="aaly__thigh_right_back_collision">
+      <origin rpy="0.023  0     0" xyz="0  0  0"/>
+      <geometry>
+        <box size="0.04 0.032 0.030"/>
+      </geometry>
+    </collision>
+    <visual name="aaly__thigh_right_back_visual">
+      <origin rpy="0.023  0     0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Thigh.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aaly__knee_right_front_motor">
+    <inertial>
+      <mass value="0.05"/>
+      <origin rpy="0  0  0" xyz="0     0    -0.012"/>
+      <inertia ixx="1.2166047261762851e-05" ixy="0.0" ixz="0.0" iyy="1.4468363602365426e-05" iyz="0.0" izz="7.993829324731787e-06"/>
+    </inertial>
+    <collision name="aaly__knee_right_front_motor_collision">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <box size="0.04 0.032 0.050"/>
+      </geometry>
+    </collision>
+    <visual name="aaly__knee_right_front_motor_visual">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/AX12-A_origin_same_as_center_of_mass.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aaly__leg_right_front">
+    <inertial>
+      <mass value="0.04"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="2.69490184257131e-05" ixy="0.0" ixz="0.0" iyy="1.843324918045141e-05" iyz="0.0" izz="3.454538603564566e-05"/>
+    </inertial>
+    <collision name="aaly__leg_right_front_collision">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <box size="0.04 0.04 0.025"/>
+      </geometry>
+    </collision>
+    <visual name="aaly__leg_right_front_visual">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Leg_Right_Front.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aaly__thigh_right_front_motor">
+    <inertial>
+      <mass value="0.05"/>
+      <origin rpy="0  0  0" xyz="0     0    -0.012"/>
+      <inertia ixx="1.2166047261762851e-05" ixy="0.0" ixz="0.0" iyy="1.4468363602365426e-05" iyz="0.0" izz="7.993829324731787e-06"/>
+    </inertial>
+    <collision name="aaly__thigh_right_front_motor_collision">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <box size="0.04 0.032 0.050"/>
+      </geometry>
+    </collision>
+    <visual name="aaly__thigh_right_front_motor_visual">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/AX12-A_origin_same_as_center_of_mass.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aaly__thigh_right_front">
+    <inertial>
+      <mass value="0.03"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="2.0103848503359805e-05" ixy="0.0" ixz="0.0" iyy="1.2296884544899207e-05" iyz="0.0" izz="1.2205253512522909e-05"/>
+    </inertial>
+    <collision name="aaly__thigh_right_front_collision">
+      <origin rpy="0  0  0" xyz="0     0     0.023"/>
+      <geometry>
+        <box size="0.04 0.032 0.030"/>
+      </geometry>
+    </collision>
+    <visual name="aaly__thigh_right_front_visual">
+      <origin rpy="0  0  0" xyz="0     0     0.023"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Thigh.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aaly__body1">
+    <inertial>
+      <mass value="0.05"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="7.760416666666666e-05" ixy="0.0" ixz="0.0" iyy="8.041666666666667e-05" iyz="0.0" izz="3.802083333333334e-05"/>
+    </inertial>
+    <collision name="aaly__body1_collision">
+      <origin rpy="0  0  0" xyz="0     0     0.065"/>
+      <geometry>
+        <box size="0.07 0.065 0.12"/>
+      </geometry>
+    </collision>
+    <visual name="aaly__body1_visual">
+      <origin rpy="0  0  0" xyz="0     0     0.065"/>
+      <geometry>
+        <box size="0.07 0.065 0.12"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aaly__body2">
+    <inertial>
+      <mass value="0.05"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="7.760416666666666e-05" ixy="0.0" ixz="0.0" iyy="8.041666666666667e-05" iyz="0.0" izz="3.802083333333334e-05"/>
+    </inertial>
+    <collision name="aaly__body2_collision">
+      <origin rpy="0  0  0" xyz="-0.045  0     0"/>
+      <geometry>
+        <box size="0.07 0.065 0.12"/>
+      </geometry>
+    </collision>
+    <visual name="aaly__body2_visual">
+      <origin rpy="0  0  0" xyz="-0.045  0     0"/>
+      <geometry>
+        <box size="0.07 0.065 0.12"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aaly__body3">
+    <inertial>
+      <mass value="0.05"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="7.760416666666666e-05" ixy="0.0" ixz="0.0" iyy="8.041666666666667e-05" iyz="0.0" izz="3.802083333333334e-05"/>
+    </inertial>
+    <collision name="aaly__body1_collision">
+      <origin rpy="0  0  0" xyz="0     0     0.065"/>
+      <geometry>
+        <box size="0.07 0.065 0.12"/>
+      </geometry>
+    </collision>
+    <visual name="aaly__body1_visual">
+      <origin rpy="0  0  0" xyz="0     0     0.065"/>
+      <geometry>
+        <box size="0.07 0.065 0.12"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aaly__body4">
+    <inertial>
+      <mass value="0.05"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="7.760416666666666e-05" ixy="0.0" ixz="0.0" iyy="8.041666666666667e-05" iyz="0.0" izz="3.802083333333334e-05"/>
+    </inertial>
+    <collision name="aaly__body2_collision">
+      <origin rpy="0  0  0" xyz="-0.045  0     0"/>
+      <geometry>
+        <box size="0.07 0.065 0.12"/>
+      </geometry>
+    </collision>
+    <visual name="aaly__body2_visual">
+      <origin rpy="0  0  0" xyz="-0.045  0     0"/>
+      <geometry>
+        <box size="0.07 0.065 0.12"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aaly__Right_Side_Track_Support">
+    <inertial>
+      <mass value="0.15"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="0.00010520383183873306" ixy="-9.148702320585518e-07" ixz="3.7647066170409417e-05" iyy="0.00032229348287662684" iyz="2.722753728174257e-06" izz="0.0002182293357979667"/>
+    </inertial>
+    <collision name="Right_Side_Track_Support_collision">
+      <origin rpy="0  0  0" xyz="0.05749 -0.004   -0.04273"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Track_Support_Collision_Mesh.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <visual name="Right_Side_Track_Support_visual">
+      <origin rpy="0  0  0" xyz="0.05749 -0.004   -0.05773"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Track_Support_Left_Side.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aaly__Left_Side_Track_Support">
+    <inertial>
+      <mass value="0.15"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="0.00010520383183873306" ixy="-9.148702320585518e-07" ixz="3.7647066170409417e-05" iyy="0.00032229348287662684" iyz="2.722753728174257e-06" izz="0.0002182293357979667"/>
+    </inertial>
+    <collision name="Left_Side_Track_Support_collision">
+      <origin rpy="0  0  0" xyz="0.05749  0.004   -0.04273"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Track_Support_Collision_Mesh.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <visual name="Left_Side_Track_Support_visual">
+      <origin rpy="0  0  0" xyz="0.05749  0.004   -0.05773"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Track_Support_Right_Side.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aaly__drum1">
+    <inertial>
+      <mass value="0.1"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="2.787405275215884e-05" ixy="0.0" ixz="0.0" iyy="2.7903424778241207e-05" iyz="0.0" izz="1.7975679962403806e-05"/>
+    </inertial>
+    <collision name="drum1_collision">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <cylinder length="0.05124" radius="0.026925"/>
+      </geometry>
+    </collision>
+    <visual name="drum1_visual">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Sproket6in_Hub13.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aaly__drum2">
+    <inertial>
+      <mass value="0.1"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="2.787405275215884e-05" ixy="0.0" ixz="0.0" iyy="2.7903424778241207e-05" iyz="0.0" izz="1.7975679962403806e-05"/>
+    </inertial>
+    <collision name="drum2_collision">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <cylinder length="0.05124" radius="0.026925"/>
+      </geometry>
+    </collision>
+    <visual name="drum2_visual">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Sproket6in_Hub13.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aaly__drum3">
+    <inertial>
+      <mass value="0.2"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="0.00010790475895594018" ixy="0.0" ixz="0.0" iyy="0.00010774994581540083" iyz="0.0" izz="0.00012753506517633218"/>
+    </inertial>
+    <collision name="drum3_collision">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <cylinder length="0.05124" radius="0.036625"/>
+      </geometry>
+    </collision>
+    <visual name="drum3_visual">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Sproket9in_Hub13.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aaly__drum4">
+    <inertial>
+      <mass value="0.2"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="0.00010790475895594018" ixy="0.0" ixz="0.0" iyy="0.00010774994581540083" iyz="0.0" izz="0.00012753506517633218"/>
+    </inertial>
+    <collision name="drum4_collision">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <cylinder length="0.05124" radius="0.036625"/>
+      </geometry>
+    </collision>
+    <visual name="drum4_visual">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Sproket9in_Hub13.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aaly__drum5">
+    <inertial>
+      <mass value="0.1"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="2.787405275215884e-05" ixy="0.0" ixz="0.0" iyy="2.7903424778241207e-05" iyz="0.0" izz="1.7975679962403806e-05"/>
+    </inertial>
+    <collision name="drum5_collision">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <cylinder length="0.05124" radius="0.027025"/>
+      </geometry>
+    </collision>
+    <visual name="drum5_visual">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Sproket6in_Hub13.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aaly__drum6">
+    <inertial>
+      <mass value="0.1"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="2.787405275215884e-05" ixy="0.0" ixz="0.0" iyy="2.7903424778241207e-05" iyz="0.0" izz="1.7975679962403806e-05"/>
+    </inertial>
+    <collision name="drum6_collision">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <cylinder length="0.05124" radius="0.027025"/>
+      </geometry>
+    </collision>
+    <visual name="drum6_visual">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Sproket6in_Hub13.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aaly__Right_Side_Track_Cover">
+    <inertial>
+      <mass value="0.15"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="0.00010520383183873306" ixy="-9.148702320585518e-07" ixz="3.7647066170409417e-05" iyy="0.00032229348287662684" iyz="2.722753728174257e-06" izz="0.0002182293357979667"/>
+    </inertial>
+    <collision name="Right_Side_Track_Cover_collision">
+      <origin rpy="0  0  0" xyz="0     0     0.015"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Track_Support_Collision_Mesh.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <visual name="Right_Side_Track_Cover_visual">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Track_Support_Cover_Side.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aaly__Left_Side_Track_Cover">
+    <inertial>
+      <mass value="0.15"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="0.00010520383183873306" ixy="-9.148702320585518e-07" ixz="3.7647066170409417e-05" iyy="0.00032229348287662684" iyz="2.722753728174257e-06" izz="0.0002182293357979667"/>
+    </inertial>
+    <collision name="Left_Side_Track_Cover_collision">
+      <origin rpy="0  0  0" xyz="0     0     0.015"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Track_Support_Collision_Mesh.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <visual name="Left_Side_Track_Cover_visual">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Track_Support_Cover_Side.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_pad1">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="right_pad1_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="right_pad1_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_pad2">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="right_pad2_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="right_pad2_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_pad3">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="right_pad3_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="right_pad3_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_pad4">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="right_pad4_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="right_pad4_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_pad5">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="right_pad5_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="right_pad5_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_pad6">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="right_pad6_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="right_pad6_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_pad7">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="right_pad7_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="right_pad7_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_pad8">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="right_pad8_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="right_pad8_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_pad9">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="right_pad9_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="right_pad9_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_pad10">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="right_pad10_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="right_pad10_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_pad11">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="right_pad11_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="right_pad11_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_pad12">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="right_pad12_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="right_pad12_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_pad13">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="right_pad13_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="right_pad13_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_pad14">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="right_pad14_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="right_pad14_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_pad15">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="right_pad15_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="right_pad15_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_pad16">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="right_pad16_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="right_pad16_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_pad17">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="right_pad17_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="right_pad17_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_pad18">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="right_pad18_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="right_pad18_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_pad19">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="right_pad19_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="right_pad19_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_pad20">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="right_pad20_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="right_pad20_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_pad21">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="right_pad21_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="right_pad21_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_pad22">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="right_pad22_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="right_pad22_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_pad23">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="right_pad23_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="right_pad23_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_pad24">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="right_pad24_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="right_pad24_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_pad25">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="right_pad25_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="right_pad25_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_pad26">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="right_pad26_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="right_pad26_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_pad27">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="right_pad27_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="right_pad27_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_pad28">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="right_pad28_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="right_pad28_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_pad29">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="right_pad29_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="right_pad29_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_pad30">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="right_pad30_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="right_pad30_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_pad31">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="right_pad31_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="right_pad31_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_pad1">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="left_pad1_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="left_pad1_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_pad2">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="left_pad2_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="left_pad2_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_pad3">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="left_pad3_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="left_pad3_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_pad4">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="left_pad4_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="left_pad4_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_pad5">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="left_pad5_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="left_pad5_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_pad6">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="left_pad6_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="left_pad6_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_pad7">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="left_pad7_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="left_pad7_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_pad8">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="left_pad8_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="left_pad8_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_pad9">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="left_pad9_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="left_pad9_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_pad10">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="left_pad10_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="left_pad10_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_pad11">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="left_pad11_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="left_pad11_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_pad12">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="left_pad12_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="left_pad12_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_pad13">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="left_pad13_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="left_pad13_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_pad14">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="left_pad14_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="left_pad14_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_pad15">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="left_pad15_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="left_pad15_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_pad16">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="left_pad16_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="left_pad16_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_pad17">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="left_pad17_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="left_pad17_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_pad18">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="left_pad18_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="left_pad18_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_pad19">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="left_pad19_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="left_pad19_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_pad20">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="left_pad20_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="left_pad20_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_pad21">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="left_pad21_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="left_pad21_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_pad22">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="left_pad22_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="left_pad22_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_pad23">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="left_pad23_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="left_pad23_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_pad24">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="left_pad24_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="left_pad24_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_pad25">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="left_pad25_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="left_pad25_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_pad26">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="left_pad26_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="left_pad26_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_pad27">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="left_pad27_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="left_pad27_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_pad28">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="left_pad28_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="left_pad28_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_pad29">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="left_pad29_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="left_pad29_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_pad30">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="left_pad30_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="left_pad30_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_pad31">
+    <inertial>
+      <mass value="0.035"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="8.251900108577635e-06" ixy="0.0" ixz="0.0" iyy="3.3659066232356143e-06" iyz="0.0" izz="1.1020629750271444e-05"/>
+    </inertial>
+    <collision name="left_pad31_collision">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <box size="0.0275 0.054 0.011"/>
+      </geometry>
+    </collision>
+    <visual name="left_pad31_visual">
+      <origin rpy="0  0  0" xyz="0.0138  0      0"/>
+      <geometry>
+        <mesh filename="package://PATHTOMESHES/meshes/Lynx_Track_2in.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+</robot>
